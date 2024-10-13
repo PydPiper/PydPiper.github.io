@@ -1,0 +1,10 @@
+# Math
+
+``` {eval-rst}
+.. toctree::
+    :maxdepth: 0
+    :titlesonly:
+    :glob:
+
+    *
+```

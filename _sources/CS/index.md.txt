@@ -1,0 +1,35 @@
+# Computer Science
+
+``` {eval-rst}
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+    :glob:
+    :caption: Artificial Intelligence
+
+    AI/*
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+    :glob:
+    :caption: Python
+
+    python/*
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+    :glob:
+    :caption: Web
+
+    web/index
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+    :glob:
+    :caption: Tools
+
+    tools/*
+```

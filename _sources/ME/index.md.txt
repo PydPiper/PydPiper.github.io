@@ -1,0 +1,11 @@
+# Mechanical Engineering
+
+
+``` {eval-rst}
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+    :glob:
+
+    structures/*
+```

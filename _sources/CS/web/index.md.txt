@@ -1,0 +1,11 @@
+# Web
+
+``` {eval-rst}
+.. toctree::
+    :caption: Web
+    :maxdepth: 0
+    :titlesonly:
+    :glob:
+
+    css/*
+```

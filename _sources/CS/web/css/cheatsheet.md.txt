@@ -1,0 +1,95 @@
+# Cascading Style Sheets (CSS)
+
+## General
+
+### How to paragraph link within the same page
+This is actually all done on the HTML side (not CSS), however the scroll-behavior makes the side much nicer
+when following a same-page link
+``` html
+<a href="#link_id1"></a>
+
+<h1 id="link_id1">Hello</h1>
+```
+
+``` css
+html {
+    scroll-behavior: smooth;
+}
+```
+
+### How to create "dark-mode" without a lot of work
+Setup a toggle to change the entire html tag's behavior to "black" and apply a filter to invert all colors.
+Now the hue-rotate is required if you want to keep the similar colors but in lighter mode for the black background to work
+
+``` css
+html {
+    background: navy;
+    filter: invert(1) hue-rotate(180deg);
+}
+```
+
+### How to remove an existing CSS style
+
+```css
+div {
+    width: unset;
+}
+
+```
+
+
+## Fonts
+
+### Custom fonts from google
+Google offers a 1000+ selection of fonts to pick from with an easy to embed link.
+
+1. Pick a font (or combine multiple fonts!) from [LINK](https://fonts.google.com/)
+2. Click "Select this style"
+3. top right should have a icon for you to click that will pop up a "Use on the web" link
+4. paste the link in your html template
+5. call out the font on your css temple 
+
+### How to change the selection styling
+
+``` css
+p::selection {
+    background: rgb(125,125,125);
+    color: white;
+}
+```
+
+## Backgrounds
+
+### How to create custom clipped background
+There are a lot of really great tools out there to auto generate `polygon` shapes for you
+that is then used to clip a background (either an image or solid color) to get abstract background fast!
+Link to polygon generator: [LINK](https://www.cssportal.com/css-clip-path-generator/)
+
+``` css
+body {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(125,125,125);
+    clip-path: polygon(50% 0%, 0 59%, 25% 100%);
+}
+```
+
+### How to blend background together
+This is a really cool feature to blend a background image with a solid color to quickly
+customize the look of a background
+
+``` css
+body {
+    background-image: url(img.png);
+    background-color: blue;
+    background-blend-mode: screen;
+}
+```
+
+
+
+---
+
+## References
+
+1. w3Schools, "CSS Tutorial" www.w3schools.com/css (accessed Sep. 25 2021)

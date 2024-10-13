@@ -1,0 +1,283 @@
+# lib - sphinx (Python Documentation)
+
+## Setting up a Sphinx Doc
+
+1) Install and start sphinx
+
+```shell
+pip install sphinx sphinx_rtd_theme myst-parser
+sphinx-quickstart
+```
+
+2) Adjust `source/config.py` to use `sphinx_rtd_theme` or `pydata_sphinx_theme`, auto code docstring, and allow to use markdown (instead of the default rst)
+
+```python
+# add your project path to your doc (assuming your structure is project/doc and project/source)
+import os, sys
+sys.path.append('../../')
+
+# ability to use autodocs
+extensions = ['sphinx.ext.autodoc', 'myst_parser']
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.md': 'markdown',
+}
+autodoc_default_options = {
+    'member-order': 'bysource',
+    'special-members': '__init__',
+}
+
+# use a new theme
+html_theme = 'sphinx_rtd_theme'
+```
+
+3) Generate your docs
+
+```shell
+docs/make.bat html
+```
+
+4) Rules
+
+- source must have a `index.rst` with a `toctree`. Note you main call an subfolder/index with an index
+- `:maxdepth:` is how far the nav tree with have expandable buttons
+- `:glob:` lets you include an entire folder of files
+- `:titlesonly:` shows only the title of the files (otherwise it would parse all headers)
+- `:caption:` lets you define a header for the tree
+- `:hidden:` hides the tree in the HTML
+
+```
+.. toctree::
+    :maxdepth: 3
+    :glob:
+    :hidden:
+
+    file
+    folder/file
+    folder/*
+```
+
+- each file must start with a header
+
+::::{tab-set}
+
+:::{tab-item} .rst
+```
+My title
+========
+```
+:::
+
+:::{tab-item} .md
+```
+# My title
+```
+:::
+
+::::
+
+## How to create autodocs for code
+
+- make sure your docstring follows one of the approved sphinx format
+
+```python
+def func(arg1, arg2):
+    """
+    Description, followed by empty line
+
+    :param str arg1: this is arg1
+    :param float arg2: this is arg2
+    :return bool: this is return description
+    """
+```
+
+- then in your docs file call out `autofunction` or `autoclass` 
+
+```
+.. autofuction:: filename.functionname
+
+.. autoclass:: filename.classname
+    :members:
+
+.. automodule:: filename
+    :members:
+```
+
+## How to ignore certain imports that are causing issue with doc generation
+
+add the following to your config.py
+
+```python
+autodoc_mock_imports = ['numpy', 'pandas']
+```
+
+## Markdown (myst-parse) tricks
+
+You can write normal markdown that sphinx can consume, however certain things are not native to markdown [my-st-parser](https://myst-parser.readthedocs.io/en/latest/syntax/admonitions.html#admonition-types):
+
+### How to link to an image
+
+```
+![title](path/to/picture.jpg)
+```
+
+### How to create an external link
+
+```
+[title](https://google.com)
+```
+
+### How to create a notebox. 
+There is also `note attention caution error important warning tip`
+
+```
+:::{note}
+this is a note
+:::
+```
+
+Similarly you can do a quote block with
+
+```
+> This is a quote block
+```
+
+### How to create code blocks 
+You have the best control if you use `{code-block}` but for simple code blocks simply just call out the code language
+
+```
+    ```{code-block} python
+    :caption: this is a title
+    :linenos:
+    :emphasize-lines: 1, 3
+
+    a = 5
+    b = 10
+    a + b
+    ```
+```
+
+### How to create tabs
+```{code-block} python
+:caption: config.py
+extensions = [
+    "sphinx_design"
+]
+myst_enable_extensions = [
+    "colon_fence"
+]
+```
+
+```
+    ::::{tab-set}
+
+    :::{tab-item} .rst
+    ```
+    My title
+    ========
+    ```
+    :::
+
+    :::{tab-item} .md
+    ```
+    # My title
+    ```
+    :::
+
+    ::::
+```
+
+
+## ReStructuredText (rst)
+
+- To italicize text: `*text*`
+- To bold text: `**text**`
+- Subscript/Superscript: ``:sub:`yourtext` `` or ``:sup:`yourtext` ``
+- To in-text code highlight:  `` `your text then` ``
+- Important messages: ``.. note::`` ``.. warning::`` ``.. deprecated::`` ``.. seealso::``
+- Internal Links: ``:doc:`filename` ``
+- External Links: ``linktext <https://google.com>`_``
+- Section Links within the same doc
+
+    1) put a ``.. _ref1:`` above the header you want to ref (make sure there is an empty line between the header and _ref1)
+
+    2) call the link by: ``:ref:`ref1` ``
+
+- Citations: to define it ``.. [refname1] Title`` then to use it in text: ``[refname1]_``
+- Today's date in text ``|today|``
+- Bullets, there are a few not so intuitive conventions about bullets, see below:
+
+```
+
+    - this is a bullet
+
+    - this is another bullet
+
+    - this is a bullet
+    on multi lines
+
+    1) this is a numbered bullet
+
+        1.1) this is a nested bullet
+        with multi lines
+
+        1.2) here is another nested bullet
+```
+
+- Header Types
+    - Title: `###`
+    - Section: `===`
+    - SubSection: `---`
+    - 2SubSection: `^^^`
+    - 3SubSection: `"""`
+
+- Figures
+
+```{code-block} text
+.. figure:: pic.png
+    :scale: 50%
+    :alt: Alternative text if image does not load, spoken by application for visually impaired
+    :align: center
+
+    This is caption text
+```
+
+## How to hyperlink to other python package code:
+
+```{code-block} python
+:caption: config.py
+
+extensions = [
+    'sphinx.ext.intersphinx',
+]
+intersphinx_mapping = {
+    'python': ('https://docs.python.org/3', None),
+    'numpy': ('https://numpy.org/doc/stable/', None),
+    'pandas': ('https://pandas.pydata.org/pandas-docs/stable', None),
+    'scipy': ('https://docs.scipy.org/doc/scipy', None),
+    'scipy-lecture-notes': ('https://scipy-lectures.org', None),
+    'matplotlib': ('https://matplotlib.org/stable', None),
+}
+```
+
+In your documentation you refernce code by either `py:class` or `py:func` then the name of the reference the same way as you would import the function/class. Some other types include `meth` for methods, and `obj` for objects.
+
+```{code-block}
+:caption: mynotes.md
+:lineno-start: 1
+
+{py:class}`list`
+{py:func}`numpy.cross`
+{py:func}`numpy.array`
+```
+
+
+---
+
+## References
+
+1. Sphinx, "Sphinx Documentation" https://www.sphinx-doc.org (accessed Oct. 29 2021)
+
+2. Myst-Parse, "Myst-Parse Documentation" https://myst-parser.readthedocs.io (accessed Oct. 29 2021)
+
+3. myst-designer, https://sphinx-design.readthedocs.io/en/pydata-theme/get_started.html

@@ -1,0 +1,958 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="dark">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Python Cheat Sheet &#8212; Home</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "dark";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/mycustom.css?v=650cd416" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CS/python/1_cheatsheet';</script>
+    <script src="../../_static/js/slideimg.js?v=f9c97fb0"></script>
+    <link rel="canonical" href="https://pydpiper.github.io/PydPiper.github.io/CS/python/1_cheatsheet.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Python Class" href="2_class.html" />
+    <link rel="prev" title="Python Quick Starter" href="0_quickstart.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="dark">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/favicon_dark.png" class="logo__image only-dark" alt="Home - Home"/>
+    <script>document.write(`<img src="../../_static/favicon_light.png" class="logo__image only-light" alt="Home - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Computer Science
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../ME/index.html">
+    Mechanical Engineering
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../math/index.html">
+    Math
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Computer Science
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../ME/index.html">
+    Mechanical Engineering
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../math/index.html">
+    Math
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Artificial Intelligence</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../AI/bayesnet.html">Bayes Theorem/Network (Probability Relations)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AI/gmm.html">Gaussian Mixture Model (GMM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AI/knn.html">K-means Clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AI/minimax.html">Minimax, AlphaBeta Pruning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AI/search.html">Search Algorithms</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0_quickstart.html">Python Quick Starter</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Python Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_class.html">Python Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_containers.html">Tuples, Lists, Sets, Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_functions.html">Python Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_logicloops.html">Python Logic Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lib_numpy.html">lib - Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lib_pytest.html">lib - Testing (unittest/pytest)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lib_sphinx.html">lib - sphinx (Python Documentation)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Web</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../web/index.html">Web</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../web/css/cheatsheet.html">Cascading Style Sheets (CSS)</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tools</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tools/git.html">Git Version Control (CI/CD) DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/jupyter.html">Juypter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/linux.html">Linux Cheatsheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/vscode.html">VS Code</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Computer Science</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Python Cheat Sheet</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="python-cheat-sheet">
+<h1>Python Cheat Sheet<a class="headerlink" href="#python-cheat-sheet" title="Link to this heading">#</a></h1>
+<p>A collection of miscellaneous python how-to’s that often times were buried in pages of stackoverflow, git issues or just cool work around to common issues within a project.</p>
+<section id="how-to-build-python-from-source">
+<h2>How to build python from source<a class="headerlink" href="#how-to-build-python-from-source" title="Link to this heading">#</a></h2>
+<p>On windows/linux from .tgz</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>tar<span class="w"> </span>xvf<span class="w"> </span>Python-3.9.6.tgz
+<span class="nb">cd</span><span class="w"> </span>Python<span class="w"> </span>Python-3.9.6
+./configure
+make
+python<span class="w"> </span>-m<span class="w"> </span>ensurepip<span class="w"> </span>--upgrade
+</pre></div>
+</div>
+</section>
+<section id="what-is-mutable-immutable">
+<h2>What is Mutable/Immutable<a class="headerlink" href="#what-is-mutable-immutable" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Mutable: An object that can be changed after it is created</p>
+<ul>
+<li><p>list, set, dict</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+    <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+    <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="mi">63674848</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+    <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="mi">63674848</span> <span class="c1"># note that the ID stays the same, however the content of the list changed</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Immutable: An object that cannot be changed after it is created</p>
+<ul>
+<li><p>bool, int, float, str, tuple, frozenset</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+    <span class="c1"># same ID every time you call id on a bool, int, float, str</span>
+    <span class="nb">id</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="mi">1794170960</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+    <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="mi">69202848</span> <span class="c1"># now note once you change the tuple size the ID rolls</span>
+    <span class="n">a</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">4</span><span class="p">,)</span>
+    <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="mi">65455520</span> <span class="c1"># new id</span>
+</pre></div>
+</div>
+</section>
+<section id="all-about-copy-true-shallow-deep">
+<h2>All about Copy: True/Shallow/Deep<a class="headerlink" href="#all-about-copy-true-shallow-deep" title="Link to this heading">#</a></h2>
+<p>There are 3 different ways to copy objects in python:</p>
+<ul class="simple">
+<li><p><strong>True Copy</strong>: ID or old object and new object are the <strong>same</strong>, therefore changing one object
+also changes the other</p></li>
+<li><p><strong>Shallow Copy</strong>: ID of old object and new object is <strong>different</strong>, therefore the number of contents
+and immutable contents can be changed by one that will not effect the other, HOWEVER mutable content copied
+are still linked between the two objects (ie: a = [[1,2],3], copy_a = [[1,2],3] the list [1,2] inside is the
+same ID, therefore changing the list in “a” will also change the list in “copy_a”</p></li>
+<li><p><strong>Deep Copy</strong>: creates <strong>new</strong> IDs for each object within (very slow!). There is no link between old and new copy</p></li>
+</ul>
+</section>
+<section id="how-to-set-a-environment-variable-within-python">
+<h2>How to set a environment variable within python<a class="headerlink" href="#how-to-set-a-environment-variable-within-python" title="Link to this heading">#</a></h2>
+<p>This will set the environment variable for this python process only. This is also great for temporarily setting up variables for testing.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;USER&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Viktor Kis&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="how-to-split-a-string-based-on-1st-delimiter-only">
+<h2>How to split a string based on 1st delimiter only<a class="headerlink" href="#how-to-split-a-string-based-on-1st-delimiter-only" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;this.is.text&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="s1">&#39;this&#39;</span><span class="p">,</span> <span class="s1">&#39;is.text&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="how-to-single-line-logic-check">
+<h2>How to Single line logic check<a class="headerlink" href="#how-to-single-line-logic-check" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span> <span class="k">if</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">10</span>
+<span class="n">a</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</section>
+<section id="how-to-find-out-a-scripts-performance">
+<h2>How to find out a scripts performance<a class="headerlink" href="#how-to-find-out-a-scripts-performance" title="Link to this heading">#</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>cProfile<span class="w"> </span>-s<span class="w"> </span><span class="nb">time</span><span class="w"> </span>filename.py
+</pre></div>
+</div>
+</section>
+<section id="how-to-get-a-object-s-attribute-and-set-to-default-if-there-is-none">
+<h2>How to get a object’s attribute and set to default if there is none<a class="headerlink" href="#how-to-get-a-object-s-attribute-and-set-to-default-if-there-is-none" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Test</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">A</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">test</span> <span class="o">=</span> <span class="n">Test</span><span class="p">()</span>
+<span class="n">a</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">test</span><span class="p">,</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">a</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">0</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">test</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">b</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">20</span>
+</pre></div>
+</div>
+</section>
+<section id="how-to-hide-print-statements">
+<h2>How to hide print statements<a class="headerlink" href="#how-to-hide-print-statements" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="k">class</span> <span class="nc">HiddenPrints</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__entr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_original_stdout</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">devnull</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_val</span><span class="p">,</span> <span class="n">exc_tb</span><span class="p">):</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_original_stdout</span>
+
+<span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
+<span class="n">hello</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;hello&#39;</span>
+
+<span class="nd">@HiddenPrints</span>
+<span class="k">def</span> <span class="nf">hello2</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
+<span class="n">hello2</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="how-to-setup-multiprocessing">
+<h2>How to setup multiprocessing<a class="headerlink" href="#how-to-setup-multiprocessing" title="Link to this heading">#</a></h2>
+<p>Note that for pyinstaller you do have to pass all import functions along with the multiprocess as well (for example if you are using math.cos() you will need to pass the function cos() along as a arg into the Process for it to use it within a new process with pyinstaller).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Queue</span><span class="p">,</span> <span class="n">Process</span>
+
+<span class="k">def</span> <span class="nf">adder</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="n">rv</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">):</span>
+        <span class="n">rv</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">i</span><span class="p">,</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">rv</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">q1</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
+    <span class="n">q2</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
+
+    <span class="n">p1</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">adder</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">p2</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">adder</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+    
+    <span class="n">p1</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">p2</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">q1</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">q2</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+
+    <span class="n">p1</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+    <span class="n">p2</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="how-to-create-a-context-manager">
+<h2>How to create a Context Manager<a class="headerlink" href="#how-to-create-a-context-manager" title="Link to this heading">#</a></h2>
+<p>Context Manager is a function or class that has an “Enter” buildup code, and an
+“Exit” teardown code that the user is able simply call in a “with” block. The most
+common example of this is the builtin file IO class “open”. Open has an “Enter” that
+opens file streaming and an “Exit” that safely closes the file for streaming.</p>
+<section id="object-oriented-version">
+<h3>Object Oriented Version<a class="headerlink" href="#object-oriented-version" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Setup</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+    <span class="c1"># context manager setup</span>
+    <span class="k">class</span> <span class="nc">MyContextManager</span><span class="p">():</span>
+
+        <span class="c1"># predefine input on &quot;with&quot; code line</span>
+        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">preload</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;context initialized on runtime&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">preload</span> <span class="o">=</span> <span class="n">preload</span>
+
+        <span class="c1"># enter method is called when the code enters the with block</span>
+        <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;inside with block&quot;</span><span class="p">)</span>
+            <span class="c1"># keep the context manager class simple</span>
+            <span class="c1">#   by returning another class that does the work from the __enter__ block</span>
+            <span class="c1"># When a &quot;with MyContextManger(10) mycont:&quot; is called,</span>
+            <span class="c1">#   we are really saying that mycont = worker_class(10)</span>
+            <span class="k">return</span> <span class="n">worker_class</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">preload</span><span class="p">)</span>
+
+        <span class="c1"># exit method is called when the code exits the with block</span>
+        <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exc_type</span><span class="p">,</span><span class="n">exc_val</span><span class="p">,</span> <span class="n">exc_tb</span><span class="p">):</span>
+            <span class="c1"># exc_type ==&gt; exception type (ie. TypeError, ValueError, KeyError)</span>
+            <span class="c1"># exc_val  ==&gt; raise exception argument (ie. TypeError(&quot;this is the exc_val&quot;))</span>
+            <span class="c1"># exc_tb   ==&gt; traceback message (where the in the code did the exception occur)</span>
+
+            <span class="c1"># exit method receives arg containing details of exception raised in the &quot;with&quot; block</span>
+            <span class="c1">#   if context can handlethe exception, __exit__() should return a true</span>
+            <span class="c1">#   (ie. error does not need to be propagated)</span>
+            <span class="c1">#   returning false causes the exception to be re-raised after __exit__()</span>
+
+            <span class="c1"># this feature is really nice when trying to graciously handle exceptions</span>
+            <span class="k">if</span> <span class="n">exc_type</span> <span class="ow">is</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;handled ValueError, raised exception value = &quot;</span><span class="p">,</span><span class="n">exc_val</span><span class="p">)</span>
+                <span class="k">return</span> <span class="kc">True</span>
+            <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Extend the context manger functionality</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+    <span class="c1"># define worker class</span>
+    <span class="k">class</span> <span class="nc">worker_class</span><span class="p">():</span>
+        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">preload</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">preload</span> <span class="o">=</span> <span class="n">preload</span>
+        <span class="k">def</span> <span class="nf">extended</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">preload</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>How to use it</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+    <span class="c1"># now to use it</span>
+    <span class="k">with</span> <span class="n">MyContextManager</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">as</span> <span class="n">mycont</span><span class="p">:</span>
+        <span class="c1"># code without any errors</span>
+        <span class="n">mycont</span><span class="o">.</span><span class="n">extended</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+    <span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;context initialized on runtime&quot;</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;inside with block&quot;</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span>
+
+    <span class="c1"># how it works with handled error</span>
+    <span class="k">with</span> <span class="n">MyContextManager</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">as</span> <span class="n">mycont</span><span class="p">:</span>
+        <span class="c1"># code without any errors</span>
+        <span class="n">mycont</span><span class="o">.</span><span class="n">extended</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;HI!&quot;</span><span class="p">)</span>
+
+    <span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;context initialized on runtime&quot;</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;inside with block&quot;</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;handled ValueError, raised exception value =  HI!&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="functional-programming-version">
+<h3>Functional Programming Version<a class="headerlink" href="#functional-programming-version" title="Link to this heading">#</a></h3>
+<p>We can accomplish the same task with a function definition as shown above and a library called
+contextlib</p>
+<ul class="simple">
+<li><p>Define the worker class (same as above, this does not have to be a class object, this example
+is simply reusing the same code as above for clarity)</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+    <span class="c1"># define worker class (same as above)</span>
+    <span class="k">class</span> <span class="nc">worker_class</span><span class="p">():</span>
+        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">preload</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">preload</span> <span class="o">=</span> <span class="n">preload</span>
+        <span class="k">def</span> <span class="nf">extended</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">preload</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Setup the context manager function</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+    <span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span>
+
+    <span class="nd">@contextmanager</span>
+    <span class="k">def</span> <span class="nf">MyContextManager</span><span class="p">(</span><span class="n">preload</span><span class="p">):</span>
+        <span class="c1"># __init__ code goes here</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;context initialized on runtime&quot;</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;inside with block&quot;</span><span class="p">)</span>
+            <span class="k">yield</span> <span class="n">worker_class</span><span class="p">(</span><span class="n">preload</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;handled ValueError, raised exception value = &quot;</span><span class="p">,</span><span class="n">e</span><span class="p">)</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="c1"># __exit__ code goes here</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;__exit__ cleanup code goes here&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Use it</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+    <span class="k">with</span> <span class="n">MyContextManager</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">as</span> <span class="n">mycont</span><span class="p">:</span>
+        <span class="c1"># code without any errors</span>
+        <span class="n">mycont</span><span class="o">.</span><span class="n">extended</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+    <span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;context initialized on runtime&quot;</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;inside with block&quot;</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;__exit__ cleanup code goes here&quot;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="how-to-get-user-inputs">
+<h2>How to get User Inputs<a class="headerlink" href="#how-to-get-user-inputs" title="Link to this heading">#</a></h2>
+<section id="runtime-inputs">
+<h3>Runtime Inputs<a class="headerlink" href="#runtime-inputs" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+    <span class="c1"># python3: runtime input (stops your code and waits for a user input)</span>
+    <span class="n">store</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Text asking for input: &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>python hack for “switch” statement</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+    <span class="c1"># python doesnt have a &quot;switch&quot; keyword function builtin, but you are given the power to forge one!</span>
+    <span class="c1">#   lets say you have multiple options on input</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Options:</span><span class="se">\n</span><span class="s2">&quot;</span>
+          <span class="s2">&quot;1) Main Menu</span><span class="se">\n</span><span class="s2">&quot;</span>
+          <span class="s2">&quot;2) Names</span><span class="se">\n</span><span class="s2">&quot;</span>
+          <span class="s2">&quot;3) Addresses</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="c1"># functions that handle each menu:</span>
+    <span class="k">def</span> <span class="nf">main_menu</span><span class="p">():</span>
+        <span class="k">pass</span>
+    <span class="k">def</span> <span class="nf">names</span><span class="p">():</span>
+        <span class="k">pass</span>
+    <span class="k">def</span> <span class="nf">addresses</span><span class="p">():</span>
+        <span class="k">pass</span>
+    <span class="c1"># switch statement to pipe the inputs</span>
+    <span class="n">piper</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;1&quot;</span><span class="p">:</span> <span class="n">main_menu</span><span class="p">,</span>
+             <span class="s2">&quot;2&quot;</span><span class="p">:</span> <span class="n">names</span><span class="p">,</span>
+             <span class="s2">&quot;3&quot;</span><span class="p">:</span> <span class="n">addresses</span><span class="p">}</span>
+    <span class="c1"># the dict stores the function objects, and piper[input]() then calls the function upon valid input</span>
+    <span class="n">piper</span><span class="o">.</span><span class="n">get</span><span class="p">([</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter option 1, 2, or 3: &quot;</span><span class="p">)],</span> <span class="s2">&quot;Invalid Input&quot;</span><span class="p">)()</span>
+</pre></div>
+</div>
+</section>
+<section id="commandline-inputs">
+<h3>Commandline Inputs<a class="headerlink" href="#commandline-inputs" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+    <span class="c1"># ask for user inputs when calling the script</span>
+    <span class="c1">#   note that sys.argv[0] is the name of the script (in this example &quot;script.py&quot;)</span>
+
+    <span class="c1"># access argument via sys</span>
+    <span class="kn">import</span> <span class="nn">sys</span>
+
+    <span class="c1"># we are looking for 3 inputs, else give guidance for proper input format</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">3</span><span class="p">):</span>
+        <span class="n">name_first</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">name_last</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">age</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Script Usage:</span><span class="se">\n</span><span class="s2">&quot;</span>
+              <span class="s2">&quot;script.py arg1 arg2 arg3</span><span class="se">\n</span><span class="s2">&quot;</span>
+              <span class="s2">&quot;where,</span><span class="se">\n</span><span class="s2">&#39;</span>
+              <span class="s2">&quot;arg1 == First name</span><span class="se">\n</span><span class="s2">&quot;</span>
+              <span class="s2">&quot;arg2 == Last name</span><span class="se">\n</span><span class="s2">&quot;</span>
+              <span class="s2">&quot;arg3 == age</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="what-is-a-compiled-python-file-pyc">
+<h2>What is a compiled python file .pyc<a class="headerlink" href="#what-is-a-compiled-python-file-pyc" title="Link to this heading">#</a></h2>
+<p>For performance reasons you python by default compiles the bytecode into .pyc binary.</p>
+<ul class="simple">
+<li><p>how to compile/de-compile manually</p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>py_compile<span class="w"> </span>file.py
+pip<span class="w"> </span>install<span class="w"> </span>decompyle6
+decompyle6<span class="w"> </span>file.pyc<span class="w"> </span>&gt;<span class="w"> </span>file.py
+</pre></div>
+</div>
+</section>
+<section id="how-to-check-python-version-within-python">
+<h2>How to check python version within python<a class="headerlink" href="#how-to-check-python-version-within-python" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">version_info</span>
+</pre></div>
+</div>
+</section>
+<section id="how-to-unpack-only-items-you-want-on-a-return-statement">
+<h2>How to unpack only items you want on a return statement<a class="headerlink" href="#how-to-unpack-only-items-you-want-on-a-return-statement" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># get only 1st 3rd and ignore the rest of the args</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="how-to-use-python-debugger-pdb">
+<h2>How to use python debugger (pdb)<a class="headerlink" href="#how-to-use-python-debugger-pdb" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>execute your code via pdb: <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pdb</span> <span class="pre">file.py</span></code></p></li>
+<li><p>insert a breakpoint into your script via <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pdb</span></code> then <code class="docutils literal notranslate"><span class="pre">pdb.set_trace()</span></code> above the line you would like to break at</p></li>
+<li><p>jump to next line <code class="docutils literal notranslate"><span class="pre">n</span></code></p></li>
+<li><p>jump to next breakpoint <code class="docutils literal notranslate"><span class="pre">x</span></code></p></li>
+</ul>
+</section>
+<section id="how-to-run-another-python-script-within-a-python-script-subprocess">
+<h2>How to run another python script within a python script (subprocess)<a class="headerlink" href="#how-to-run-another-python-script-within-a-python-script-subprocess" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">subprocess</span>
+
+<span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;python script.py&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="how-to-scrape-a-website">
+<h2>How to scrape a website<a class="headerlink" href="#how-to-scrape-a-website" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span> <span class="k">as</span> <span class="n">bs</span>
+
+<span class="c1"># query the raw html tags</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://google.com&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="n">bs</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+<span class="c1"># get a html tag, you can also find on id=</span>
+<span class="n">tag</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s1">&#39;classname&#39;</span><span class="p">)</span>
+<span class="c1"># get its text</span>
+<span class="n">tag</span><span class="o">.</span><span class="n">text</span>
+
+<span class="c1"># query an API&#39;s json response</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://api.opensea.io/collection/lazy-lions&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="c1"># you can also send specific information to an api to get a response with, ex: google maps api</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://maps.googleapis.com/maps/api/directions/json&#39;</span>
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;origin&#39;</span><span class="p">:</span><span class="s1">&#39;Seattle, WA&#39;</span><span class="p">,</span> <span class="s1">&#39;destination&#39;</span><span class="p">:</span> <span class="s1">&#39;Everett, WA&#39;</span><span class="p">}</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="c1"># note that some site require javascript to render the full page, currently there is no way to parse these</span>
+<span class="c1"># with just python alone, you would need to use a headless terminal like phantomjs</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Python Software Foundation, “Python3.9.7 Documentation” www.python.org (accessed Sep. 25 2021)</p></li>
+</ol>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="0_quickstart.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Python Quick Starter</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="2_class.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Python Class</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-build-python-from-source">How to build python from source</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-mutable-immutable">What is Mutable/Immutable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#all-about-copy-true-shallow-deep">All about Copy: True/Shallow/Deep</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-set-a-environment-variable-within-python">How to set a environment variable within python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-split-a-string-based-on-1st-delimiter-only">How to split a string based on 1st delimiter only</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-single-line-logic-check">How to Single line logic check</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-find-out-a-scripts-performance">How to find out a scripts performance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-get-a-object-s-attribute-and-set-to-default-if-there-is-none">How to get a object’s attribute and set to default if there is none</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-hide-print-statements">How to hide print statements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-setup-multiprocessing">How to setup multiprocessing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-create-a-context-manager">How to create a Context Manager</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#object-oriented-version">Object Oriented Version</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-programming-version">Functional Programming Version</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-get-user-inputs">How to get User Inputs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#runtime-inputs">Runtime Inputs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commandline-inputs">Commandline Inputs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-compiled-python-file-pyc">What is a compiled python file .pyc</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-check-python-version-within-python">How to check python version within python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-unpack-only-items-you-want-on-a-return-statement">How to unpack only items you want on a return statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-python-debugger-pdb">How to use python debugger (pdb)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run-another-python-script-within-a-python-script-subprocess">How to run another python script within a python script (subprocess)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-scrape-a-website">How to scrape a website</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Viktor Kis.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

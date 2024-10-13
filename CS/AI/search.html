@@ -1,0 +1,829 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="dark">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Search Algorithms &#8212; Home</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "dark";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/mycustom.css?v=650cd416" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CS/AI/search';</script>
+    <script src="../../_static/js/slideimg.js?v=f9c97fb0"></script>
+    <link rel="canonical" href="https://pydpiper.github.io/PydPiper.github.io/CS/AI/search.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Python Quick Starter" href="../python/0_quickstart.html" />
+    <link rel="prev" title="Minimax, AlphaBeta Pruning" href="minimax.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="dark">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/favicon_dark.png" class="logo__image only-dark" alt="Home - Home"/>
+    <script>document.write(`<img src="../../_static/favicon_light.png" class="logo__image only-light" alt="Home - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Computer Science
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../ME/index.html">
+    Mechanical Engineering
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../math/index.html">
+    Math
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Computer Science
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../ME/index.html">
+    Mechanical Engineering
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../math/index.html">
+    Math
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Artificial Intelligence</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="bayesnet.html">Bayes Theorem/Network (Probability Relations)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gmm.html">Gaussian Mixture Model (GMM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="knn.html">K-means Clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="minimax.html">Minimax, AlphaBeta Pruning</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Search Algorithms</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../python/0_quickstart.html">Python Quick Starter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/1_cheatsheet.html">Python Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/2_class.html">Python Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/2_containers.html">Tuples, Lists, Sets, Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/2_functions.html">Python Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/2_logicloops.html">Python Logic Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/lib_numpy.html">lib - Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/lib_pytest.html">lib - Testing (unittest/pytest)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/lib_sphinx.html">lib - sphinx (Python Documentation)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Web</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../web/index.html">Web</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../web/css/cheatsheet.html">Cascading Style Sheets (CSS)</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tools</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tools/git.html">Git Version Control (CI/CD) DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/jupyter.html">Juypter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/linux.html">Linux Cheatsheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/vscode.html">VS Code</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Computer Science</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Search Algorithms</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="search-algorithms">
+<h1>Search Algorithms<a class="headerlink" href="#search-algorithms" title="Link to this heading">#</a></h1>
+<p>Since the commercialization of GPS navigation systems search algorithms have become a common tool in our everyday lives. As trivial as navigation may seem, the depth of possible routes to get from point “A” to point “B” may be on the order of trillions in a large city like New York. Now even with our sophisticated hardwares computation time for such large dataset via brute force method could be measured in years, but as we know we get our direction within seconds. This section will explore different methods of apply search algorithms to solve such problems quickly.</p>
+<hr class="docutils" />
+<section id="level-set-terms-node-frontier-heap-path-cost">
+<h2>Level Set Terms: Node, Frontier, Heap, Path Cost<a class="headerlink" href="#level-set-terms-node-frontier-heap-path-cost" title="Link to this heading">#</a></h2>
+<p>Before diving into the algorithm, let’s define a few terms:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">start</span></code>: starting node position for search</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">goal</span></code>: end target position for search</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">node</span></code>: a single location within a search tree/environment</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">frontier</span></code>: nodes to explore next. Items in the frontier are usually stored in a binary tree data-structure also known as heap</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">heap</span></code>: a binary tree data-structure that has a parent node which is less than or equal to the child node (ie. top of the heap is always the smallest value node). This is particularly efficient for search algorithms because it uses an efficient sorting to append/pop nodes as we explore the environment</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">path</span> <span class="pre">cost</span></code>: also known as “edge cost” which is the actual cost of to get from 1 node to another. These can be measured in unit-steps (for <code class="docutils literal notranslate"><span class="pre">breath</span> <span class="pre">first</span> <span class="pre">search</span></code>) or measured in distance cost (for <code class="docutils literal notranslate"><span class="pre">uniform</span> <span class="pre">cost</span> <span class="pre">search</span></code>)</p></li>
+</ul>
+<p><img alt="frontier" src="../../_images/Slide1.JPG" /></p>
+</section>
+<section id="tree-search-method">
+<h2>Tree Search Method<a class="headerlink" href="#tree-search-method" title="Link to this heading">#</a></h2>
+<p>Search method that does not eliminate previously visited locations. This search method is used over <code class="docutils literal notranslate"><span class="pre">Graph</span> <span class="pre">Search</span></code> when there is a space constrain with keeping track of visited <code class="docutils literal notranslate"><span class="pre">nodes</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tree_search</span><span class="p">(</span><span class="n">environment</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">goal</span><span class="p">):</span>
+    <span class="c1"># initialize frontier with start</span>
+    <span class="c1"># while true</span>
+        <span class="c1"># if frontier is empty return none</span>
+        <span class="c1"># pop node off the frontier with least evaluation score</span>
+        <span class="c1"># if node == goal then return path</span>
+        <span class="c1"># expand the children of node </span>
+        <span class="c1"># add children nodes to frontier with an evaluation function score</span>
+</pre></div>
+</div>
+</section>
+<section id="graph-search-method">
+<h2>Graph Search Method<a class="headerlink" href="#graph-search-method" title="Link to this heading">#</a></h2>
+<p>Search method that does eliminate previously visited locations. This search method is used over <code class="docutils literal notranslate"><span class="pre">Tree</span> <span class="pre">Search</span></code> when there is a time constrain on the problem.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">graph_search</span><span class="p">(</span><span class="n">environment</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">goal</span><span class="p">):</span>
+    <span class="c1"># initialize frontier with start</span>
+    <span class="c1"># initialize explored set</span>
+    <span class="c1"># while true</span>
+        <span class="c1"># if frontier is empty return none</span>
+        <span class="c1"># pop node off the frontier with least evaluation score</span>
+        <span class="c1"># if node == goal then return path</span>
+        <span class="c1"># expand the children of node </span>
+        <span class="c1"># add children nodes to frontier only if nodes is not in explored set with an evaluation function score</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="uninformed-search">
+<h2>Uninformed Search<a class="headerlink" href="#uninformed-search" title="Link to this heading">#</a></h2>
+<p>There are 2 types of searches: Uninformed and Informed. Uninformed search performs search without any prerequisite knowledge of the environment.</p>
+<section id="breath-first-search-bfs">
+<h3>Breath First Search (BFS)<a class="headerlink" href="#breath-first-search-bfs" title="Link to this heading">#</a></h3>
+<p>Breath First Search expands from the <code class="docutils literal notranslate"><span class="pre">start</span></code> based on a First In First Out (FIFO) <code class="docutils literal notranslate"><span class="pre">heap</span></code> queue. For example, starting at position “A” that has nodes “B” and “C” adjacent to it will add “B” then “C” to the heap (<strong>for these examples a tie cost will pick in alphabetical order</strong>). Therefore next “B” will be expanded, then “C”, then the children of “B” and children of “C” and so on. Note that expansion disregards path cost, but instead finds the <strong>least node steps</strong> to the <code class="docutils literal notranslate"><span class="pre">goal</span></code>. BFS can perform well for close proximity <code class="docutils literal notranslate"><span class="pre">start</span></code>/<code class="docutils literal notranslate"><span class="pre">goal</span></code> and perform really poorly for larger gaps due to unnecessary node expansions.</p>
+<p>Key Concepts:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">heap</span></code> is popped on FIFO basis (a tie cost will be determined in alphabetical order)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">goal</span></code> test is checked on children expansion (<code class="docutils literal notranslate"><span class="pre">frontier</span></code>)</p></li>
+<li><p>Complete: yes if branch is finite</p></li>
+<li><p>Time: <span class="math notranslate nohighlight">\(O(b^d)\)</span></p></li>
+<li><p>Space: <span class="math notranslate nohighlight">\(O(b^d)\)</span></p></li>
+<li><p>Optimal (yields shortest path): yes if all path costs are equal</p></li>
+</ul>
+<p>where b is # of branches, d is max branch depth</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># graph method version</span>
+<span class="k">def</span> <span class="nf">BDF</span><span class="p">(</span><span class="n">environment</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">goal</span><span class="p">):</span>
+    <span class="c1"># initialize frontier with start</span>
+    <span class="c1"># initialize explored set</span>
+    <span class="c1"># if start == goal return [start,]</span>
+    <span class="c1"># while true</span>
+        <span class="c1"># if frontier is empty return none</span>
+        <span class="c1"># pop node off the frontier based on FIFO</span>
+        <span class="c1"># add node to explored set</span>
+        <span class="c1"># get children of node</span>
+        <span class="c1"># loop children</span>
+            <span class="c1"># if child is not in explored set</span>
+                <span class="c1"># if child == goal return path</span>
+                <span class="c1"># add child to frontier</span>
+</pre></div>
+</div>
+<p><img alt="img" class="slideimg group1 active" src="../../_images/Slide2.JPG" />
+<img alt="img" class="slideimg group1" src="../../_images/Slide31.JPG" />
+<img alt="img" class="slideimg group1" src="../../_images/Slide41.JPG" />
+<img alt="img" class="slideimg group1" src="../../_images/Slide51.JPG" />
+<img alt="img" class="slideimg group1" src="../../_images/Slide61.JPG" />
+<img alt="img" class="slideimg group1" src="../../_images/Slide71.JPG" /></p>
+<div style="display: flex; justify-content: center">
+    <button onclick="showDivs(-1, 1)">Prev</button>
+    <button onclick="showDivs(+1, 1)">Next</button>
+</div>
+</section>
+<section id="uniform-cost-search-ucs">
+<h3>Uniform Cost Search (UCS)<a class="headerlink" href="#uniform-cost-search-ucs" title="Link to this heading">#</a></h3>
+<p>Uniform Cost Search is the same as BFS however children nodes added to the <code class="docutils literal notranslate"><span class="pre">heap</span></code> is based on the <code class="docutils literal notranslate"><span class="pre">path</span> <span class="pre">cost</span></code> and <code class="docutils literal notranslate"><span class="pre">goal</span></code> test is on selection (not on expansion of the <code class="docutils literal notranslate"><span class="pre">frontier</span></code> like in BFS).</p>
+<p>Key Concepts:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">heap</span></code> is added with <code class="docutils literal notranslate"><span class="pre">path</span> <span class="pre">cost</span></code> least <code class="docutils literal notranslate"><span class="pre">path</span> <span class="pre">cost</span></code> node is popped first (a tie cost will be determined in alphabetical order)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">goal</span></code> test is checked on selection (not on expansion of <code class="docutils literal notranslate"><span class="pre">frontier</span></code>)</p></li>
+<li><p>Complete: yes if branch is finite and step cost is <span class="math notranslate nohighlight">\(&gt;=e\)</span></p></li>
+<li><p>Time: <span class="math notranslate nohighlight">\(O(b^(1+C/e))\)</span> note this can be must worst than <span class="math notranslate nohighlight">\(O(b^d)\)</span></p></li>
+<li><p>Space: <span class="math notranslate nohighlight">\(O(b^(1+C/e))\)</span></p></li>
+<li><p>Optimal (yields shortest path): yes</p></li>
+</ul>
+<p>where b is # of branches, C optimal solution cost, and e is an assumed estimated cost of all paths</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># graph method version</span>
+<span class="k">def</span> <span class="nf">UCS</span><span class="p">(</span><span class="n">environment</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">goal</span><span class="p">):</span>
+    <span class="c1"># initialize frontier with start</span>
+    <span class="c1"># initialize explored set</span>
+    <span class="c1"># if start == goal return [start,]</span>
+    <span class="c1"># while true</span>
+        <span class="c1"># if frontier is empty return none</span>
+        <span class="c1"># pop node off the frontier based on least path cost</span>
+        <span class="c1"># goal check if node == goal; if true break and return path</span>
+        <span class="c1"># add node to explored set</span>
+        <span class="c1"># get children of node</span>
+        <span class="c1"># loop children</span>
+            <span class="c1"># if child is not in explored set</span>
+                <span class="c1"># add child to frontier</span>
+            <span class="c1"># if child is in frontier but current path cost is &lt; existing path cost</span>
+                <span class="c1"># replace child node with new lower cost path</span>
+</pre></div>
+</div>
+<p><img alt="img" class="slideimg group2 active" src="../../_images/Slide81.JPG" />
+<img alt="img" class="slideimg group2" src="../../_images/Slide9.JPG" />
+<img alt="img" class="slideimg group2" src="../../_images/Slide10.JPG" />
+<img alt="img" class="slideimg group2" src="../../_images/Slide11.JPG" />
+<img alt="img" class="slideimg group2" src="../../_images/Slide12.JPG" />
+<img alt="img" class="slideimg group2" src="../../_images/Slide13.JPG" />
+<img alt="img" class="slideimg group2" src="../../_images/Slide14.JPG" />
+<img alt="img" class="slideimg group2" src="../../_images/Slide15.JPG" />
+<img alt="img" class="slideimg group2" src="../../_images/Slide16.JPG" />
+<img alt="img" class="slideimg group2" src="../../_images/Slide17.JPG" /></p>
+<div style="display: flex; justify-content: center">
+    <button onclick="showDivs(-1, 2)">Prev</button>
+    <button onclick="showDivs(+1, 2)">Next</button>
+</div>
+</section>
+<section id="depth-first-search-dfs">
+<h3>Depth First Search (DFS)<a class="headerlink" href="#depth-first-search-dfs" title="Link to this heading">#</a></h3>
+<p>Depth First Search (DFS) is the reverse idea of BFS, where our search tree drills down a single child path as opposed to searching wide first with BFS. Technically speaking this done by First In Last Out (FILO) <code class="docutils literal notranslate"><span class="pre">heap</span></code> queue. To demonstrate this we kept the example the same as above for BFS which the same rule that the <code class="docutils literal notranslate"><span class="pre">frontier</span></code> is added to the <code class="docutils literal notranslate"><span class="pre">heap</span></code> in alphabetical order, therefore from “A” we add children “B”, “C”, and “D”, and since DFS is FILO, we then begin to drill down child “D”.</p>
+<p>DFS has no real benefit until it is switched over to tree search method where we only keep a single path in memory and drop all node paths that have had all their children explored (ie. an entire branch can be purged from memory if the goal was not found within that branch).</p>
+<p>Key Concepts:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">heap</span></code> is added with FILO order (note frontier expansion is in alphabetical order for this example)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">goal</span></code> test is checked on selection (not on expansion of <code class="docutils literal notranslate"><span class="pre">frontier</span></code>)</p></li>
+<li><p>Complete: no</p></li>
+<li><p>Time: <span class="math notranslate nohighlight">\(O(b^l)\)</span></p></li>
+<li><p>Space: <span class="math notranslate nohighlight">\(O(bl)\)</span></p></li>
+<li><p>Optimal (yields shortest path): no</p></li>
+</ul>
+<p>where b is # of branches, and l is depth limit</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># graph method version</span>
+<span class="k">def</span> <span class="nf">DFS</span><span class="p">(</span><span class="n">environment</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">goal</span><span class="p">,</span> <span class="n">depthlimit</span><span class="p">):</span>
+    <span class="c1"># initialize frontier with start</span>
+    <span class="c1"># initialize explored set</span>
+    <span class="c1"># initialize depth = 0</span>
+    <span class="c1"># if start == goal return [start,]</span>
+    <span class="c1"># while true</span>
+        <span class="c1"># if depth == depthlimit return none</span>
+        <span class="c1"># if frontier is empty return none</span>
+        <span class="c1"># pop node off the frontier based on FILO</span>
+        <span class="c1"># add node to explored set</span>
+        <span class="c1"># if frontier node == goal return path</span>
+        <span class="c1"># get children of node</span>
+        <span class="c1"># depth += 1</span>
+        <span class="c1"># loop children</span>
+            <span class="c1"># if child is not in explored set</span>
+                <span class="c1"># add child to frontier</span>
+</pre></div>
+</div>
+<p><img alt="img" class="slideimg group3 active" src="../../_images/Slide25.JPG" />
+<img alt="img" class="slideimg group3" src="../../_images/Slide26.JPG" />
+<img alt="img" class="slideimg group3" src="../../_images/Slide27.JPG" />
+<img alt="img" class="slideimg group3" src="../../_images/Slide28.JPG" />
+<img alt="img" class="slideimg group3" src="../../_images/Slide29.JPG" /></p>
+<div style="display: flex; justify-content: center">
+    <button onclick="showDivs(-1, 3)">Prev</button>
+    <button onclick="showDivs(+1, 3)">Next</button>
+</div>
+</section>
+<section id="iterative-deepening-search-ids">
+<h3>Iterative Deepening Search (IDS)<a class="headerlink" href="#iterative-deepening-search-ids" title="Link to this heading">#</a></h3>
+<p>Iterative Deepening Search (IDS) is similar to DFS with incremental updates to the depth. This is often time used when depth is unknown and the problem is space constrained (memory limited). Similar to DFS, IDS has no real benefit until it is switched over to tree search method where it combines the BFS methodology with space efficiency of DFS.</p>
+<p>Key Concepts:</p>
+<ul class="simple">
+<li><p>Complete: yes if branch is finite</p></li>
+<li><p>Time: <span class="math notranslate nohighlight">\(O(b^d)\)</span></p></li>
+<li><p>Space: <span class="math notranslate nohighlight">\(O(bd)\)</span></p></li>
+<li><p>Optimal (yields shortest path): yes if all path costs are equal</p></li>
+</ul>
+<p>where b is # of branches, and d max depth</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># graph method version</span>
+<span class="k">def</span> <span class="nf">IDS</span><span class="p">(</span><span class="n">environment</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">goal</span><span class="p">,</span> <span class="n">depthlimit</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">depth</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">depthlimit</span><span class="p">):</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">DFS</span><span class="p">(</span><span class="n">environment</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">goal</span><span class="p">,</span> <span class="n">depth</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">path</span>
+    <span class="k">return</span> <span class="n">path</span>
+</pre></div>
+</div>
+<p><img alt="DFSvIDS" src="../../_images/DFSvIDS.jpg" /></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="informed-search">
+<h2>Informed Search<a class="headerlink" href="#informed-search" title="Link to this heading">#</a></h2>
+<p>There are 2 types of searches: Uninformed and Informed. Informed search performs search with knowledge of the environment (ie. total cost to goal shouldn’t take longer than #).</p>
+<section id="greedy-first-search">
+<h3>Greedy First Search<a class="headerlink" href="#greedy-first-search" title="Link to this heading">#</a></h3>
+<p>Greedy First Search is similar to UCS but instead of minimizing on path cost, it minimizes on the <code class="docutils literal notranslate"><span class="pre">heuristic</span></code> cost <span class="math notranslate nohighlight">\(f(h)\)</span>. A <code class="docutils literal notranslate"><span class="pre">heuristic</span></code> function estimates the cost to the goal that is:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">admissible</span></code>: estimated cost is less than true cost to goal and</p></li>
+</ul>
+<p>Key Concepts:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">heap</span></code> is added with <code class="docutils literal notranslate"><span class="pre">heuristic</span> <span class="pre">cost</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">goal</span></code> test is checked on selection (not on expansion of <code class="docutils literal notranslate"><span class="pre">frontier</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">evaluation</span> <span class="pre">function</span></code> <span class="math notranslate nohighlight">\(f(h)\)</span> is the remaining estimated cost to the goal from the current node <span class="math notranslate nohighlight">\(f(h)\)</span>. A common <code class="docutils literal notranslate"><span class="pre">heuristic</span></code> function is a linear distance (euclidean distance).</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># graph method version</span>
+<span class="k">def</span> <span class="nf">GFS</span><span class="p">(</span><span class="n">environment</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">goal</span><span class="p">):</span>
+    <span class="c1"># initialize frontier with start</span>
+    <span class="c1"># initialize explored set</span>
+    <span class="c1"># if start == goal return [start,]</span>
+    <span class="c1"># while true</span>
+        <span class="c1"># if frontier is empty return none</span>
+        <span class="c1"># pop node off the frontier based on least f(h) cost</span>
+        <span class="c1"># goal check if node == goal; if true break and return path</span>
+        <span class="c1"># add node to explored set</span>
+        <span class="c1"># get children of node</span>
+        <span class="c1"># loop children</span>
+            <span class="c1"># if child is not in explored set</span>
+                <span class="c1"># add child to frontier</span>
+</pre></div>
+</div>
+<p><img alt="img" class="slideimg group4 active" src="../../_images/Slide311.JPG" />
+<img alt="img" class="slideimg group4" src="../../_images/Slide32.JPG" />
+<img alt="img" class="slideimg group4" src="../../_images/Slide33.JPG" />
+<img alt="img" class="slideimg group4" src="../../_images/Slide34.JPG" />
+<img alt="img" class="slideimg group4" src="../../_images/Slide35.JPG" /></p>
+<div style="display: flex; justify-content: center">
+    <button onclick="showDivs(-1, 4)">Prev</button>
+    <button onclick="showDivs(+1, 4)">Next</button>
+</div>
+</section>
+<section id="a-search">
+<h3>A* Search<a class="headerlink" href="#a-search" title="Link to this heading">#</a></h3>
+<p>A-Star (A*) search is very similar to Uniform Cost Search but with an upgraded evaluation function <span class="math notranslate nohighlight">\(f(g,h)\)</span> that considers both the path cost <span class="math notranslate nohighlight">\(f(g)\)</span> plus a <code class="docutils literal notranslate"><span class="pre">heuristic</span></code> cost <span class="math notranslate nohighlight">\(f(h)\)</span> that is an estimated cost to the goal (that is <code class="docutils literal notranslate"><span class="pre">admissible</span></code>: less than the true cost to the goal). This new evaluation function narrows the search field greatly compare to the UCS, thereby improving the search’s performance.</p>
+<p>Key Concepts:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">heap</span></code> is added with <code class="docutils literal notranslate"><span class="pre">path</span> <span class="pre">cost</span></code> least <code class="docutils literal notranslate"><span class="pre">path</span> <span class="pre">cost</span></code> node is popped first</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">goal</span></code> test is checked on selection (not on expansion of <code class="docutils literal notranslate"><span class="pre">frontier</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">evaluation</span> <span class="pre">function</span></code> <span class="math notranslate nohighlight">\(f(g,h)\)</span> is the path cost up to this point from start to current node <span class="math notranslate nohighlight">\(f(g)\)</span> + the remaining estimated cost to the goal from the current node <span class="math notranslate nohighlight">\(f(h)\)</span>. A common <code class="docutils literal notranslate"><span class="pre">heuristic</span></code> function is a linear distance (euclidean distance).</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># graph method version</span>
+<span class="k">def</span> <span class="nf">Astar</span><span class="p">(</span><span class="n">environment</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">goal</span><span class="p">):</span>
+    <span class="c1"># initialize frontier with start</span>
+    <span class="c1"># initialize explored set</span>
+    <span class="c1"># if start == goal return [start,]</span>
+    <span class="c1"># while true</span>
+        <span class="c1"># if frontier is empty return none</span>
+        <span class="c1"># pop node off the frontier based on least f(g,h) cost</span>
+        <span class="c1"># goal check if node == goal; if true break and return path</span>
+        <span class="c1"># add node to explored set</span>
+        <span class="c1"># get children of node</span>
+        <span class="c1"># loop children</span>
+            <span class="c1"># if child is not in explored set</span>
+                <span class="c1"># add child to frontier</span>
+            <span class="c1"># if child is in frontier but current path cost is &lt; existing path cost</span>
+                <span class="c1"># replace child node with new lower cost path</span>
+</pre></div>
+</div>
+<p><img alt="img" class="slideimg group5 active" src="../../_images/Slide18.JPG" />
+<img alt="img" class="slideimg group5" src="../../_images/Slide19.JPG" />
+<img alt="img" class="slideimg group5" src="../../_images/Slide20.JPG" />
+<img alt="img" class="slideimg group5" src="../../_images/Slide21.JPG" />
+<img alt="img" class="slideimg group5" src="../../_images/Slide22.JPG" />
+<img alt="img" class="slideimg group5" src="../../_images/Slide23.JPG" />
+<img alt="img" class="slideimg group5" src="../../_images/Slide24.JPG" /></p>
+<div style="display: flex; justify-content: center">
+    <button onclick="showDivs(-1, 5)">Prev</button>
+    <button onclick="showDivs(+1, 5)">Next</button>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="optimization-techniques-bi-directional">
+<h2>Optimization Techniques - Bi-directional<a class="headerlink" href="#optimization-techniques-bi-directional" title="Link to this heading">#</a></h2>
+<p>Coming soon!</p>
+</section>
+<section id="optimization-techniques-landmarks">
+<h2>Optimization Techniques - Landmarks<a class="headerlink" href="#optimization-techniques-landmarks" title="Link to this heading">#</a></h2>
+<p>Coming soon!</p>
+</section>
+<section id="optimization-techniques-reach">
+<h2>Optimization Techniques - Reach<a class="headerlink" href="#optimization-techniques-reach" title="Link to this heading">#</a></h2>
+<p>Coming soon!</p>
+</section>
+<hr class="docutils" />
+<section id="definitions">
+<h2>Definitions<a class="headerlink" href="#definitions" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">node</span></code>: a single location within a search tree/environment</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">frontier</span></code>: nodes to explore next. Items in the frontier are usually stored in a binary tree data-structure also known as heap</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">heap</span></code>: a binary tree data-structure that has a parent node which is less than or equal to the child node (ie. top of the heap is always the smallest value node). This is particularly efficient for search algorithms because it uses an efficient sorting to append/pop nodes as we explore the environment</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">path</span> <span class="pre">cost</span></code>: also known as “edge cost” which is the actual cost of to get from 1 node to another. These can be measured in unit-steps (for <code class="docutils literal notranslate"><span class="pre">breath</span> <span class="pre">first</span> <span class="pre">search</span></code>) or measured in distance cost (for <code class="docutils literal notranslate"><span class="pre">uniform</span> <span class="pre">cost</span> <span class="pre">search</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">admissible</span></code>: cost is less than the true cost from current node to goal</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Stuart J. Russell and Peter Norvig, Artifical Intelligence A Modern Approach 3rd ed. Upper Saddle River, New Jersey: Pearson Education, 2010.</p></li>
+</ol>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="minimax.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Minimax, AlphaBeta Pruning</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../python/0_quickstart.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Python Quick Starter</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#level-set-terms-node-frontier-heap-path-cost">Level Set Terms: Node, Frontier, Heap, Path Cost</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tree-search-method">Tree Search Method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-search-method">Graph Search Method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uninformed-search">Uninformed Search</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#breath-first-search-bfs">Breath First Search (BFS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uniform-cost-search-ucs">Uniform Cost Search (UCS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#depth-first-search-dfs">Depth First Search (DFS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterative-deepening-search-ids">Iterative Deepening Search (IDS)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#informed-search">Informed Search</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#greedy-first-search">Greedy First Search</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-search">A* Search</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-techniques-bi-directional">Optimization Techniques - Bi-directional</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-techniques-landmarks">Optimization Techniques - Landmarks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-techniques-reach">Optimization Techniques - Reach</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions">Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Viktor Kis.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+/* page full width */
+.bd-page-width{
+    max-width: unset;
+}
+/* reduce sidebar size to make more room for main content. Note i took this out because on small width this looks bad. Something to come back to an create a small width adjusted setting */
+/* .bd-sidebar {
+    width: 20%;
+} */
+
+/* img slideshow */
+img.slideimg {
+    display: none;
+}
+img.slideimg.active{
+    display: block;
+}
+button.slidebutton {
+    border: none;
+    padding: 8px 16px;
+    margin: 5px;
+    vertical-align: middle;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    font-family: "calibri";
+    background-color: rgb(223, 223, 223);
+}
+img, .slideimg  {
+    /* center img */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* crop of img is larger than mainbody div */
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}

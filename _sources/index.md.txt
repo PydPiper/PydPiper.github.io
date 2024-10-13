@@ -1,0 +1,19 @@
+# Welcome to Vik's Blue Prints
+A place for all of my personal notes mainly related to Science, Tech, Engineering, and Math (STEM). Some of the notes are full-blown tutorials with a problem statement, derivation and example problem, while others are a collection of "how-to's". 
+
+These notes were written on 100% my own time as a hobby/skill-maintenance with 100% publicly available sources such as books/articles/posts. Like many other's creative content they do take a lot of time to develop so the only thing I would like to ask for is to properly cite the content you may use, whether directly from my posts or the references I used to create my posts. Cheers! 
+
+## About Me
+Viktor holds a B.S. in Mechanical Engineer and a M.S. in Computer Science. Professionally, Viktor has 10+ years of work experience in the Structures Aerospace industry working on various stages of the lifecycle from blank-page Product Development all the way to Fleet Support Airframe sustaining. 
+
+``` {eval-rst}
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :glob:
+   :caption: Contents:
+
+   CS/index
+   ME/index
+   math/index
+```

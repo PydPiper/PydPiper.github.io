@@ -1,0 +1,347 @@
+# Search Algorithms
+
+Since the commercialization of GPS navigation systems search algorithms have become a common tool in our everyday lives. As trivial as navigation may seem, the depth of possible routes to get from point "A" to point "B" may be on the order of trillions in a large city like New York. Now even with our sophisticated hardwares computation time for such large dataset via brute force method could be measured in years, but as we know we get our direction within seconds. This section will explore different methods of apply search algorithms to solve such problems quickly.
+
+---
+
+## Level Set Terms: Node, Frontier, Heap, Path Cost
+
+Before diving into the algorithm, let's define a few terms:
+
+- `start`: starting node position for search
+- `goal`: end target position for search
+- `node`: a single location within a search tree/environment
+- `frontier`: nodes to explore next. Items in the frontier are usually stored in a binary tree data-structure also known as heap
+- `heap`: a binary tree data-structure that has a parent node which is less than or equal to the child node (ie. top of the heap is always the smallest value node). This is particularly efficient for search algorithms because it uses an efficient sorting to append/pop nodes as we explore the environment
+- `path cost`: also known as "edge cost" which is the actual cost of to get from 1 node to another. These can be measured in unit-steps (for `breath first search`) or measured in distance cost (for `uniform cost search`)
+
+![frontier](/_static/imgs/CS/AI/search/Slide1.JPG)
+
+
+## Tree Search Method
+
+Search method that does not eliminate previously visited locations. This search method is used over `Graph Search` when there is a space constrain with keeping track of visited `nodes`.
+
+
+```python
+def tree_search(environment, start, goal):
+    # initialize frontier with start
+    # while true
+        # if frontier is empty return none
+        # pop node off the frontier with least evaluation score
+        # if node == goal then return path
+        # expand the children of node 
+        # add children nodes to frontier with an evaluation function score
+```
+
+## Graph Search Method
+
+Search method that does eliminate previously visited locations. This search method is used over `Tree Search` when there is a time constrain on the problem.
+
+
+```python
+def graph_search(environment, start, goal):
+    # initialize frontier with start
+    # initialize explored set
+    # while true
+        # if frontier is empty return none
+        # pop node off the frontier with least evaluation score
+        # if node == goal then return path
+        # expand the children of node 
+        # add children nodes to frontier only if nodes is not in explored set with an evaluation function score
+```
+
+---
+
+## Uninformed Search
+
+There are 2 types of searches: Uninformed and Informed. Uninformed search performs search without any prerequisite knowledge of the environment. 
+
+### Breath First Search (BFS)
+
+Breath First Search expands from the `start` based on a First In First Out (FIFO) `heap` queue. For example, starting at position "A" that has nodes "B" and "C" adjacent to it will add "B" then "C" to the heap (**for these examples a tie cost will pick in alphabetical order**). Therefore next "B" will be expanded, then "C", then the children of "B" and children of "C" and so on. Note that expansion disregards path cost, but instead finds the **least node steps** to the `goal`. BFS can perform well for close proximity `start`/`goal` and perform really poorly for larger gaps due to unnecessary node expansions.
+
+Key Concepts:
+
+- `heap` is popped on FIFO basis (a tie cost will be determined in alphabetical order)
+- `goal` test is checked on children expansion (`frontier`)
+- Complete: yes if branch is finite
+- Time: $O(b^d)$ 
+- Space: $O(b^d)$
+- Optimal (yields shortest path): yes if all path costs are equal
+
+where b is # of branches, d is max branch depth
+
+
+```python
+# graph method version
+def BDF(environment, start, goal):
+    # initialize frontier with start
+    # initialize explored set
+    # if start == goal return [start,]
+    # while true
+        # if frontier is empty return none
+        # pop node off the frontier based on FIFO
+        # add node to explored set
+        # get children of node
+        # loop children
+            # if child is not in explored set
+                # if child == goal return path
+                # add child to frontier
+```
+
+![img](/_static/imgs/CS/AI/search/Slide2.JPG){.slideimg .group1 .active}
+![img](/_static/imgs/CS/AI/search/Slide3.JPG){.slideimg .group1}
+![img](/_static/imgs/CS/AI/search/Slide4.JPG){.slideimg .group1}
+![img](/_static/imgs/CS/AI/search/Slide5.JPG){.slideimg .group1}
+![img](/_static/imgs/CS/AI/search/Slide6.JPG){.slideimg .group1}
+![img](/_static/imgs/CS/AI/search/Slide7.JPG){.slideimg .group1}
+<div style="display: flex; justify-content: center">
+    <button onclick="showDivs(-1, 1)">Prev</button>
+    <button onclick="showDivs(+1, 1)">Next</button>
+</div>
+
+
+### Uniform Cost Search (UCS)
+
+Uniform Cost Search is the same as BFS however children nodes added to the `heap` is based on the `path cost` and `goal` test is on selection (not on expansion of the `frontier` like in BFS).
+
+Key Concepts:
+
+- `heap` is added with `path cost` least `path cost` node is popped first (a tie cost will be determined in alphabetical order)
+- `goal` test is checked on selection (not on expansion of `frontier`)
+- Complete: yes if branch is finite and step cost is $>=e$ 
+- Time: $O(b^(1+C/e))$ note this can be must worst than $O(b^d)$
+- Space: $O(b^(1+C/e))$
+- Optimal (yields shortest path): yes
+
+where b is # of branches, C optimal solution cost, and e is an assumed estimated cost of all paths
+
+
+```python
+# graph method version
+def UCS(environment, start, goal):
+    # initialize frontier with start
+    # initialize explored set
+    # if start == goal return [start,]
+    # while true
+        # if frontier is empty return none
+        # pop node off the frontier based on least path cost
+        # goal check if node == goal; if true break and return path
+        # add node to explored set
+        # get children of node
+        # loop children
+            # if child is not in explored set
+                # add child to frontier
+            # if child is in frontier but current path cost is < existing path cost
+                # replace child node with new lower cost path
+```
+
+![img](/_static/imgs/CS/AI/search/Slide8.JPG){.slideimg .group2 .active}
+![img](/_static/imgs/CS/AI/search/Slide9.JPG){.slideimg .group2}
+![img](/_static/imgs/CS/AI/search/Slide10.JPG){.slideimg .group2}
+![img](/_static/imgs/CS/AI/search/Slide11.JPG){.slideimg .group2}
+![img](/_static/imgs/CS/AI/search/Slide12.JPG){.slideimg .group2}
+![img](/_static/imgs/CS/AI/search/Slide13.JPG){.slideimg .group2}
+![img](/_static/imgs/CS/AI/search/Slide14.JPG){.slideimg .group2}
+![img](/_static/imgs/CS/AI/search/Slide15.JPG){.slideimg .group2}
+![img](/_static/imgs/CS/AI/search/Slide16.JPG){.slideimg .group2}
+![img](/_static/imgs/CS/AI/search/Slide17.JPG){.slideimg .group2}
+<div style="display: flex; justify-content: center">
+    <button onclick="showDivs(-1, 2)">Prev</button>
+    <button onclick="showDivs(+1, 2)">Next</button>
+</div>
+
+
+### Depth First Search (DFS)
+
+Depth First Search (DFS) is the reverse idea of BFS, where our search tree drills down a single child path as opposed to searching wide first with BFS. Technically speaking this done by First In Last Out (FILO) `heap` queue. To demonstrate this we kept the example the same as above for BFS which the same rule that the `frontier` is added to the `heap` in alphabetical order, therefore from "A" we add children "B", "C", and "D", and since DFS is FILO, we then begin to drill down child "D". 
+
+DFS has no real benefit until it is switched over to tree search method where we only keep a single path in memory and drop all node paths that have had all their children explored (ie. an entire branch can be purged from memory if the goal was not found within that branch).
+
+Key Concepts:
+
+- `heap` is added with FILO order (note frontier expansion is in alphabetical order for this example)
+- `goal` test is checked on selection (not on expansion of `frontier`)
+- Complete: no
+- Time: $O(b^l)$
+- Space: $O(bl)$
+- Optimal (yields shortest path): no
+
+where b is # of branches, and l is depth limit
+
+```python
+# graph method version
+def DFS(environment, start, goal, depthlimit):
+    # initialize frontier with start
+    # initialize explored set
+    # initialize depth = 0
+    # if start == goal return [start,]
+    # while true
+        # if depth == depthlimit return none
+        # if frontier is empty return none
+        # pop node off the frontier based on FILO
+        # add node to explored set
+        # if frontier node == goal return path
+        # get children of node
+        # depth += 1
+        # loop children
+            # if child is not in explored set
+                # add child to frontier
+```
+
+![img](/_static/imgs/CS/AI/search/Slide25.JPG){.slideimg .group3 .active}
+![img](/_static/imgs/CS/AI/search/Slide26.JPG){.slideimg .group3}
+![img](/_static/imgs/CS/AI/search/Slide27.JPG){.slideimg .group3}
+![img](/_static/imgs/CS/AI/search/Slide28.JPG){.slideimg .group3}
+![img](/_static/imgs/CS/AI/search/Slide29.JPG){.slideimg .group3}
+<div style="display: flex; justify-content: center">
+    <button onclick="showDivs(-1, 3)">Prev</button>
+    <button onclick="showDivs(+1, 3)">Next</button>
+</div>
+
+
+### Iterative Deepening Search (IDS)
+
+Iterative Deepening Search (IDS) is similar to DFS with incremental updates to the depth. This is often time used when depth is unknown and the problem is space constrained (memory limited). Similar to DFS, IDS has no real benefit until it is switched over to tree search method where it combines the BFS methodology with space efficiency of DFS.
+
+Key Concepts:
+
+- Complete: yes if branch is finite
+- Time: $O(b^d)$
+- Space: $O(bd)$
+- Optimal (yields shortest path): yes if all path costs are equal
+
+where b is # of branches, and d max depth
+
+```python
+# graph method version
+def IDS(environment, start, goal, depthlimit):
+    for depth in range(depthlimit):
+        path = DFS(environment, start, goal, depth)
+        if path is not None:
+            return path
+    return path
+```
+
+![DFSvIDS](/_static/imgs/CS/AI/search/DFSvIDS.jpg)
+
+
+---
+
+## Informed Search
+
+There are 2 types of searches: Uninformed and Informed. Informed search performs search with knowledge of the environment (ie. total cost to goal shouldn't take longer than #). 
+
+### Greedy First Search
+
+Greedy First Search is similar to UCS but instead of minimizing on path cost, it minimizes on the `heuristic` cost $f(h)$. A `heuristic` function estimates the cost to the goal that is:
+
+- `admissible`: estimated cost is less than true cost to goal and
+
+Key Concepts:
+- `heap` is added with `heuristic cost`
+- `goal` test is checked on selection (not on expansion of `frontier`)
+- `evaluation function` $f(h)$ is the remaining estimated cost to the goal from the current node $f(h)$. A common `heuristic` function is a linear distance (euclidean distance).
+
+```python
+# graph method version
+def GFS(environment, start, goal):
+    # initialize frontier with start
+    # initialize explored set
+    # if start == goal return [start,]
+    # while true
+        # if frontier is empty return none
+        # pop node off the frontier based on least f(h) cost
+        # goal check if node == goal; if true break and return path
+        # add node to explored set
+        # get children of node
+        # loop children
+            # if child is not in explored set
+                # add child to frontier
+```
+
+
+![img](/_static/imgs/CS/AI/search/Slide31.JPG){.slideimg .group4 .active}
+![img](/_static/imgs/CS/AI/search/Slide32.JPG){.slideimg .group4}
+![img](/_static/imgs/CS/AI/search/Slide33.JPG){.slideimg .group4}
+![img](/_static/imgs/CS/AI/search/Slide34.JPG){.slideimg .group4}
+![img](/_static/imgs/CS/AI/search/Slide35.JPG){.slideimg .group4}
+<div style="display: flex; justify-content: center">
+    <button onclick="showDivs(-1, 4)">Prev</button>
+    <button onclick="showDivs(+1, 4)">Next</button>
+</div>
+
+
+### A* Search
+
+A-Star (A*) search is very similar to Uniform Cost Search but with an upgraded evaluation function $f(g,h)$ that considers both the path cost $f(g)$ plus a `heuristic` cost $f(h)$ that is an estimated cost to the goal (that is `admissible`: less than the true cost to the goal). This new evaluation function narrows the search field greatly compare to the UCS, thereby improving the search's performance.
+
+Key Concepts:
+
+- `heap` is added with `path cost` least `path cost` node is popped first
+- `goal` test is checked on selection (not on expansion of `frontier`)
+- `evaluation function` $f(g,h)$ is the path cost up to this point from start to current node $f(g)$ + the remaining estimated cost to the goal from the current node $f(h)$. A common `heuristic` function is a linear distance (euclidean distance).
+
+```python
+# graph method version
+def Astar(environment, start, goal):
+    # initialize frontier with start
+    # initialize explored set
+    # if start == goal return [start,]
+    # while true
+        # if frontier is empty return none
+        # pop node off the frontier based on least f(g,h) cost
+        # goal check if node == goal; if true break and return path
+        # add node to explored set
+        # get children of node
+        # loop children
+            # if child is not in explored set
+                # add child to frontier
+            # if child is in frontier but current path cost is < existing path cost
+                # replace child node with new lower cost path
+```
+
+
+![img](/_static/imgs/CS/AI/search/Slide18.JPG){.slideimg .group5 .active}
+![img](/_static/imgs/CS/AI/search/Slide19.JPG){.slideimg .group5}
+![img](/_static/imgs/CS/AI/search/Slide20.JPG){.slideimg .group5}
+![img](/_static/imgs/CS/AI/search/Slide21.JPG){.slideimg .group5}
+![img](/_static/imgs/CS/AI/search/Slide22.JPG){.slideimg .group5}
+![img](/_static/imgs/CS/AI/search/Slide23.JPG){.slideimg .group5}
+![img](/_static/imgs/CS/AI/search/Slide24.JPG){.slideimg .group5}
+<div style="display: flex; justify-content: center">
+    <button onclick="showDivs(-1, 5)">Prev</button>
+    <button onclick="showDivs(+1, 5)">Next</button>
+</div>
+
+
+---
+
+## Optimization Techniques - Bi-directional
+
+Coming soon!
+
+## Optimization Techniques - Landmarks
+
+Coming soon!
+
+## Optimization Techniques - Reach
+
+Coming soon!
+
+---
+
+## Definitions
+
+- `node`: a single location within a search tree/environment
+- `frontier`: nodes to explore next. Items in the frontier are usually stored in a binary tree data-structure also known as heap
+- `heap`: a binary tree data-structure that has a parent node which is less than or equal to the child node (ie. top of the heap is always the smallest value node). This is particularly efficient for search algorithms because it uses an efficient sorting to append/pop nodes as we explore the environment
+- `path cost`: also known as "edge cost" which is the actual cost of to get from 1 node to another. These can be measured in unit-steps (for `breath first search`) or measured in distance cost (for `uniform cost search`)
+- `admissible`: cost is less than the true cost from current node to goal
+
+---
+
+## References
+
+1. Stuart J. Russell and Peter Norvig, Artifical Intelligence A Modern Approach 3rd ed. Upper Saddle River, New Jersey: Pearson Education, 2010.

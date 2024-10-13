@@ -1,0 +1,133 @@
+# Linear Regression Linear Curve Fitting (Method of Ordinary Least Squares)
+
+## Problem Statement
+ Given a cluster of points find a best fit linear line equation.
+
+![graph](/_static/imgs/math/linear_regression/graph.png)
+
+---
+
+## Solution
+
+
+$$ \boxed{m = \frac{\sum_i(x_i\overline{y}-x_iy_i)}{\sum_i(x_i\overline{x}-x_i^2)}} \tag{eq1} $$
+
+$$ \boxed{b = \overline{y} - m\overline{x}} \tag{eq2} $$
+
+where,
+
+- $m$ = slope
+- $b$ = y-intercept
+- $x_i$, $y_i$ = x,y points
+- $\overline{x}$, $\overline{y}$ = average of x and y
+
+---
+
+## Example
+
+![graph](/_static/imgs/math/linear_regression/example.png)
+
+---
+
+## Derivation
+
+We want the final form of our equation to be:
+
+$$ y = mx + b \tag{eq3} $$
+
+However to talk in terms of real data, we must find a way to express eq3 with error ($e_i$):
+
+$$ y_i = mx_i + b + e_i \tag{eq4}$$
+
+There are several method for solving for $m$ and $b$ that minimizes $e$, here we are going to demonstrate the method of least squares:
+
+$$ S(b,m) = \sum_i(y_i-b-mx_i)^2 = 0 \tag{eq5}$$
+
+We can solve for $b$ and $m$ by taking the partial derivatives (chain rule):
+
+<br>
+<br>
+
+### Step 1: Partial Derivative of y-intercept $b$
+
+$$ \frac{d}{db}S = \sum_i(2)(y_i-b-mx_i)(-1) = 0 \tag{eq6} $$
+
+pull out the constant from the summation
+
+$$ (-2)\sum_i(y_i-b-mx_i) = 0 \tag{eq7} $$
+
+divide both sides by $(-2)$, and expand the summations
+
+$$ \sum_i(y_i)-\sum_i(b)-\sum_i(mx_i) = 0 \tag{eq8} $$
+
+notice that $b$ is a constant therefore it can be simplified to
+
+$$ \sum_i(y_i)-b\sum_i(1)-\sum_i(mx_i) = 0 \tag{eq9} $$
+
+note that $\sum_i^n(1)=n$ where $n$ is the number of data points, with this we can write:
+
+$$ \sum_i(y_i)-bn-\sum_i(mx_i) = 0 \tag{eq10} $$
+
+divide left and right side by $n$, we get:
+
+$$ \sum_i(y_i)/n-b-\sum_i(mx_i)/n = 0 \tag{eq11} $$
+
+note that $\sum_i(y_i)/n$ is really just the average of $y$ or $\overline{y}$ for short notation:
+
+$$ \overline{y}-b-m\overline{x} = 0 \tag{eq11} $$
+
+solve for y-intercept $b$ we get:
+
+$$ \boxed{b=\overline{y}-m\overline{x}} \tag{eq12} $$ 
+
+<br>
+<br>
+
+### Step 2: Partial Derivative of slope $m$
+
+$$ \frac{d}{dm}S = \sum_i(2)(y_i-b-mx_i)(-x_i) = 0 \tag{eq13} $$
+
+factoring out the constant $-2$ and $x_i$ we get:
+
+$$ \sum_i(y_ix_i-bx_i-mx_i^2) = 0 \tag{eq14} $$
+
+substituting in $eq12$:
+
+$$ \sum_i(y_ix_i-(\overline{y}-m\overline{x})x_i-mx_i^2) = 0 \tag{eq15} $$
+
+expanding out and split the summation of additions/subtractions:
+
+$$ \sum_iy_ix_i-\sum_i\overline{y}x_i+m\sum_i\overline{x}x_i-m\sum_ix_i^2 = 0 \tag{eq16} $$
+
+subtract out the non-sloped summation from both sides to get:
+
+$$ m\sum_i\overline{x}x_i-m\sum_ix_i^2 = \sum_i\overline{y}x_i-\sum_iy_ix_i \tag{eq17} $$
+
+simplify out common $m$ slope term on left side:
+
+$$ m\sum_i(\overline{x}x_i-x_i^2) = \sum_i(\overline{y}x_i-y_ix_i) \tag{eq18} $$
+
+solve for $m$ and simplify:
+
+$$ \boxed{m = \frac{\sum_i(x_i\overline{y}-x_iy_i)}{\sum_i(x_i\overline{x}-x_i^2)}} \tag{eq19} $$
+
+
+
+---
+
+## References
+
+1. George A. F. Seber and Alan J. Lee, Linear Regression Analysis 2nd ed. Wiley, 2014.
+
+
+
+
+
+
+
+
+
+
+
+
+

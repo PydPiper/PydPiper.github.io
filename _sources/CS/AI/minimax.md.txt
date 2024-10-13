@@ -1,0 +1,87 @@
+# Minimax, AlphaBeta Pruning
+
+`Minimax` algorithm is a concept in AI that makes the best decision during each turn based on a `evaluation function`. During our turn we want to `maximize` our evaluation function score, while during our opponent's turn we assume they will also try to make the best choice by `minimizing` their evaluation function score.
+
+ `Alphabeta pruning` is a concept used to optimize the `minimax` algorithm that removes unnecessary children expansions.
+
+ ---
+
+## Example - Minimax Evaluation Function
+
+Given a binary tree shown below (each node has 2 children), we can make our best **selection** by evaluating our **options**. We evaluate our **options** using an `evaluation function`. This is a function that scores a single **option**. A common `evaluation function` for move limiting games is my_free_moves - opp_free_moves score. With this sample `evaluation function` we can make a best selection by **maximizing** the score of our **selection** from our **options**. 
+
+To see this in action, let's estimate our best **selection** by only looking at `depth=1`; this is really just the **options**  available to us during our turn. We have 2 **options**, and the evaluation of these 2 **options** is 5 and 7. So to make our best **selection** we **maximize** our score by choosing 7.
+
+Now let's see what happens when we look +1 depth (our opponent's reaction to our choice). If we first look at the right side branch, our move has 2 **options** for our opponent, that has a score = -1 and a score = 7. Now we make the assumption that our opponent is also very smart and will pick the move associated with score = -1, thereby **minimizing** during their turn. This now means that our previous estimate of our move from depth = 1 that had a score = 7 over-represented this move, and actually picking the left branch move would have been better.
+
+With this example we demonstrated our turn's **maximization**, and opponent's turn **minimization** as a result of an `evaluation function`. We also showed that looking deeper in the tree will refine our estimated scoring of each move that ultimately helps us make the best choice. It is common practice to represent **maximization** nodes as triangles facing up, while **minimization** nodes as triangles facing down.
+
+![depth_estimate](/_static/imgs/CS/AI/minimax/depth_estimate.png)
+
+ Example - Minimax with AlphaBeta Pruning
+---
+
+ Let's explore `Minimax` and `AlphaBeta Pruning` by examining this binary tree. As you can imagine, the best decisions are made in games by thinking as far ahead as possible in the game to see our move's outcome. This binary tree shows a depth of 4.
+ 
+ Notice the top of the tree is a single triangle. This represents a single move choice that is returned to the game state. With a binary tree we have 2 options for us, which then break into 2 options for our opponent, and so on.
+
+ The triangles pointing up are "maximized" representing our turn's **selection**, while the triangles pointing down are "minimized" representing our opponent's turn **selection**.
+
+ It is important to take a second here and absorb the distinction between **selection** and **options**. The tree technically shown both selections and options, however the triangle minimax are displayed in terms of selections. For example. The top is a single maximized selection that we return as our best choice.
+
+![img](/_static/imgs/CS/AI/minimax/Slide3.png){.slideimg .group1 .active}
+![img](/_static/imgs/CS/AI/minimax/Slide4.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide5.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide6.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide7.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide8.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide9.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide10.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide11.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide12.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide13.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide14.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide15.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide16.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide17.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide18.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide19.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide20.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide21.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide22.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide23.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide24.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide25.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide26.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide27.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide28.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide29.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide30.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide31.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide32.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide33.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide34.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide35.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide36.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide37.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide38.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide39.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide40.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide41.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide42.png){.slideimg .group1}
+![img](/_static/imgs/CS/AI/minimax/Slide43.png){.slideimg .group1}
+<div style="display: flex; justify-content: center">
+    <button onclick="showDivs(-1, 1)">Prev</button>
+    <button onclick="showDivs(+1, 1)">Next</button>
+</div>
+
+
+
+
+
+---
+
+## References
+
+1. Stuart J. Russell and Peter Norvig, Artifical Intelligence A Modern Approach 3rd ed. Upper Saddle River, New Jersey: Pearson Education, 2010.
+

@@ -1,0 +1,51 @@
+# K-means Clustering
+
+`K-means Clustering` is a type of `unsupervised machine learning` technique that groups all similar data points together based on their `mean` (average) values for `k` number of clusters (groups). It is also known as a special case of the `Gaussian mixture model` but with the limitation of hard clustering assignments, for example; a data point for `k-means` is 100% blue or 100% green, but for a `Gaussian mixture model` it is a statistical classification of 60% blue and 40% green. With that said we can begin to see where `k-mean` can have limitations if the data's classification in intertwined (not clear separation of data and its classifications). 
+
+Take a look at the figure below. The figure on the right is the data we collected. It is a 2D dataset measured alone the x and y-axis. It has 3 clusters that are slightly overlapped (green, blue, orange). On the left we have our `k-means` algorithm that separates the data based on our known input of k=3 clusters (note we could cluster the data into any number of clusters but we observed our collected data and saw that there was 3 classifications). 
+
+Note on iteration 1 our `k-mean` algorithm does a very poor job on clustering but as we progress the iterations and keep updating our center of cluster in which the mean is computed about we begin to see that the algorithm converges on the grouping of data points, however even after 10 iteration where the `means` stop changing certain overlapped data points are never going to be classified correctly with `k-mean` because of its black-and-white hard classification assignment.
+
+![k_means](/_static/imgs/CS/AI/knn/k_means.gif)
+
+---
+
+## Algorithm of K-means
+
+The algorithm can be broken down to a few distinct steps:
+
+1. Initialization of means: 
+
+    - define `k`: how many clusters are we going to separate our data into
+    - define `means`: `k` number of means. This is usually done with a random start where the input data is split into `k` number of randomly selected subsets and the mean is calculated on its `features`
+
+![k_means](/_static/imgs/CS/AI/knn/means.png)
+
+2. Definition of a k-step:
+
+    - inputs: `data`, `k`, `means`
+    - classify `data` on `means`: based on the input `means` (size `k`) figure out which `mean` each of the `data` point belongs to. This is done with by calculating the Euclidean distance between each data point and each `mean`. The minimum distance to a `mean` is that data's classification for this iteration of k-step.
+
+![k_means](/_static/imgs/CS/AI/knn/classification.png)
+
+3. Repeat step 2 until converged:
+
+    - convergence is reached when the `means` stop changing to some degree of tolerance. See figure below of the large delta between step 5 and step 10 of iterations.
+
+![k_means](/_static/imgs/CS/AI/knn/iterations.png) 
+
+---
+
+## Definitions
+
+- `k-mean`: unsupervised machine learning method that classifies clustered data types well
+- `clustering`: method of classification data into groups of same "case" classifications
+- `case`: assignment of classification (ex: color RGB data [0,0,0] is case black)
+- `feature`: data collected which is used to make a classification (ex: color RGB [0,0,0])
+- `unsupervised learning`: analysis of data without case labels (ex: an image has 100s of colors, and if we wanted to know what the 2 most dominant average colors are we would use a unsupervised learning algorithm since we don't know the final answer 2 colors/cases)
+
+---
+
+## References
+
+1. Stuart J. Russell and Peter Norvig, Artifical Intelligence A Modern Approach 3rd ed. Upper Saddle River, New Jersey: Pearson Education, 2010.

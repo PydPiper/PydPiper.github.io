@@ -1,0 +1,19 @@
+# Gaussian Mixture Model (GMM)
+
+`Gaussian Mixture Model` (`GMM`) is a type of `unsupervised machine learning` technique that groups all similar data points together based on their `mean` (average) values for `k` number of clusters (groups). It similar to `K-means clustering` but without the limitation of hard clustering assignments, for example; a data point for `k-means` is 100% blue or 100% green, but for a `Gaussian mixture model` it is a statistical classification of 60% blue and 40% green. With that said we can begin to see where `k-mean` can have limitations if the data's classification in intertwined (not clear separation of data and its classifications). 
+
+Take a look at the figure below. The figure on the right is the data we collected. It is a 2D dataset measured alone the x and y-axis. It has 3 clusters that are slightly overlapped (green, blue, orange). On the left we have our `GMM` algorithm that separates the data based on our known input of k=3 clusters (note we could cluster the data into any number of clusters but we observed our collected data and saw that there was 3 classifications). 
+
+![k_means_vs_gmm](/_static/imgs/CS/AI/gmm/gmm.gif)
+
+Note on iteration 1 our `GMM` algorithm does a very poor job on clustering but as we progress the iterations and keep updating our `mean` (center of cluster), `sigma` (standard deviation or width of normal distribution) and `pi` (height coefficient of the normal distribution) `GMM` algorithm converges on the grouping of data points. Note that similar to `k-means` classification certain overlapped data points are never going to be classified correctly even with its soft statistical classification assignment, however `GMM` does do a better job in wrapping around our data far away from our cluster `mean` (center of cluster) that the `k-mean` classification would not be able to achieve.
+
+![k_means_vs_gmm](/_static/imgs/CS/AI/gmm/kmean_vs_gmm.gif)
+
+
+
+---
+
+## References
+
+1. Stuart J. Russell and Peter Norvig, Artifical Intelligence A Modern Approach 3rd ed. Upper Saddle River, New Jersey: Pearson Education, 2010.

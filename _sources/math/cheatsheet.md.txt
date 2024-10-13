@@ -1,0 +1,8 @@
+# Math Cheat Sheet
+
+## How to compute the radius of curvature of an ellipse
+
+![ellipse](/_static/imgs/math/cheatsheet/ellipse.png)
+
+$$ R(\theta) = {\frac{a^2}{b} \bigg(\frac{(1 - e^2 (2-e^2) cos(\theta)^2)}{(1-e^2cos(\theta)^2)}\bigg)^{3/2} } $$
+

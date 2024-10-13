@@ -1,0 +1,699 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="dark">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Git Version Control (CI/CD) DevOps &#8212; Home</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "dark";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/mycustom.css?v=650cd416" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CS/tools/git';</script>
+    <script src="../../_static/js/slideimg.js?v=f9c97fb0"></script>
+    <link rel="canonical" href="https://pydpiper.github.io/PydPiper.github.io/CS/tools/git.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Juypter Notebooks" href="jupyter.html" />
+    <link rel="prev" title="Cascading Style Sheets (CSS)" href="../web/css/cheatsheet.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="dark">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/favicon_dark.png" class="logo__image only-dark" alt="Home - Home"/>
+    <script>document.write(`<img src="../../_static/favicon_light.png" class="logo__image only-light" alt="Home - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Computer Science
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../ME/index.html">
+    Mechanical Engineering
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../math/index.html">
+    Math
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Computer Science
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../ME/index.html">
+    Mechanical Engineering
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../math/index.html">
+    Math
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Artificial Intelligence</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../AI/bayesnet.html">Bayes Theorem/Network (Probability Relations)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AI/gmm.html">Gaussian Mixture Model (GMM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AI/knn.html">K-means Clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AI/minimax.html">Minimax, AlphaBeta Pruning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AI/search.html">Search Algorithms</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../python/0_quickstart.html">Python Quick Starter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/1_cheatsheet.html">Python Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/2_class.html">Python Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/2_containers.html">Tuples, Lists, Sets, Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/2_functions.html">Python Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/2_logicloops.html">Python Logic Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/lib_numpy.html">lib - Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/lib_pytest.html">lib - Testing (unittest/pytest)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/lib_sphinx.html">lib - sphinx (Python Documentation)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Web</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../web/index.html">Web</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../web/css/cheatsheet.html">Cascading Style Sheets (CSS)</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tools</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Git Version Control (CI/CD) DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jupyter.html">Juypter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux.html">Linux Cheatsheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vscode.html">VS Code</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Computer Science</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Git Version...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="git-version-control-ci-cd-devops">
+<h1>Git Version Control (CI/CD) DevOps<a class="headerlink" href="#git-version-control-ci-cd-devops" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Git is what’s called a Version Control System (VCS).</p></li>
+<li><p>Git is not the same as GitHub or GitLab. Git is a tool in itself.
+It is a tool that takes a complete snapshots of your work with each commit (“save”) thereby allowing the user to roll an entire project forward and aft in time without having to worry about piecing the project back together.</p></li>
+<li><p>Git can be <a class="reference external" href="https://git-scm.com/">downloaded</a> for windows in a form of a linux emulator (GitBash), whilst mac and linux distributions may already have it installed. The user can work with it 100% offline if that is desired, however cloud providers such as GitHub and GitLab offer a collaborative online experience for a team of developers.</p></li>
+</ul>
+<hr class="docutils" />
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Set up your username in the terminal <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.name</span> <span class="pre">&quot;Viktor</span> <span class="pre">Kis&quot;</span></code></p></li>
+<li><p>Set your email address: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.email</span> <span class="pre">name&#64;example.com</span></code></p></li>
+<li><p>Set your editor: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">vim</span></code></p></li>
+<li><p>Check your user setttings: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--list</span></code></p></li>
+</ul>
+</section>
+<section id="step-by-step-github-repo">
+<h2>Step-by-Step GitHub Repo<a class="headerlink" href="#step-by-step-github-repo" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Create a free github account at: github.com</p></li>
+<li><p>On the top right click your <code class="docutils literal notranslate"><span class="pre">user</span> <span class="pre">icon</span></code> and a drop-down should appear &gt; Click <code class="docutils literal notranslate"><span class="pre">Your</span> <span class="pre">repositories</span></code></p></li>
+<li><p>On your <code class="docutils literal notranslate"><span class="pre">Repositories</span></code> tab towards the right, there should a green <code class="docutils literal notranslate"><span class="pre">New</span></code> icon, click it.</p></li>
+<li><p>Give your new repo a name and hit <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">repository</span></code></p></li>
+<li><p>Go back to the <code class="docutils literal notranslate"><span class="pre">Repositories</span></code> tab and select your new repo. On your repo page, towards the right there
+there should be a green <code class="docutils literal notranslate"><span class="pre">Clone</span> <span class="pre">or</span> <span class="pre">download</span></code> button, click it and copy the http link.</p></li>
+<li><p>On your local machine, open up a terminal and type <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">http-for-your-repo</span></code></p></li>
+<li><p>You now have a successful link up to your online repo from your local. Let’s step through a basic upload</p>
+<ol class="arabic simple">
+<li><p>Add a new file to your repo folder (inside your project folder that was cloned down)</p></li>
+<li><p>Add it to queue: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code></p></li>
+<li><p>Add a commit message: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;initial</span> <span class="pre">demo</span> <span class="pre">upload&quot;</span></code></p></li>
+<li><p>Push it to the github: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code></p></li>
+</ol>
+</li>
+</ol>
+</section>
+<section id="commands-general">
+<h2>Commands - General<a class="headerlink" href="#commands-general" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>To initialize a folder: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> or clone an existing repo <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">url</span></code></p>
+<ul>
+<li><p>Note that <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">url</span></code> sets up your remote link, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> does not (see remote below to link up a initialized project)</p></li>
+</ul>
+</li>
+<li><p>To add file(s) in queue for save: all files <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code> single file <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">filename</span></code></p></li>
+<li><p>To remove an already added file from queue: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span></code></p></li>
+<li><p>To commit a change: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;msg</span> <span class="pre">with</span> <span class="pre">your</span> <span class="pre">commit&quot;</span></code></p></li>
+<li><p>To push a commit to the cloud: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code></p></li>
+<li><p>To pull the latest data from the branch: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> or explicitly <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">origin</span> <span class="pre">master</span></code> (note that <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code> works similarly, however it does not merge the work with your local changes)</p></li>
+<li><p>To completely overwrite local files with server files: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span> <span class="pre">origin/master</span></code></p></li>
+</ul>
+</section>
+<section id="commands-status">
+<h2>Commands - Status<a class="headerlink" href="#commands-status" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>To check change status: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code></p></li>
+<li><p>To check the past commit logs: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span> <span class="pre">--graph</span></code> to limit the log <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span> <span class="pre">--since=2.weeks</span></code></p></li>
+</ul>
+</section>
+<section id="commands-branches">
+<h2>Commands - Branches<a class="headerlink" href="#commands-branches" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>To create a new branch: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">branchname</span></code></p></li>
+<li><p>To switch between branches: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">branchname</span></code></p></li>
+<li><p>To merge a branch onto another: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span></code></p></li>
+</ul>
+</section>
+<section id="ignore-files">
+<h2>Ignore Files<a class="headerlink" href="#ignore-files" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>To create an ignore files/file-types, create a .gitignore: <code class="docutils literal notranslate"><span class="pre">touch</span> <span class="pre">.gitignore</span></code></p></li>
+<li><p>By practice developers should only commit source files (no binaries, no .pyc files, no config files and etc.) ex; <code class="docutils literal notranslate"><span class="pre">*.pyc</span></code></p></li>
+<li><p>you can ignore all with <code class="docutils literal notranslate"><span class="pre">*</span></code> and then do a not ignore on specific files <code class="docutils literal notranslate"><span class="pre">!filename.py</span></code></p></li>
+</ul>
+</section>
+<section id="remote">
+<h2>Remote<a class="headerlink" href="#remote" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>To add a remote link <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">add</span> <span class="pre">user_defined_remote_name</span> <span class="pre">url</span></code></p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>github.com/project.git
+git<span class="w"> </span>remote<span class="w"> </span>-v
+&gt;&gt;&gt;<span class="w"> </span>origin<span class="w"> </span>https://github.com/project.git<span class="w"> </span><span class="o">(</span>fetch<span class="o">)</span>
+&gt;&gt;&gt;<span class="w"> </span>origin<span class="w"> </span>https://github.com/project.git<span class="w"> </span><span class="o">(</span>push<span class="o">)</span>
+<span class="c1"># to add a link to someone&#39;s fork of the project for example, we would:</span>
+git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>fork_vik<span class="w"> </span>https://github.com/vik/project.git
+git<span class="w"> </span>remote<span class="w"> </span>-v
+&gt;&gt;&gt;<span class="w"> </span>origin<span class="w"> </span>https://github.com/project.git<span class="w"> </span><span class="o">(</span>fetch<span class="o">)</span>
+&gt;&gt;&gt;<span class="w"> </span>origin<span class="w"> </span>https://github.com/project.git<span class="w"> </span><span class="o">(</span>push<span class="o">)</span>
+&gt;&gt;&gt;<span class="w"> </span>fork_vik<span class="w"> </span>https://github.com/vik/project.git<span class="w"> </span><span class="o">(</span>fetch<span class="o">)</span>
+&gt;&gt;&gt;<span class="w"> </span>fork_vik<span class="w"> </span>https://github.com/vik/project.git<span class="w"> </span><span class="o">(</span>push<span class="o">)</span>
+<span class="c1"># now we have to option to pull/fetch from a fork onto our local project</span>
+git<span class="w"> </span>pull<span class="w"> </span>fork_vik<span class="w"> </span>master
+</pre></div>
+</div>
+</section>
+<section id="branch">
+<h2>Branch<a class="headerlink" href="#branch" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>To create a branch: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">branch_name</span></code></p></li>
+<li><p>To work/change your current branch: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">branch_name</span></code></p></li>
+</ul>
+</section>
+<section id="branch-merge">
+<h2>Branch Merge<a class="headerlink" href="#branch-merge" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Create a merge request on github/gitlab</p></li>
+<li><p>checkout the branch to merge (if you dont already have it on local): <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">dev</span></code></p></li>
+<li><p>switch to the merge-to-branch (ie. master): <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">master</span></code></p></li>
+<li><p>merge the branch from the merge-to-branch: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">--no-ff</span> <span class="pre">dev</span></code></p></li>
+<li><p>this will bring you to a merge conflict resolver stage where each file that has conflicts are marked by:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;&lt;&lt;&lt;</span> <span class="n">HEAD</span>
+<span class="n">code</span> <span class="kn">from</span> <span class="nn">master</span> <span class="n">branch</span>
+<span class="o">=======</span>
+<span class="n">code</span> <span class="kn">from</span> <span class="nn">dev</span> <span class="n">branch</span>
+<span class="o">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> <span class="n">name</span> <span class="n">of</span> <span class="n">incoming</span> <span class="n">branch</span> <span class="n">ie</span> <span class="n">dev</span> <span class="n">here</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>delete/edit/adjust these files and remove the extra git tags like &lt;&lt;&lt; === &gt;&gt;&gt;</p></li>
+<li><p>once done commit: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;fixed</span> <span class="pre">merge</span> <span class="pre">issues&quot;</span></code></p></li>
+<li><p>this will bring you back to the master branch and from here you can: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">master</span></code></p></li>
+</ul>
+</section>
+<section id="force-overwrite-current-branch-with-another-branch">
+<h2>Force overwrite current branch with another branch<a class="headerlink" href="#force-overwrite-current-branch-with-another-branch" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>switch to the branch to be overwritten: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">master</span></code></p></li>
+<li><p>overwrite code from another branch: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span> <span class="pre">origin/dev</span></code></p></li>
+<li><p>add: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code></p></li>
+<li><p>commit: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">&quot;force</span> <span class="pre">overwrite</span> <span class="pre">master</span> <span class="pre">with</span> <span class="pre">dev&quot;</span></code></p></li>
+<li><p>force push to git: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">--force</span></code></p></li>
+</ul>
+</section>
+<section id="how-to-stash-current-work-and-recover-it-when-trying-to-pull-down-code">
+<h2>How to stash current work and recover it when trying to pull down code<a class="headerlink" href="#how-to-stash-current-work-and-recover-it-when-trying-to-pull-down-code" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Stash away your local work</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">stash</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>pull down the commit you want to play with</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">fetch</span> <span class="o">&lt;</span><span class="n">commitID</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>bring back your local work</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">stash</span> <span class="n">apply</span>
+</pre></div>
+</div>
+</section>
+<section id="how-to-pull-down-a-specific-commit">
+<h2>How to pull down a specific commit<a class="headerlink" href="#how-to-pull-down-a-specific-commit" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">fetch</span> <span class="o">&lt;</span><span class="n">commitID</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="how-to-pull-down-a-git-repo-and-convert-it-to-your-own">
+<h2>How to pull down a git repo and convert it to your own<a class="headerlink" href="#how-to-pull-down-a-git-repo-and-convert-it-to-your-own" title="Link to this heading">#</a></h2>
+<p>Let’s say you have a class repo, and you get a homework thats a separate clone with each homework.</p>
+<ol class="arabic simple">
+<li><p>To keep things clean create a single repo for yourself.</p></li>
+<li><p>Then clone down the hw into this folder</p></li>
+<li><p>now the 2 <code class="docutils literal notranslate"><span class="pre">.git</span></code> folder will conflict so you want to delete the one that came with the hw. Now the hw will only be synced up to your own class repo</p></li>
+</ol>
+</section>
+<section id="common-issues">
+<h2>Common Issues<a class="headerlink" href="#common-issues" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>“failed to push some refs to repo, tip of your current branch is behind”</p>
+<ul>
+<li><p>Cause: there were changes to the remote repo that you dont have (this could be file or history log change)</p></li>
+<li><p>Fix: run a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> and resolve the conflicts</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Git, “Git Documentation” www.git-scm.com (accessed Sep. 25 2021)</p></li>
+<li><p>Github Inc., “GitHub Docs” www.github.com (accessed Sep. 25 2021)</p></li>
+</ol>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../web/css/cheatsheet.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Cascading Style Sheets (CSS)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="jupyter.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Juypter Notebooks</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-github-repo">Step-by-Step GitHub Repo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commands-general">Commands - General</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commands-status">Commands - Status</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commands-branches">Commands - Branches</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ignore-files">Ignore Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remote">Remote</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branch">Branch</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branch-merge">Branch Merge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#force-overwrite-current-branch-with-another-branch">Force overwrite current branch with another branch</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-stash-current-work-and-recover-it-when-trying-to-pull-down-code">How to stash current work and recover it when trying to pull down code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-pull-down-a-specific-commit">How to pull down a specific commit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-pull-down-a-git-repo-and-convert-it-to-your-own">How to pull down a git repo and convert it to your own</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-issues">Common Issues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Viktor Kis.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

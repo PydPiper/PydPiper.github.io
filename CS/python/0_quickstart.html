@@ -1,0 +1,888 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="dark">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Python Quick Starter &#8212; Home</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "dark";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/mycustom.css?v=650cd416" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CS/python/0_quickstart';</script>
+    <script src="../../_static/js/slideimg.js?v=f9c97fb0"></script>
+    <link rel="canonical" href="https://pydpiper.github.io/PydPiper.github.io/CS/python/0_quickstart.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Python Cheat Sheet" href="1_cheatsheet.html" />
+    <link rel="prev" title="Search Algorithms" href="../AI/search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="dark">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/favicon_dark.png" class="logo__image only-dark" alt="Home - Home"/>
+    <script>document.write(`<img src="../../_static/favicon_light.png" class="logo__image only-light" alt="Home - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Computer Science
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../ME/index.html">
+    Mechanical Engineering
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../math/index.html">
+    Math
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Computer Science
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../ME/index.html">
+    Mechanical Engineering
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../math/index.html">
+    Math
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Artificial Intelligence</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../AI/bayesnet.html">Bayes Theorem/Network (Probability Relations)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AI/gmm.html">Gaussian Mixture Model (GMM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AI/knn.html">K-means Clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AI/minimax.html">Minimax, AlphaBeta Pruning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AI/search.html">Search Algorithms</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Python Quick Starter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_cheatsheet.html">Python Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_class.html">Python Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_containers.html">Tuples, Lists, Sets, Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_functions.html">Python Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_logicloops.html">Python Logic Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lib_numpy.html">lib - Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lib_pytest.html">lib - Testing (unittest/pytest)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lib_sphinx.html">lib - sphinx (Python Documentation)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Web</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../web/index.html">Web</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../web/css/cheatsheet.html">Cascading Style Sheets (CSS)</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tools</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tools/git.html">Git Version Control (CI/CD) DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/jupyter.html">Juypter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/linux.html">Linux Cheatsheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/vscode.html">VS Code</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Computer Science</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Python Quick Starter</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="python-quick-starter">
+<h1>Python Quick Starter<a class="headerlink" href="#python-quick-starter" title="Link to this heading">#</a></h1>
+<p>This starter kit was meant for readers that have never used python
+and have very little knowledge of programming concepts.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Output results in this guide are marked as “&gt;&gt;&gt;”. (don’t copy these lines, they are outputs from code written above it)</p>
+</div>
+<section id="installation-windows-guide-only">
+<h2>Installation - Windows Guide Only<a class="headerlink" href="#installation-windows-guide-only" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Download the latest version of python from <a class="reference external" href="https://www.python.org/">python.org</a></p></li>
+<li><p>During installation all the default selection will work, but pay attention to where python is being installed.
+The newer versions on windows will be placed under: <code class="docutils literal notranslate"><span class="pre">c/users/&lt;yourusername&gt;/AppData/Local/Programs</span></code></p></li>
+<li><p>Once python is installed browse to folder it was installed in, something like
+<code class="docutils literal notranslate"><span class="pre">c/users/&lt;yourusername&gt;/AppData/Local/Programs/Python38-32</span></code> and inside you will see a <code class="docutils literal notranslate"><span class="pre">python.exe</span></code></p></li>
+<li><p>(OPTIONAL) Not being able to run python from the terminal is a common issue. There is usually a option during installation to add python to your windows <code class="docutils literal notranslate"><span class="pre">PATH</span></code>, however if you cannot, then follow these steps to add it manually:</p>
+<ol class="arabic simple">
+<li><p>Hit the windows start menu (bottom left windows icon)</p></li>
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">environment</span></code> and you are looking for <code class="docutils literal notranslate"><span class="pre">edit</span> <span class="pre">environment</span> <span class="pre">variables</span> <span class="pre">for</span> <span class="pre">your</span> <span class="pre">account</span></code></p></li>
+<li><p>Highlight <code class="docutils literal notranslate"><span class="pre">Path</span></code> and hit <code class="docutils literal notranslate"><span class="pre">edit</span></code></p></li>
+<li><p>A new window will open, hit <code class="docutils literal notranslate"><span class="pre">new</span></code> and paste in your path where python was installed <code class="docutils literal notranslate"><span class="pre">c/users/&lt;yourusername&gt;/AppData/Local/Programs/Python38-32</span></code></p></li>
+<li><p>Hit <code class="docutils literal notranslate"><span class="pre">OK</span></code> on both windows and you are good to go!</p></li>
+</ol>
+</li>
+<li><p>Running python: pull up a terminal (start menu &gt; cmd &gt; enter) and type <code class="docutils literal notranslate"><span class="pre">python</span></code>. If the terminal hangs on windows try <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-i</span></code> where <code class="docutils literal notranslate"><span class="pre">-i</span></code> is interactive, or <code class="docutils literal notranslate"><span class="pre">winpty</span> <span class="pre">python</span></code></p></li>
+</ol>
+<p><strong>Things you should know about</strong>:</p>
+<ul class="simple">
+<li><p>Python is manually downloaded from python.org. There is no update button to get a newer version, you will have to go back to python.org and download a new version manually again.</p></li>
+<li><p>When installing Python, you are also installing a python package installer (pip) that unlocks python’s superpowers. Packages can be imported with a single line of a code and before you know it you are scraping the web, working on excel/text files or performing machine learning with only 10 lines of code.</p></li>
+<li><p>Everything in python is about versions. Python has a version, under it your pip has a version, under that your packages will have versions.</p></li>
+</ul>
+</section>
+<section id="run-your-first-script">
+<h2>Run your first Script<a class="headerlink" href="#run-your-first-script" title="Link to this heading">#</a></h2>
+<p>You have python installed and it works. Now you can type away at a python session in a terminal but once you close the terminal, your code will also be gone. So instead we can write a script can you
+can call any number of times:</p>
+<ol class="arabic simple">
+<li><p>create a script file (lets say on your desktop): Right Mouse Button &gt; New &gt; Text Document</p></li>
+<li><p>rename it <code class="docutils literal notranslate"><span class="pre">myscript.py</span></code></p></li>
+<li><p>open it with your text editor (notepad++ is a decent pick)</p></li>
+<li><p>type out your python code and save, example:</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>run your script by typing <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">myscript.py</span></code> in your terminal(your terminal has to be in the same folder).
+Start Menu &gt; type “cmd” &gt; enter &gt; then in the terminal <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">Desktop</span></code> then try <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">myscript.py</span></code></p></li>
+</ol>
+</section>
+<section id="python-high-level-concepts">
+<h2>Python High Level Concepts<a class="headerlink" href="#python-high-level-concepts" title="Link to this heading">#</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Tthe following names are reserved for python internals, and should not be used as variable names: <code class="docutils literal notranslate"><span class="pre">false</span> <span class="pre">none</span> <span class="pre">true</span> <span class="pre">and</span> <span class="pre">as</span> <span class="pre">assert</span> <span class="pre">break</span> <span class="pre">class</span> <span class="pre">continue</span> <span class="pre">def</span> <span class="pre">del</span> <span class="pre">elif</span> <span class="pre">else</span> <span class="pre">except</span> <span class="pre">finally</span> <span class="pre">for</span> <span class="pre">from</span> <span class="pre">global</span> <span class="pre">if</span> <span class="pre">import</span> <span class="pre">in</span> <span class="pre">is</span> <span class="pre">lambda</span> <span class="pre">nonlocal</span> <span class="pre">not</span> <span class="pre">or</span> <span class="pre">pass</span> <span class="pre">raise</span> <span class="pre">return</span> <span class="pre">try</span> <span class="pre">while</span> <span class="pre">with</span> <span class="pre">yield</span></code></p>
+</div>
+<section id="basics">
+<h3>Basics<a class="headerlink" href="#basics" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>code comment: <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">this</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">comment</span></code></p></li>
+<li><p>define a variable (no declaration needed!): <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">5</span></code></p></li>
+<li><p>basic types:</p>
+<ul>
+<li><p>int:<code class="docutils literal notranslate"><span class="pre">1</span></code> or <code class="docutils literal notranslate"><span class="pre">2342134</span></code></p></li>
+<li><p>float: <code class="docutils literal notranslate"><span class="pre">1.0</span></code> or <code class="docutils literal notranslate"><span class="pre">2342134.12341234</span></code> **be careful of numeric approximation <a class="reference external" href="https://docs.python.org/3.4/tutorial/floatingpoint.html">Link</a></p></li>
+<li><p>string: <code class="docutils literal notranslate"><span class="pre">&quot;this&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">'that'</span></code> both valid but double quotes is better for <code class="docutils literal notranslate"><span class="pre">&quot;it's</span> <span class="pre">a</span> <span class="pre">nice</span> <span class="pre">day&quot;</span></code></p></li>
+<li><p>list (arrays if you prefer): 1D <code class="docutils literal notranslate"><span class="pre">[1,2,3]</span></code> 2D <code class="docutils literal notranslate"><span class="pre">[[1,2,3],[10,20,30],[100,200,300]]</span></code></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="what-can-i-do-with-integers-floats-math">
+<h3>What can I do with integers/floats (math)<a class="headerlink" href="#what-can-i-do-with-integers-floats-math" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">15</span>
+<span class="c1"># add, subtract, multiply, divide, power</span>
+<span class="mi">5</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">-</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">/</span><span class="mi">5</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mf">13.0</span>
+</pre></div>
+</div>
+</section>
+<section id="what-can-i-do-with-strings">
+<h3>What can I do with strings<a class="headerlink" href="#what-can-i-do-with-strings" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>split up text</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;this is a string&#39;</span>
+<span class="c1"># split text base on &quot; &quot; single spaces</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span> 
+<span class="n">b</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="s1">&#39;this&#39;</span><span class="p">,</span> <span class="s1">&#39;is&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">]</span>
+
+<span class="c1"># string literal</span>
+<span class="sa">r</span><span class="s2">&quot;this is without a newline\n&quot;</span>
+
+<span class="c1"># this is binary</span>
+<span class="sa">b</span><span class="s2">&quot;this is binary&quot;</span>
+
+<span class="c1"># multi-line string</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">this</span>
+<span class="sd">is </span>
+<span class="sd">multilined</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># upper/lower/title</span>
+<span class="s1">&#39;this&#39;</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;THIS&#39;</span>
+<span class="s1">&#39;this&#39;</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;This&#39;</span>
+
+<span class="c1"># get count of character</span>
+<span class="s1">&#39;thiss&#39;</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span>
+
+<span class="c1"># get index of character (not it will be index of first occurrence)</span>
+<span class="s1">&#39;thiss&#39;</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;s&#39;</span><span class="p">)</span><span class="s1">&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">3</span>
+<span class="c1"># you can also use rfind or lfind to find a substring index</span>
+<span class="s1">&#39;thiss&#39;</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">4</span>
+
+<span class="c1"># reverse string</span>
+<span class="s1">&#39;this&#39;</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;siht&#39;</span>
+
+<span class="c1"># figure out if string is a digit</span>
+<span class="s1">&#39;this&#39;</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kc">False</span>
+<span class="s1">&#39;123&#39;</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kc">True</span>
+<span class="c1"># note negative sign is does not qualify a string to be a digit</span>
+<span class="s1">&#39;-123&#39;</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kc">False</span>
+
+<span class="c1"># join strings together</span>
+<span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;t&#39;</span><span class="p">,</span><span class="s1">&#39;h&#39;</span><span class="p">,</span><span class="s1">&#39;i&#39;</span><span class="p">,</span><span class="s1">&#39;s&#39;</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;this&#39;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>replace characters</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;this is a string&#39;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;s&#39;</span><span class="p">,</span><span class="s1">&#39;S&#39;</span><span class="p">)</span>
+<span class="n">b</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;thiS iS a String&#39;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>add two strings</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;this&#39;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;that&#39;</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="n">c</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;thisthat&#39;</span>
+<span class="c1"># or use join, note items have to be in square brackets</span>
+<span class="n">d</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">])</span> <span class="c1"># join &quot;a&quot; and &quot;b&quot; with a &quot; &quot; space</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;this that&#39;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>sub-strings (slicing)</p></li>
+</ul>
+<p><img alt="list_slicing" src="../../_images/list_slicing.png" /></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;this is a string&#39;</span>
+<span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># index to a character (python indexing start at 0)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;t&#39;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span> <span class="c1"># give me the characters from index 0 to start-of index 4, t=0,h=1,i=2=s=3,4=&#39; &#39;</span>
+<span class="n">b</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;this&#39;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>String Formatting</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># f-strings (python3+)</span>
+<span class="sa">f</span><span class="s2">&quot;x is equal to </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="c1"># benefit is that f-strings allows you to perform arithmetic/logic on the spot</span>
+<span class="sa">f</span><span class="s2">&quot;x is equal to </span><span class="si">{</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="sa">f</span><span class="s2">&quot;x is equal to </span><span class="si">{</span><span class="n">x</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="c1"># format (python2-3)</span>
+<span class="s2">&quot;x is equal to </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="s2">&quot;x is equal to </span><span class="si">{x1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x1</span><span class="o">=</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># % &quot;modulo operator&quot;</span>
+<span class="s2">&quot;x is equal to </span><span class="si">%(x1)d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">{</span><span class="s2">&quot;x1&quot;</span><span class="p">:</span> <span class="n">x</span><span class="p">}</span>
+
+<span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="mi">1</span><span class="si">:</span><span class="s2">4</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;   1&#39;</span>
+<span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="mf">1.11111</span><span class="si">:</span><span class="s2">4</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;1.11111&#39;</span> <span class="c1"># not what you would expect str-len is not 4</span>
+<span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="mf">1.11111</span><span class="si">:</span><span class="s2">4.2</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39; 1.1&#39;</span>
+<span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="mf">1.11111</span><span class="si">:</span><span class="s2">2.4</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;1.111&#39;</span> <span class="c1"># note that sigfig wins vs str-len</span>
+
+<span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="mi">1</span><span class="si">:</span><span class="s2">&lt;4</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;1   &#39;</span>
+<span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="mi">1</span><span class="si">:</span><span class="s2">&gt;4</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;   1&#39;</span>
+<span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="mi">1</span><span class="si">:</span><span class="s2">0=4</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="c1"># note padding only works on int or float</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;0001&#39;</span>
+<span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="mi">1</span><span class="si">:</span><span class="s2">^4</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39; 1  &#39;</span>
+
+<span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="mi">1</span><span class="si">:</span><span class="s2">+</span><span class="si">}</span><span class="s2">|</span><span class="si">{</span><span class="o">-</span><span class="mi">1</span><span class="si">:</span><span class="s2">+</span><span class="si">}</span><span class="s2">|</span><span class="si">{</span><span class="mi">1</span><span class="si">:</span><span class="s2">-</span><span class="si">}</span><span class="s2">|</span><span class="si">{</span><span class="o">-</span><span class="mi">1</span><span class="si">:</span><span class="s2">-</span><span class="si">}</span><span class="s2">|</span><span class="si">{</span><span class="mi">1</span><span class="si">:</span><span class="s2"> </span><span class="si">}</span><span class="s2">|</span><span class="si">{</span><span class="o">-</span><span class="mi">1</span><span class="si">:</span><span class="s2"> </span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;+1|-1|1|-1| 1|-1|&#39;</span>
+
+<span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="mi">123</span><span class="si">:</span><span class="s2">d</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;123&#39;</span> <span class="c1"># note that this does not convert a float to a int or str to int</span>
+
+<span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="mi">1</span><span class="si">:</span><span class="s2">f</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;1.000000&#39;</span> <span class="c1"># note flag f does convert a int to a float but NOT str-&gt;float</span>
+
+<span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="mi">1</span><span class="si">:</span><span class="s2">e</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;1.000000e+00&#39;</span> <span class="c1"># similar to float conversion</span>
+
+<span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="mi">1</span><span class="si">:</span><span class="s2">%</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;100.000000%&#39;</span> <span class="c1"># similar to float conversion</span>
+
+<span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="mi">1000</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;1,000&#39;</span>
+
+</pre></div>
+</div>
+</section>
+<section id="what-can-i-do-with-lists">
+<h3>What can I do with lists<a class="headerlink" href="#what-can-i-do-with-lists" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>indexing</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">]</span>
+<span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># python indexing starts at 0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">10</span>
+<span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># from index 0=10, to right before index 2=30 so that&#39;s 20</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>add to a list</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># empty list</span>
+<span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># append one at a time</span>
+<span class="n">a</span> <span class="o">+=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">]</span> <span class="c1"># add another list to it</span>
+<span class="n">a</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>2D array (really just a nested list)</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">]</span> <span class="c1"># 3 x-coordinates</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">40</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">60</span><span class="p">]</span> <span class="c1"># 3 y-coordinates</span>
+<span class="n">myarray</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span>
+<span class="n">myarray</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">60</span><span class="p">)]</span>
+<span class="n">myarray</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># what is the x,y -coordinate of point 2 (note again python index starts from 0)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">myarray</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># what is the x-coordinate of point 2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">20</span>
+<span class="n">myarray</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># what is the y-coordinate of point 2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">50</span>
+</pre></div>
+</div>
+</section>
+<section id="how-to-write-logic-loops-if-for-while">
+<h3>How to write logic loops (if, for, while)<a class="headerlink" href="#how-to-write-logic-loops-if-for-while" title="Link to this heading">#</a></h3>
+<p>equal: <code class="docutils literal notranslate"><span class="pre">==</span></code>, not equal: <code class="docutils literal notranslate"><span class="pre">!=</span></code>, and: <code class="docutils literal notranslate"><span class="pre">and</span></code>, or: <code class="docutils literal notranslate"><span class="pre">or</span></code></p>
+<p>Note that are also bitwise operators as well such as <code class="docutils literal notranslate"><span class="pre">|</span></code> for <code class="docutils literal notranslate"><span class="pre">or</span></code> (ex: <code class="docutils literal notranslate"><span class="pre">False|True</span></code> will give you <code class="docutils literal notranslate"><span class="pre">True</span></code> back)</p>
+<ul class="simple">
+<li><p>if statements</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1 is equal to 1 and also equal to 2&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="mi">1</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1 is not equal to 1&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;none of the conditions were true&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>for loop</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">mylist</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">10</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">20</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">30</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>while loop</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</section>
+<section id="how-to-write-functions">
+<h3>How to write functions<a class="headerlink" href="#how-to-write-functions" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># define function with 2 inputs</span>
+<span class="k">def</span> <span class="nf">myfunc</span><span class="p">(</span><span class="n">input1</span><span class="p">,</span> <span class="n">input2</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">intput1</span> <span class="o">+</span> <span class="n">input2</span> <span class="o">+</span> <span class="mi">10</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="c1"># call a function with inputs 1,2</span>
+<span class="n">func</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">13</span>
+</pre></div>
+</div>
+</section>
+<section id="how-do-i-read-write-files-input-output-io">
+<h3>How do I read/write files (Input/Output IO)<a class="headerlink" href="#how-do-i-read-write-files-input-output-io" title="Link to this heading">#</a></h3>
+<p>Although there are many ways to work with files, by far the safest is with “Context Manager”.
+A Context Manager has an Enter and an Exit protocol that handles events. In terms of file IO,
+<code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">open</span></code> opens a file stream on Enter, and closes file stream on Exit, therefore files are
+always closed down once the code is done streaming it.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+    <span class="c1"># read a file</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;filename.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="p">:</span>
+                <span class="k">break</span>
+
+    <span class="c1"># write a file</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;world&quot;</span><span class="p">]</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;filename.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Open file object modes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">r</span></code>: read only</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">w</span></code>: write only</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: execution only</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span></code>: append to existing file</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">b</span></code>: binary mode (this is combined with <code class="docutils literal notranslate"><span class="pre">r</span></code> or <code class="docutils literal notranslate"><span class="pre">w</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code>: open for updating (reading/writing)</p></li>
+</ul>
+</section>
+<section id="working-with-directories">
+<h3>Working with directories<a class="headerlink" href="#working-with-directories" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="kn">import</span> <span class="nn">os</span>
+    <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+    <span class="c1"># returns a list of files/folders in current working dir</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">()</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="s1">&#39;file1.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;file2.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;folder&#39;</span><span class="p">]</span>
+    <span class="c1"># or feed it a subdir path</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;./folder&#39;</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="s1">&#39;subfile1.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;subfile2.txt&#39;</span><span class="p">]</span>
+
+    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="s1">&#39;file1.txt&#39;</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Python Software Foundation, “Python3.9.7 Documentation” www.python.org (accessed Sep. 25 2021)</p></li>
+</ol>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../AI/search.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Search Algorithms</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="1_cheatsheet.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Python Cheat Sheet</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-windows-guide-only">Installation - Windows Guide Only</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-your-first-script">Run your first Script</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-high-level-concepts">Python High Level Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basics">Basics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-can-i-do-with-integers-floats-math">What can I do with integers/floats (math)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-can-i-do-with-strings">What can I do with strings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-can-i-do-with-lists">What can I do with lists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-write-logic-loops-if-for-while">How to write logic loops (if, for, while)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-write-functions">How to write functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-read-write-files-input-output-io">How do I read/write files (Input/Output IO)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-directories">Working with directories</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Viktor Kis.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
