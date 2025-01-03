@@ -21,6 +21,14 @@
     :maxdepth: 1
     :titlesonly:
     :glob:
+    :caption: Rust
+
+    rust/*
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+    :glob:
     :caption: Web
 
     web/index

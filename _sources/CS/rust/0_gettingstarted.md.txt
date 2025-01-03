@@ -1,0 +1,262 @@
+# Getting Started
+Last updated: 12/21/2024
+
+
+## Getting Rust
+
+- `https://www.rust-lang.org/`
+- you will likely need `Desktop development with C++` via `Visual Studio Installer`
+
+## How to create a Rust Project
+
+- create a new folder
+```
+cargo new projectname
+```
+
+- if you already have a folder
+```
+cargo init
+```
+
+## How to version a Rust Project
+
+### How to check Rust version
+```
+cargo --version
+```
+
+### How to update Rust
+```
+rustup update stable
+```
+
+### How to pin a project to a specific Rust version
+While this is possible, it is not a good idea unless there is a special use case like testing new unstable releases.
+The reason being is that Rust is 100% backwards compatible. When a `src` is compiled it logs the version of compiler 
+that compiled it. Thus if someone else with a different version tries to run your code, Rust will simply fetch that 
+compiler for you and use it for compatibility.
+
+- check what version you are running
+```
+cargo --version
+```
+
+- create a `rust-toolchain` file on same level as your rust project `src` folder
+
+- add version of Rust you want to this file `1.72.0` or `stable` (latest stable version on your local `rustup`) or `nightly` (latest overnight updates - unstable)
+
+## How to run your Rust code?
+This step compiles and runs your code. Note that Rust runs `src/main.rs`
+
+```
+cargo run
+```
+
+### How to check if your code compiles?
+Note that you can also use `rustc src/main.rs` however this may not grab all dependencies of your project properly and only compiles that file.
+You still get an `.exe` with `cargo build` it's just under `target/debug/projectname.exe`
+
+```
+cargo build
+```
+
+### How to run a different file than `src/main.rs`?
+You can run code out of a `src/bin/` folder for example `src/bin/mycode.rs` with
+
+```
+cargo run --bin mycode
+```
+
+## Primitive Types
+
+### Integers/Floats (floats work the same)
+
+```rust
+
+// without "mut" a primitive is immutable
+let myint: i32 = 0;
+myint += 1; // this code errors because myint is immutable
+
+// this is a mutable int
+let mut myint2: i32 = 0;
+myint2 += 1;
+
+// this is a pointer to myint2, thus it shares memory
+let myint3: &i32 = &myint2;
+myint3 += 1; // this code error because a pointer is immutable
+// what you can do is de-reference the pointer with *
+// NOTE however arithmetic operation is Rust by default auto-dereference so * here is redundant (but explicit)
+let myint4: i32 = *myint3 + 1;
+
+// all the same for floats as ints, for example
+let pi: f32 = 3.14;
+```
+
+## Understanding Ownership
+Before beginning it is key to understand why is `ownership` matters. In Feb 2024, the U.S. White House 
+published an article addressing the need for **memory safe** programming languages that meet 3 reqs:
+
+- language must allow the code to be close to kernel for tight software/hardware interaction
+- language must support **determinism** so the timing of outputs are consistent (operations take as close of constant time as possible)
+- language must not have a way to override the **garbage collector** (function which reclaims memory)
+
+Rust address all 3 req's in a memory safe way (unlike C and C++, ex: double dereferencing or accessing array out of bounds) by implementing `ownership` which is:
+
+- Each value in Rust has an owner
+- There can only be one owner at a time (auto memory release)
+- When the owner goes out of scope, the value is released from memory (auto memory release)
+
+As a side note, Java and C# are memory safe but they are memory safe because they implemented **garbage collection**. The only draw back with garbage collection
+is that it is slow. Your program has to stop for the garbage collector to release memory then resume your code when it is done. This is fixed in Rust by managing memory (releasing) of variables when they go out of scope **at compile time, rather than runtime like in Java or C#**.
+
+Let's create an example for each of the `ownership` bullets to fully understand.
+
+```rust
+// 1 - each value in Rust has an owner
+let x: String = "hi".to_string();
+// x is the owner, while xref is pointer to x
+let xref: &str = &x;
+
+// 2 - there can only be 1 owner
+// we can pass ownership from x to x2, but then x becomes obsolete (released from memory automatically)
+let x2: String = x;
+// now x2 has ownership of the value, and we cannot use x
+println!("{x2}");
+println!("{x}"); // this throws an error
+// IMPORTANT: primitive fixed size values like char, int, float, bool bitwise copy instead of transferring ownership, so we dont see this same issue
+let y: i32 = 1;
+let y_copy = y;
+println!("{y} {y_copy}"); // no error for calling y after what looks like would be a ownership change to y_copy
+
+// 3 - When the owner goes out of scope, the value is released from memory
+{
+    let x3: &str = "hi";
+}
+println!("{x3}") // throws an error because x3 is out of scope, and it is deallocated from memory outside {}
+```
+
+Another not so straight forward concept related to **ownership** is updating a value from a borrowed reference
+
+```rust
+// borrowing a mut, and update the value via the reference (by dereferencing it)
+let mut y: i32 = 1;
+let yref_mut = &mut y; // note this is a little funky because we need to put a mut after the "&" instead of after "let"
+// to edit the original value of y, we have to deref the ref (to get to the value), perform edit, write it to the value of the ref (deref yref_mut)
+*yref_mut = *yref_mut + 1;
+println!("{y}");
+let yref_mut2 = &mut y;
+println!("{yref_mut2}");
+// you can only have 1 mut ref to a mut owner, yref_mut essentially becomes useless after yref_mut2 takes new mut ref control
+println!("{yref_mut}"); // this throws an error 
+```
+
+
+## How to work with modules?
+
+### How to work with Rust base libraries?
+There are a few handy libraries included with core Rust. Here are a few:
+
+- [std](https://doc.rust-lang.org/std/index.html#modules)
+- [test](https://doc.rust-lang.org/test/index.html)
+- install aditional modules via [crates for example regex](https://crates.io/crates/regex): `cargo add regex`
+
+
+Import an entire module
+```rust
+// to import "io"
+use std::io
+// use "io"
+let mut input = String::new();
+io::stdin().read_line(&mut input)?;
+```
+
+Import everything from "io" (not advised as it can get convoluted where methods came from)
+```rust
+// import everything from "io"
+use std::io::*;
+// use a function from "io"
+let mut input = String::new();
+stdin().read_line(&mut input)?;
+```
+
+Import multiple functions from a module
+```rust
+use std::collections::{HashMap, HashSet};
+let myset = HashSet::new();
+```
+
+## How to work with multiple files?
+
+### Simple import of a another file in `/src`
+
+```
+src/
+  main.rs
+  file1.rs
+```
+
+```{code-block} rust
+:caption: main.rs
+
+mod file1;
+// note you can only call "pub" public functions from file1
+file1::pub_example();
+```
+
+```{code-block} rust
+:caption: file1.rs
+
+pub fn pub_example(){};
+
+// cannot be called from main.rs (or any other file importing this module)
+fn private_example(){};
+```
+
+### Import a file from a sub directory
+
+```
+src/
+  main.rs
+  subdir.rs
+  subdir/
+    file1.rs
+```
+
+```{code-block} rust
+:caption: main.rs
+
+// call the current level subdir.rs
+mod subdir;
+// import a subdir module
+use crate::subdir::file1;
+
+// note you can only call "pub" public functions from file1
+file1::pub_example();
+```
+
+```{code-block} rust
+:caption: subdir.rs
+
+// exposes modules of a sub dir 
+pub mod file1;
+```
+
+```{code-block} rust
+:caption: file1.rs
+
+pub fn pub_example(){};
+
+// cannot be called from main.rs (or any other file importing this module)
+fn private_example(){};
+```
+
+---
+
+## References
+
+1. [Rust Book](https://doc.rust-lang.org/book/title-page.html), accessed Dec, 2024.
+
+2. [Rust Docs](https://docs.rs/), accessed Dec, 2024.
+
+3. [White House - A Path Towards Secure and Measurable software](https://www.whitehouse.gov/wp-content/uploads/2024/02/Final-ONCD-Technical-Report.pdf), released Feb, 2024.

@@ -1,0 +1,792 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="dark">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Getting Started &#8212; Home</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "dark";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/mycustom.css?v=650cd416" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CS/rust/0_gettingstarted';</script>
+    <script src="../../_static/js/slideimg.js?v=f9c97fb0"></script>
+    <link rel="icon" href="../../_static/favicon_light.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Web" href="../web/index.html" />
+    <link rel="prev" title="lib - sphinx (Python Documentation)" href="../python/lib_sphinx.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="dark">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/favicon_dark.png" class="logo__image only-dark" alt="Home - Home"/>
+    <script>document.write(`<img src="../../_static/favicon_light.png" class="logo__image only-light" alt="Home - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Computer Science
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../ME/index.html">
+    Mechanical Engineering
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../math/index.html">
+    Math
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Computer Science
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../ME/index.html">
+    Mechanical Engineering
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../math/index.html">
+    Math
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Artificial Intelligence</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../AI/bayesnet.html">Bayes Theorem/Network (Probability Relations)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AI/gmm.html">Gaussian Mixture Model (GMM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AI/knn.html">K-means Clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AI/minimax.html">Minimax, AlphaBeta Pruning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AI/search.html">Search Algorithms</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../python/0_quickstart.html">Python Quick Starter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/1_cheatsheet.html">Python Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/2_class.html">Python Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/2_containers.html">Tuples, Lists, Sets, Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/2_functions.html">Python Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/2_logicloops.html">Python Logic Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/lib_numpy.html">lib - Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/lib_pytest.html">lib - Testing (unittest/pytest)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/lib_sphinx.html">lib - sphinx (Python Documentation)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Rust</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Getting Started</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Web</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../web/index.html">Web</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../web/css/cheatsheet.html">Cascading Style Sheets (CSS)</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tools</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tools/excel.html">Microsoft Excel Tips/Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/git.html">Git Version Control (CI/CD) DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/jupyter.html">Juypter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/linux.html">Linux Cheatsheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/vscode.html">VS Code</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Computer Science</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Getting Started</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h1>
+<p>Last updated: 12/21/2024</p>
+<section id="getting-rust">
+<h2>Getting Rust<a class="headerlink" href="#getting-rust" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">https://www.rust-lang.org/</span></code></p></li>
+<li><p>you will likely need <code class="docutils literal notranslate"><span class="pre">Desktop</span> <span class="pre">development</span> <span class="pre">with</span> <span class="pre">C++</span></code> via <code class="docutils literal notranslate"><span class="pre">Visual</span> <span class="pre">Studio</span> <span class="pre">Installer</span></code></p></li>
+</ul>
+</section>
+<section id="how-to-create-a-rust-project">
+<h2>How to create a Rust Project<a class="headerlink" href="#how-to-create-a-rust-project" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>create a new folder</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cargo</span> <span class="n">new</span> <span class="n">projectname</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>if you already have a folder</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cargo</span> <span class="n">init</span>
+</pre></div>
+</div>
+</section>
+<section id="how-to-version-a-rust-project">
+<h2>How to version a Rust Project<a class="headerlink" href="#how-to-version-a-rust-project" title="Link to this heading">#</a></h2>
+<section id="how-to-check-rust-version">
+<h3>How to check Rust version<a class="headerlink" href="#how-to-check-rust-version" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cargo</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+</section>
+<section id="how-to-update-rust">
+<h3>How to update Rust<a class="headerlink" href="#how-to-update-rust" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rustup</span> <span class="n">update</span> <span class="n">stable</span>
+</pre></div>
+</div>
+</section>
+<section id="how-to-pin-a-project-to-a-specific-rust-version">
+<h3>How to pin a project to a specific Rust version<a class="headerlink" href="#how-to-pin-a-project-to-a-specific-rust-version" title="Link to this heading">#</a></h3>
+<p>While this is possible, it is not a good idea unless there is a special use case like testing new unstable releases.
+The reason being is that Rust is 100% backwards compatible. When a <code class="docutils literal notranslate"><span class="pre">src</span></code> is compiled it logs the version of compiler
+that compiled it. Thus if someone else with a different version tries to run your code, Rust will simply fetch that
+compiler for you and use it for compatibility.</p>
+<ul class="simple">
+<li><p>check what version you are running</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cargo</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>create a <code class="docutils literal notranslate"><span class="pre">rust-toolchain</span></code> file on same level as your rust project <code class="docutils literal notranslate"><span class="pre">src</span></code> folder</p></li>
+<li><p>add version of Rust you want to this file <code class="docutils literal notranslate"><span class="pre">1.72.0</span></code> or <code class="docutils literal notranslate"><span class="pre">stable</span></code> (latest stable version on your local <code class="docutils literal notranslate"><span class="pre">rustup</span></code>) or <code class="docutils literal notranslate"><span class="pre">nightly</span></code> (latest overnight updates - unstable)</p></li>
+</ul>
+</section>
+</section>
+<section id="how-to-run-your-rust-code">
+<h2>How to run your Rust code?<a class="headerlink" href="#how-to-run-your-rust-code" title="Link to this heading">#</a></h2>
+<p>This step compiles and runs your code. Note that Rust runs <code class="docutils literal notranslate"><span class="pre">src/main.rs</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cargo</span> <span class="n">run</span>
+</pre></div>
+</div>
+<section id="how-to-check-if-your-code-compiles">
+<h3>How to check if your code compiles?<a class="headerlink" href="#how-to-check-if-your-code-compiles" title="Link to this heading">#</a></h3>
+<p>Note that you can also use <code class="docutils literal notranslate"><span class="pre">rustc</span> <span class="pre">src/main.rs</span></code> however this may not grab all dependencies of your project properly and only compiles that file.
+You still get an <code class="docutils literal notranslate"><span class="pre">.exe</span></code> with <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">build</span></code> it’s just under <code class="docutils literal notranslate"><span class="pre">target/debug/projectname.exe</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cargo</span> <span class="n">build</span>
+</pre></div>
+</div>
+</section>
+<section id="how-to-run-a-different-file-than-src-main-rs">
+<h3>How to run a different file than <code class="docutils literal notranslate"><span class="pre">src/main.rs</span></code>?<a class="headerlink" href="#how-to-run-a-different-file-than-src-main-rs" title="Link to this heading">#</a></h3>
+<p>You can run code out of a <code class="docutils literal notranslate"><span class="pre">src/bin/</span></code> folder for example <code class="docutils literal notranslate"><span class="pre">src/bin/mycode.rs</span></code> with</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cargo</span> <span class="n">run</span> <span class="o">--</span><span class="nb">bin</span> <span class="n">mycode</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="primitive-types">
+<h2>Primitive Types<a class="headerlink" href="#primitive-types" title="Link to this heading">#</a></h2>
+<section id="integers-floats-floats-work-the-same">
+<h3>Integers/Floats (floats work the same)<a class="headerlink" href="#integers-floats-floats-work-the-same" title="Link to this heading">#</a></h3>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// without &quot;mut&quot; a primitive is immutable</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">myint</span><span class="p">:</span><span class="w"> </span><span class="kt">i32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">myint</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// this code errors because myint is immutable</span>
+
+<span class="c1">// this is a mutable int</span>
+<span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">myint2</span><span class="p">:</span><span class="w"> </span><span class="kt">i32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">myint2</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="c1">// this is a pointer to myint2, thus it shares memory</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">myint3</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">i32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">myint2</span><span class="p">;</span>
+<span class="n">myint3</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// this code error because a pointer is immutable</span>
+<span class="c1">// what you can do is de-reference the pointer with *</span>
+<span class="c1">// NOTE however arithmetic operation is Rust by default auto-dereference so * here is redundant (but explicit)</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">myint4</span><span class="p">:</span><span class="w"> </span><span class="kt">i32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">myint3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="c1">// all the same for floats as ints, for example</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">pi</span><span class="p">:</span><span class="w"> </span><span class="kt">f32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="understanding-ownership">
+<h2>Understanding Ownership<a class="headerlink" href="#understanding-ownership" title="Link to this heading">#</a></h2>
+<p>Before beginning it is key to understand why is <code class="docutils literal notranslate"><span class="pre">ownership</span></code> matters. In Feb 2024, the U.S. White House
+published an article addressing the need for <strong>memory safe</strong> programming languages that meet 3 reqs:</p>
+<ul class="simple">
+<li><p>language must allow the code to be close to kernel for tight software/hardware interaction</p></li>
+<li><p>language must support <strong>determinism</strong> so the timing of outputs are consistent (operations take as close of constant time as possible)</p></li>
+<li><p>language must not have a way to override the <strong>garbage collector</strong> (function which reclaims memory)</p></li>
+</ul>
+<p>Rust address all 3 req’s in a memory safe way (unlike C and C++, ex: double dereferencing or accessing array out of bounds) by implementing <code class="docutils literal notranslate"><span class="pre">ownership</span></code> which is:</p>
+<ul class="simple">
+<li><p>Each value in Rust has an owner</p></li>
+<li><p>There can only be one owner at a time (auto memory release)</p></li>
+<li><p>When the owner goes out of scope, the value is released from memory (auto memory release)</p></li>
+</ul>
+<p>As a side note, Java and C# are memory safe but they are memory safe because they implemented <strong>garbage collection</strong>. The only draw back with garbage collection
+is that it is slow. Your program has to stop for the garbage collector to release memory then resume your code when it is done. This is fixed in Rust by managing memory (releasing) of variables when they go out of scope <strong>at compile time, rather than runtime like in Java or C#</strong>.</p>
+<p>Let’s create an example for each of the <code class="docutils literal notranslate"><span class="pre">ownership</span></code> bullets to fully understand.</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// 1 - each value in Rust has an owner</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hi&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">();</span>
+<span class="c1">// x is the owner, while xref is pointer to x</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">xref</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
+
+<span class="c1">// 2 - there can only be 1 owner</span>
+<span class="c1">// we can pass ownership from x to x2, but then x becomes obsolete (released from memory automatically)</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">x2</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="c1">// now x2 has ownership of the value, and we cannot use x</span>
+<span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{x2}&quot;</span><span class="p">);</span>
+<span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{x}&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// this throws an error</span>
+<span class="c1">// IMPORTANT: primitive fixed size values like char, int, float, bool bitwise copy instead of transferring ownership, so we dont see this same issue</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="kt">i32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">y_copy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{y} {y_copy}&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// no error for calling y after what looks like would be a ownership change to y_copy</span>
+
+<span class="c1">// 3 - When the owner goes out of scope, the value is released from memory</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">x3</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hi&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{x3}&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// throws an error because x3 is out of scope, and it is deallocated from memory outside {}</span>
+</pre></div>
+</div>
+<p>Another not so straight forward concept related to <strong>ownership</strong> is updating a value from a borrowed reference</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// borrowing a mut, and update the value via the reference (by dereferencing it)</span>
+<span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="kt">i32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">yref_mut</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">y</span><span class="p">;</span><span class="w"> </span><span class="c1">// note this is a little funky because we need to put a mut after the &quot;&amp;&quot; instead of after &quot;let&quot;</span>
+<span class="c1">// to edit the original value of y, we have to deref the ref (to get to the value), perform edit, write it to the value of the ref (deref yref_mut)</span>
+<span class="o">*</span><span class="n">yref_mut</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">yref_mut</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{y}&quot;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">yref_mut2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{yref_mut2}&quot;</span><span class="p">);</span>
+<span class="c1">// you can only have 1 mut ref to a mut owner, yref_mut essentially becomes useless after yref_mut2 takes new mut ref control</span>
+<span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{yref_mut}&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// this throws an error </span>
+</pre></div>
+</div>
+</section>
+<section id="how-to-work-with-modules">
+<h2>How to work with modules?<a class="headerlink" href="#how-to-work-with-modules" title="Link to this heading">#</a></h2>
+<section id="how-to-work-with-rust-base-libraries">
+<h3>How to work with Rust base libraries?<a class="headerlink" href="#how-to-work-with-rust-base-libraries" title="Link to this heading">#</a></h3>
+<p>There are a few handy libraries included with core Rust. Here are a few:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://doc.rust-lang.org/std/index.html#modules">std</a></p></li>
+<li><p><a class="reference external" href="https://doc.rust-lang.org/test/index.html">test</a></p></li>
+<li><p>install aditional modules via <a class="reference external" href="https://crates.io/crates/regex">crates for example regex</a>: <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">add</span> <span class="pre">regex</span></code></p></li>
+</ul>
+<p>Import an entire module</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// to import &quot;io&quot;</span>
+<span class="k">use</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="n">io</span>
+<span class="c1">// use &quot;io&quot;</span>
+<span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span><span class="p">::</span><span class="n">new</span><span class="p">();</span>
+<span class="n">io</span><span class="p">::</span><span class="n">stdin</span><span class="p">().</span><span class="n">read_line</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">input</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Import everything from “io” (not advised as it can get convoluted where methods came from)</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// import everything from &quot;io&quot;</span>
+<span class="k">use</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="n">io</span><span class="p">::</span><span class="o">*</span><span class="p">;</span>
+<span class="c1">// use a function from &quot;io&quot;</span>
+<span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span><span class="p">::</span><span class="n">new</span><span class="p">();</span>
+<span class="n">stdin</span><span class="p">().</span><span class="n">read_line</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">input</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Import multiple functions from a module</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">use</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="n">collections</span><span class="p">::{</span><span class="n">HashMap</span><span class="p">,</span><span class="w"> </span><span class="n">HashSet</span><span class="p">};</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">myset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HashSet</span><span class="p">::</span><span class="n">new</span><span class="p">();</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="how-to-work-with-multiple-files">
+<h2>How to work with multiple files?<a class="headerlink" href="#how-to-work-with-multiple-files" title="Link to this heading">#</a></h2>
+<section id="simple-import-of-a-another-file-in-src">
+<h3>Simple import of a another file in <code class="docutils literal notranslate"><span class="pre">/src</span></code><a class="headerlink" href="#simple-import-of-a-another-file-in-src" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">src</span><span class="o">/</span>
+  <span class="n">main</span><span class="o">.</span><span class="n">rs</span>
+  <span class="n">file1</span><span class="o">.</span><span class="n">rs</span>
+</pre></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">main.rs</span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">mod</span><span class="w"> </span><span class="nn">file1</span><span class="p">;</span>
+<span class="c1">// note you can only call &quot;pub&quot; public functions from file1</span>
+<span class="n">file1</span><span class="p">::</span><span class="n">pub_example</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">file1.rs</span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">pub_example</span><span class="p">(){};</span>
+
+<span class="c1">// cannot be called from main.rs (or any other file importing this module)</span>
+<span class="k">fn</span><span class="w"> </span><span class="nf">private_example</span><span class="p">(){};</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="import-a-file-from-a-sub-directory">
+<h3>Import a file from a sub directory<a class="headerlink" href="#import-a-file-from-a-sub-directory" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">src</span><span class="o">/</span>
+  <span class="n">main</span><span class="o">.</span><span class="n">rs</span>
+  <span class="n">subdir</span><span class="o">.</span><span class="n">rs</span>
+  <span class="n">subdir</span><span class="o">/</span>
+    <span class="n">file1</span><span class="o">.</span><span class="n">rs</span>
+</pre></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">main.rs</span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// call the current level subdir.rs</span>
+<span class="k">mod</span><span class="w"> </span><span class="nn">subdir</span><span class="p">;</span>
+<span class="c1">// import a subdir module</span>
+<span class="k">use</span><span class="w"> </span><span class="k">crate</span><span class="p">::</span><span class="n">subdir</span><span class="p">::</span><span class="n">file1</span><span class="p">;</span>
+
+<span class="c1">// note you can only call &quot;pub&quot; public functions from file1</span>
+<span class="n">file1</span><span class="p">::</span><span class="n">pub_example</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">subdir.rs</span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// exposes modules of a sub dir </span>
+<span class="k">pub</span><span class="w"> </span><span class="k">mod</span><span class="w"> </span><span class="nn">file1</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">file1.rs</span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">pub_example</span><span class="p">(){};</span>
+
+<span class="c1">// cannot be called from main.rs (or any other file importing this module)</span>
+<span class="k">fn</span><span class="w"> </span><span class="nf">private_example</span><span class="p">(){};</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://doc.rust-lang.org/book/title-page.html">Rust Book</a>, accessed Dec, 2024.</p></li>
+<li><p><a class="reference external" href="https://docs.rs/">Rust Docs</a>, accessed Dec, 2024.</p></li>
+<li><p><a class="reference external" href="https://www.whitehouse.gov/wp-content/uploads/2024/02/Final-ONCD-Technical-Report.pdf">White House - A Path Towards Secure and Measurable software</a>, released Feb, 2024.</p></li>
+</ol>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../python/lib_sphinx.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">lib - sphinx (Python Documentation)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../web/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Web</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-rust">Getting Rust</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-create-a-rust-project">How to create a Rust Project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-version-a-rust-project">How to version a Rust Project</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-check-rust-version">How to check Rust version</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-update-rust">How to update Rust</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-pin-a-project-to-a-specific-rust-version">How to pin a project to a specific Rust version</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run-your-rust-code">How to run your Rust code?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-check-if-your-code-compiles">How to check if your code compiles?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run-a-different-file-than-src-main-rs">How to run a different file than <code class="docutils literal notranslate"><span class="pre">src/main.rs</span></code>?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primitive-types">Primitive Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integers-floats-floats-work-the-same">Integers/Floats (floats work the same)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-ownership">Understanding Ownership</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-work-with-modules">How to work with modules?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-work-with-rust-base-libraries">How to work with Rust base libraries?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-work-with-multiple-files">How to work with multiple files?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-import-of-a-another-file-in-src">Simple import of a another file in <code class="docutils literal notranslate"><span class="pre">/src</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-file-from-a-sub-directory">Import a file from a sub directory</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Viktor Kis.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

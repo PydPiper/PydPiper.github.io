@@ -1,0 +1,28 @@
+# Microsoft Excel Tips/Tricks
+
+## How to define custom functions (without vba/.xlsm) - M365 Lambda Functions
+In M365 you can define custom function with using VBA (and saving your workbook as .xlsm macro enabled) by:
+
+Local cell (1 time use):
+You can define a `lambda` function within a cell for a 1 time use. Ex: `lambda=(x, y, x+y)`
+
+Reusable function name:
+
+1. Formulas Tab > Name manager (under Defined Names) > New
+2. Type the name of the function (must be alpha - no numbers or special char)
+3. Select scope 
+    - workbook is for all worksheet
+    - Sheet scope will only work for this sheet
+    - note it's best practice to have variables be local to sheets (unless shared) and function be workbook
+      you'll be greatly annoyed when you go through a big project and have to swap a ton of variables to Sheet
+4. Refers to type `lambda=(x, y, x+y)`
+
+The way `lambda` functions work is that they take n-args first, then last "arg" is your custom function that must return a value or matrix of values
+
+- example 1 arg: `=lambda(x, x+1)`
+- example 2 args: `lambda=(x, y, x+y)`
+- example matrix return: `lambda=(x, let(total, sum(x), x / total))`
+
+## How to reference a matrix
+- Before M365 you could reference an entire range as your matrix. Ex `A1:B2` for a 2x2 matrix
+- In M365 feature, and it's done by adding a `#` after the master header matrix. `=A1#`
