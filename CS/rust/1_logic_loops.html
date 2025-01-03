@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Microsoft Excel Tips/Tricks &#8212; Home</title>
+    <title>Logic Loops - TBD &#8212; Home</title>
   
   
   
@@ -45,13 +45,13 @@
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'CS/tools/excel';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CS/rust/1_logic_loops';</script>
     <script src="../../_static/js/slideimg.js?v=f9c97fb0"></script>
     <link rel="icon" href="../../_static/favicon_light.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Git Version Control (CI/CD) DevOps" href="git.html" />
-    <link rel="prev" title="Cascading Style Sheets (CSS)" href="../web/css/cheatsheet.html" />
+    <link rel="next" title="Lib - Regex" href="lib_regex.html" />
+    <link rel="prev" title="Functions - TBD" href="1_functions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -220,10 +220,6 @@ document.write(`
   
 
   
-    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
-      <span class="fa-solid fa-outdent"></span>
-    </button>
-  
 </div>
 
     </header>
@@ -321,13 +317,13 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../python/lib_sphinx.html">lib - sphinx (Python Documentation)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Rust</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../rust/0_gettingstarted.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rust/1_data_types.html">Data Types - TBD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rust/1_fileIO.html">File I/O</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rust/1_functions.html">Functions - TBD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rust/1_logic_loops.html">Logic Loops - TBD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rust/lib_regex.html">Lib - Regex</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0_gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_data_types.html">Data Types - TBD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_fileIO.html">File I/O</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_functions.html">Functions - TBD</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Logic Loops - TBD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lib_regex.html">Lib - Regex</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Web</span></p>
 <ul class="nav bd-sidenav">
@@ -337,12 +333,12 @@ document.write(`
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tools</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Microsoft Excel Tips/Tricks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="git.html">Git Version Control (CI/CD) DevOps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="jupyter.html">Juypter Notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="linux.html">Linux Cheatsheet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vscode.html">VS Code</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tools/excel.html">Microsoft Excel Tips/Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/git.html">Git Version Control (CI/CD) DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/jupyter.html">Juypter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/linux.html">Linux Cheatsheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/vscode.html">VS Code</a></li>
 </ul>
 </div>
 </nav></div>
@@ -383,7 +379,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Computer Science</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Microsoft...</li>
+    <li class="breadcrumb-item active" aria-current="page">Logic Loops - TBD</li>
   </ul>
 </nav>
 </div>
@@ -400,41 +396,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="microsoft-excel-tips-tricks">
-<h1>Microsoft Excel Tips/Tricks<a class="headerlink" href="#microsoft-excel-tips-tricks" title="Link to this heading">#</a></h1>
-<section id="how-to-define-custom-functions-without-vba-xlsm-m365-lambda-functions">
-<h2>How to define custom functions (without vba/.xlsm) - M365 Lambda Functions<a class="headerlink" href="#how-to-define-custom-functions-without-vba-xlsm-m365-lambda-functions" title="Link to this heading">#</a></h2>
-<p>In M365 you can define custom function with using VBA (and saving your workbook as .xlsm macro enabled) by:</p>
-<p>Local cell (1 time use):
-You can define a <code class="docutils literal notranslate"><span class="pre">lambda</span></code> function within a cell for a 1 time use. Ex: <code class="docutils literal notranslate"><span class="pre">lambda=(x,</span> <span class="pre">y,</span> <span class="pre">x+y)</span></code></p>
-<p>Reusable function name:</p>
-<ol class="arabic simple">
-<li><p>Formulas Tab &gt; Name manager (under Defined Names) &gt; New</p></li>
-<li><p>Type the name of the function (must be alpha - no numbers or special char)</p></li>
-<li><p>Select scope</p>
-<ul class="simple">
-<li><p>workbook is for all worksheet</p></li>
-<li><p>Sheet scope will only work for this sheet</p></li>
-<li><p>note it’s best practice to have variables be local to sheets (unless shared) and function be workbook
-you’ll be greatly annoyed when you go through a big project and have to swap a ton of variables to Sheet</p></li>
-</ul>
-</li>
-<li><p>Refers to type <code class="docutils literal notranslate"><span class="pre">lambda=(x,</span> <span class="pre">y,</span> <span class="pre">x+y)</span></code></p></li>
-</ol>
-<p>The way <code class="docutils literal notranslate"><span class="pre">lambda</span></code> functions work is that they take n-args first, then last “arg” is your custom function that must return a value or matrix of values</p>
-<ul class="simple">
-<li><p>example 1 arg: <code class="docutils literal notranslate"><span class="pre">=lambda(x,</span> <span class="pre">x+1)</span></code></p></li>
-<li><p>example 2 args: <code class="docutils literal notranslate"><span class="pre">lambda=(x,</span> <span class="pre">y,</span> <span class="pre">x+y)</span></code></p></li>
-<li><p>example matrix return: <code class="docutils literal notranslate"><span class="pre">lambda=(x,</span> <span class="pre">let(total,</span> <span class="pre">sum(x),</span> <span class="pre">x</span> <span class="pre">/</span> <span class="pre">total))</span></code></p></li>
-</ul>
-</section>
-<section id="how-to-reference-a-matrix">
-<h2>How to reference a matrix<a class="headerlink" href="#how-to-reference-a-matrix" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Before M365 you could reference an entire range as your matrix. Ex <code class="docutils literal notranslate"><span class="pre">A1:B2</span></code> for a 2x2 matrix</p></li>
-<li><p>In M365 feature, and it’s done by adding a <code class="docutils literal notranslate"><span class="pre">#</span></code> after the master header matrix. <code class="docutils literal notranslate"><span class="pre">=A1#</span></code></p></li>
-</ul>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="logic-loops-tbd">
+<h1>Logic Loops - TBD<a class="headerlink" href="#logic-loops-tbd" title="Link to this heading">#</a></h1>
 </section>
 
 
@@ -448,20 +411,20 @@ you’ll be greatly annoyed when you go through a big project and have to swap a
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../web/css/cheatsheet.html"
+       href="1_functions.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Cascading Style Sheets (CSS)</p>
+        <p class="prev-next-title">Functions - TBD</p>
       </div>
     </a>
     <a class="right-next"
-       href="git.html"
+       href="lib_regex.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Git Version Control (CI/CD) DevOps</p>
+        <p class="prev-next-title">Lib - Regex</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -471,24 +434,6 @@ you’ll be greatly annoyed when you go through a big project and have to swap a
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-<div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-  </div>
-  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-define-custom-functions-without-vba-xlsm-m365-lambda-functions">How to define custom functions (without vba/.xlsm) - M365 Lambda Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-reference-a-matrix">How to reference a matrix</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

@@ -1,0 +1,26 @@
+# File I/O
+
+## How to read an entire File
+
+```rust
+fn read_data(filename: &str) -> String{
+    let mut file = File::open(filename).expect("unable to open file");
+    let mut content = String::new();
+    file.read_to_string(&mut content);
+    // println!("{content}");
+    content
+}
+```
+
+## How to return an iter of lines
+
+```rust
+fn read_data(filename: &str) -> Vec<String> {
+    let file = File::open(filename).expect("unable to open file");
+    let reader = io::BufReader::new(&file);
+    let lines: Vec<String> = reader.lines().map(|line|line.expect("unable to parse line")).collect();
+    lines
+}
+```
+
+
