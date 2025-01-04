@@ -2,7 +2,7 @@
 
 ## Setup
 
-- To add python to PATH: `export PATH="/C/Users\<user>\AppData\Local\Programs\Python\Python38:$PATH"`
+- To add python to PATH (note this appends to path, simply put `$PATH:...` for prepend): `export PATH="/C/Users\<user>\AppData\Local\Programs\Python\Python38:$PATH"`
 - To add python scripts (pytest etc.) to PATH: `export PATH="/C/Users\<user>\AppData\Local\Programs\Python\Python38\Scripts:$PATH"`
 - To add java to PATH: `export PATH="/C/Users/<user>/AppData/Local/Programs/AdoptOpenJDK/jdk-11.0.8.10-hotspot/bin:$PATH"`
 - To set an alias: `alias python38="winpty /C/Users\<user>\AppData\Local\Programs\Python\Python38\python.exe"
@@ -37,7 +37,7 @@
 
 ## File Permissions
 
-- To get list of files/folders with permission levels in your current working directory: `dir -la`
+- To get list of files/folders with permission levels in your current working directory: `dir -la` or `ll`
 - To change file/folder permissions: `chmod -R u=rwx folder`
 
     - `-R` is recursively change all files/folder under the given folder
@@ -46,9 +46,29 @@
 
 - To change group of a file/folder: `chgrp new_groupname file.txt`
 - To check which groups you belong to: `groups`
+- numbering cheatsheet
 
+    - 0 = none
+    - 1 = execute
+    - 2 = write
+    - 3 = write + execute
+    - 4 = read
+    - 5 = read + execute
+    - 6 = read + write
+    - 7 = all
+
+- sticky bits allows more control over files in a folder. If sticky bit is set on a folder only the root owner and directory owner can rename/delete files, otherwise anyone with write/execute can rename/delete. You set sticky on a folder by `chmod +t .` or `chmod 0### .` where ### is whatever regular permissions you want
+
+## How to find/grep
+To be safe always put what you are trying to match in `"this.*"` so that regex works correctly
+
+- `-r` recursive
+- `-i` ignore case
+- `-w` whole word match
+- Find folder name: `find -type d | grep "foldername"`
 
 ## Scripting
 
 - To print datetime: `date +%m%d%y` (note lower case is short form, upper case is long form)
 - To declare a variable in a script: `variable1 = "this"` and to call it `$variable1`
+

@@ -1,0 +1,22 @@
+# General Regex Cheat Sheet
+
+## Common
+
+- `^` starts with. Ex: `^(vik).*` matches all words starting with "vik" so also "viktor but not "novik"
+- `|` or operator. Ex: `(hi)|(hello)` match both hi and hello
+
+
+## Match no scientific shorthand number notation
+
+`(?<=\d|e|E\.)[-\+]` matches any of 
+
+1+4
+1-4
+1e+4
+1e-4
+1E+4
+1E-4
+and all additional with starting +/-
++1+4
++1-4
+...

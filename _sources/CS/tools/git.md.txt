@@ -57,7 +57,7 @@
 
 - To create an ignore files/file-types, create a .gitignore: `touch .gitignore`
 - By practice developers should only commit source files (no binaries, no .pyc files, no config files and etc.) ex; `*.pyc`
-- you can ignore all with `*` and then do a not ignore on specific files `!filename.py`
+- you can ignore all with `*` and then do a not ignore on specific files `!filename.py`. Note the order does matter!
 
 ## Remote
 

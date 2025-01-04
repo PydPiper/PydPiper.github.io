@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Web &#8212; Home</title>
+    <title>General Regex Cheat Sheet &#8212; Home</title>
   
   
   
@@ -45,13 +45,13 @@
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'CS/web/index';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CS/tools/regex';</script>
     <script src="../../_static/js/slideimg.js?v=f9c97fb0"></script>
     <link rel="icon" href="../../_static/favicon_light.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Cascading Style Sheets (CSS)" href="css/cheatsheet.html" />
-    <link rel="prev" title="Lib - Regex" href="../rust/lib_regex.html" />
+    <link rel="next" title="VS Code" href="vscode.html" />
+    <link rel="prev" title="Linux Cheatsheet" href="linux.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -220,6 +220,10 @@ document.write(`
   
 
   
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
 </div>
 
     </header>
@@ -326,20 +330,20 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../rust/lib_regex.html">Lib - Regex</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Web</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Web</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="css/cheatsheet.html">Cascading Style Sheets (CSS)</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../web/index.html">Web</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../web/css/cheatsheet.html">Cascading Style Sheets (CSS)</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tools</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../tools/excel.html">Microsoft Excel Tips/Tricks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tools/git.html">Git Version Control (CI/CD) DevOps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tools/jupyter.html">Juypter Notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tools/linux.html">Linux Cheatsheet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tools/regex.html">General Regex Cheat Sheet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tools/vscode.html">VS Code</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="excel.html">Microsoft Excel Tips/Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git.html">Git Version Control (CI/CD) DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jupyter.html">Juypter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux.html">Linux Cheatsheet</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">General Regex Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vscode.html">VS Code</a></li>
 </ul>
 </div>
 </nav></div>
@@ -380,7 +384,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Computer Science</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Web</li>
+    <li class="breadcrumb-item active" aria-current="page">General...</li>
   </ul>
 </nav>
 </div>
@@ -397,14 +401,29 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="web">
-<h1>Web<a class="headerlink" href="#web" title="Link to this heading">#</a></h1>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Web</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="css/cheatsheet.html">Cascading Style Sheets (CSS)</a></li>
+  <section class="tex2jax_ignore mathjax_ignore" id="general-regex-cheat-sheet">
+<h1>General Regex Cheat Sheet<a class="headerlink" href="#general-regex-cheat-sheet" title="Link to this heading">#</a></h1>
+<section id="common">
+<h2>Common<a class="headerlink" href="#common" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">^</span></code> starts with. Ex: <code class="docutils literal notranslate"><span class="pre">^(vik).*</span></code> matches all words starting with “vik” so also “viktor but not “novik”</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">|</span></code> or operator. Ex: <code class="docutils literal notranslate"><span class="pre">(hi)|(hello)</span></code> match both hi and hello</p></li>
 </ul>
-</div>
+</section>
+<section id="match-no-scientific-shorthand-number-notation">
+<h2>Match no scientific shorthand number notation<a class="headerlink" href="#match-no-scientific-shorthand-number-notation" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">(?&lt;=\d|e|E\.)[-\+]</span></code> matches any of</p>
+<p>1+4
+1-4
+1e+4
+1e-4
+1E+4
+1E-4
+and all additional with starting +/-
++1+4
++1-4
+…</p>
+</section>
 </section>
 
 
@@ -418,20 +437,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../rust/lib_regex.html"
+       href="linux.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Lib - Regex</p>
+        <p class="prev-next-title">Linux Cheatsheet</p>
       </div>
     </a>
     <a class="right-next"
-       href="css/cheatsheet.html"
+       href="vscode.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Cascading Style Sheets (CSS)</p>
+        <p class="prev-next-title">VS Code</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -441,6 +460,24 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common">Common</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#match-no-scientific-shorthand-number-notation">Match no scientific shorthand number notation</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
