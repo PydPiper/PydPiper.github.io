@@ -45,13 +45,12 @@
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'CS/python/2_class';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CS/python/class';</script>
     <script src="../../_static/js/slideimg.js?v=f9c97fb0"></script>
-    <link rel="icon" href="../../_static/favicon_light.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Tuples, Lists, Sets, Dictionaries" href="2_containers.html" />
-    <link rel="prev" title="Python Cheat Sheet" href="1_cheatsheet.html" />
+    <link rel="next" title="Python Functions" href="functions.html" />
+    <link rel="prev" title="Python Quick Starter" href="0_quickstart.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -310,40 +309,21 @@ document.write(`
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
 <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0_cheatsheet.html">Python Cheat Sheet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="0_quickstart.html">Python Quick Starter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_cheatsheet.html">Python Cheat Sheet</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Python Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2_containers.html">Tuples, Lists, Sets, Dictionaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2_functions.html">Python Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2_logicloops.html">Python Logic Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">Python Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lib_numpy.html">lib - Numpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lib_pytest.html">lib - Testing (unittest/pytest)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lib_sphinx.html">lib - sphinx (Python Documentation)</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Rust</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../rust/0_gettingstarted.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rust/1_data_types.html">Data Types</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rust/1_fileIO.html">File I/O</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rust/1_functions.html">Functions - TBD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rust/1_logic_loops.html">Logic Loops - TBD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rust/lib_regex.html">Lib - Regex</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logicloops.html">Python Logic Loops</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Web</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../web/index.html">Web</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../web/css/cheatsheet.html">Cascading Style Sheets (CSS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../web/css/cheatsheet.html">CSS Cheatsheet</a></li>
 </ul>
 </details></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tools</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../tools/excel.html">Microsoft Excel Tips/Tricks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tools/git.html">Git Version Control (CI/CD) DevOps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tools/jupyter.html">Juypter Notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tools/linux.html">Linux Cheatsheet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tools/regex.html">General Regex Cheat Sheet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tools/vscode.html">VS Code</a></li>
 </ul>
 </div>
 </nav></div>
@@ -406,7 +386,7 @@ document.write(`
 <section id="class-object-versus-class-object-instance">
 <h2>Class object versus Class object instance<a class="headerlink" href="#class-object-versus-class-object-instance" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>define a class <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p></li>
+<li><p>define a class <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 <span class="k">class</span> <span class="nc">Circle</span><span class="p">():</span>
@@ -643,7 +623,7 @@ circle2 is now instanced via CLASSMETHOD, and all of the regular functionality i
 <section id="double-underscore-methods-dunder">
 <h2>Double underscore methods (dunder)<a class="headerlink" href="#double-underscore-methods-dunder" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>define a class with <a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#object.__init__" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">object.__init__</span></code></a>, <a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#object.__repr__" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">object.__repr__</span></code></a>, <a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#object.__call__" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">object.__call__</span></code></a></p></li>
+<li><p>define a class with <a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#object.__init__" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">object.__init__</span></code></a>, <a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#object.__repr__" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">object.__repr__</span></code></a>, <a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#object.__call__" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">object.__call__</span></code></a></p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 <span class="k">class</span> <span class="nc">Circle</span><span class="p">():</span>
@@ -692,7 +672,7 @@ circle2 is now instanced via CLASSMETHOD, and all of the regular functionality i
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>call/use <a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#object.__init__" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">object.__init__</span></code></a> (class instance initialization)</p></li>
+<li><p>call/use <a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#object.__init__" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">object.__init__</span></code></a> (class instance initialization)</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 <span class="c1"># INIT call/use</span>
@@ -700,7 +680,7 @@ circle2 is now instanced via CLASSMETHOD, and all of the regular functionality i
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>call/use <a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#object.__repr__" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">object.__repr__</span></code></a> (class text representation, note this also works for `str(func()))</p></li>
+<li><p>call/use <a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#object.__repr__" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">object.__repr__</span></code></a> (class text representation, note this also works for `str(func()))</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 <span class="n">circle1</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
@@ -713,7 +693,7 @@ circle2 is now instanced via CLASSMETHOD, and all of the regular functionality i
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>call/use <a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#object.__call__" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">object.__call__</span></code></a> (call return of the class, ex: <code class="docutils literal notranslate"><span class="pre">func()</span></code>)</p></li>
+<li><p>call/use <a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#object.__call__" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">object.__call__</span></code></a> (call return of the class, ex: <code class="docutils literal notranslate"><span class="pre">func()</span></code>)</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 <span class="n">circle1</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
@@ -725,7 +705,7 @@ circle2 is now instanced via CLASSMETHOD, and all of the regular functionality i
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>call/use <a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#object.__add__" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">object.__add__</span></code></a> and other math dunder’s</p></li>
+<li><p>call/use <a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#object.__add__" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">object.__add__</span></code></a> and other math dunder’s</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 <span class="n">circle1</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
@@ -1006,20 +986,20 @@ range of IDs were given) and we would like to create multiple unique classes out
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="1_cheatsheet.html"
+       href="0_quickstart.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Python Cheat Sheet</p>
+        <p class="prev-next-title">Python Quick Starter</p>
       </div>
     </a>
     <a class="right-next"
-       href="2_containers.html"
+       href="functions.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tuples, Lists, Sets, Dictionaries</p>
+        <p class="prev-next-title">Python Functions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1081,7 +1061,7 @@ range of IDs were given) and we would like to create multiple unique classes out
 
   <p class="copyright">
     
-      © Copyright 2025, Viktor Kis.
+      © Copyright 2024, Viktor Kis.
       <br/>
     
   </p>
