@@ -44,3 +44,65 @@ let myint4: i32 = *myint3 + 1;
 // all the same for floats as ints, for example
 let pi: f32 = 3.14;
 ```
+
+## Char / String / Str Slice
+
+A single character is a `char` and it is in single quotes
+```rust
+// char is a single character. IMPORTANT: this is subtle but notice a char is '' not "" because "" is reserved for strings
+let mychar: char = 'a';
+```
+
+String vs String Slice (&str)
+- by default "some text" is a `String Slice` in Rust unless casted to `String` explicitly
+- `String` is mutable (if defined `mut`) these are OWNED, vs `String Slice` is immutable reference (BORROWED)
+- Strings because they are mutable are allocated on the HEAP and because of that are slow to access
+- &str are fixed in size and are references to a specific location on the STACK, thus they are very fast to access
+
+Strings
+```rust
+// there are 2 ways to define a string:
+// NOTE: : is for decleration, :: is for accessing functions/methods/constants of a type
+let mut mystr1: String = "Hello".to_string(); // converted from String Slice with .to_string()
+let mut mystr2: String = String::from("Hello"); // converted from String
+// to add to string, we push
+mystr1.push_str(" Vik");
+println!("{mystr1}");
+```
+
+String Slice
+```rust
+let mystr3: &str = &mystr1;
+// note that technically the above is a slice of the entire string, we can also slice it down by
+let mystr4: &str = &mystr1[..5];
+println!("{mystr4}");
+// to key onto a specific char you have to turn it into an iter
+let mychar1 = &mystr1.chars().nth(1).unwrap();
+```
+
+How to combine strings
+```rust
+// combine strings
+let mystr5 = "hi".to_string();
+let mystr6 = "Vik".to_string();
+
+let mystr7 = format!("Combined via format!: {mystr5} {mystr6}!");
+
+// alternatively you can use array/vec join
+let my_string_arr: [&str;2] = [&mystr5, &mystr6];
+let my_string = my_string_arr.join(" ");
+println!("{my_string}");
+```
+
+How to split strings
+```rust
+// how to split on space(s)
+let split_str: Vec<&str> = "this has   many  spaces".to_string().split_whitespace().collect();
+```
+
+How to type convert strings (ex: string int to int)
+```rust
+// how to type convert
+let split_int: Vec<i32> = "1,2,3,4".split(',').map(|val|val.parse::<i32>().unwrap()).collect();
+
+```
