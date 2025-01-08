@@ -28,7 +28,7 @@ myint1 += 1;
 // this is a mutable int
 let mut myint2: i32 = 0;
 myint2 += 1;
-
+```
 
 Pointer and de-referencing
 ```rust
