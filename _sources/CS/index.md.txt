@@ -13,17 +13,17 @@
     :maxdepth: 1
     :titlesonly:
     :glob:
-    :caption: Python
+    :caption: Rust
 
-    python/*
+    rust/*
 
 .. toctree::
     :maxdepth: 1
     :titlesonly:
     :glob:
-    :caption: Rust
+    :caption: Python
 
-    rust/*
+    python/*
 
 .. toctree::
     :maxdepth: 1

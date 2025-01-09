@@ -1,1 +1,154 @@
-# Data Types - TBD
+# Data Types
+
+General Notes:
+- By default all variables are immutable, you have to explicitly state `let mut ...` 
+
+
+## Boolean
+
+Mutable / Immutable
+```rust
+// immutable 
+let mybool1: bool = true;
+
+// mutable
+let mut mybool2: bool = true;
+mybool2 = false;
+```
+
+## Integers/Floats
+
+Mutable / Immutable
+```rust
+// without "mut" a primitive is immutable
+let myint1: i32 = 0;
+// this code errors because myint is immutable
+myint1 += 1;
+
+// this is a mutable int
+let mut myint2: i32 = 0;
+myint2 += 1;
+```
+
+Pointer and de-referencing
+```rust
+// this is a pointer to myint2, thus it shares memory
+let myint3: &i32 = &myint2;
+// this code error because a pointer is immutable by default
+myint3 += 1;
+
+// what you can do is de-reference the pointer with *
+// NOTE however arithmetic operation is Rust by default auto-dereference so * here is redundant (but explicit)
+let myint4: i32 = *myint3 + 1;
+
+// all the same for floats as ints, for example
+let pi: f32 = 3.14;
+```
+
+## Char / String / Str Slice
+
+A single character is a `char` and it is in single quotes
+```rust
+// char is a single character. IMPORTANT: this is subtle but notice a char is '' not "" because "" is reserved for strings
+let mychar: char = 'a';
+```
+
+String vs String Slice (&str)
+
+- by default "some text" is a `String Slice` in Rust unless casted to `String` explicitly
+- `String` is mutable (if defined `mut`) these are OWNED, vs `String Slice` is immutable reference (BORROWED)
+- Strings because they are mutable are allocated on the HEAP and because of that are slow to access
+- &str are fixed in size and are references to a specific location on the STACK, thus they are very fast to access
+
+Strings
+```rust
+// there are 2 ways to define a string:
+// NOTE: : is for decleration, :: is for accessing functions/methods/constants of a type
+let mut mystr1: String = "Hello".to_string(); // converted from String Slice with .to_string()
+let mut mystr2: String = String::from("Hello"); // converted from String
+// to add to string, we push
+mystr1.push_str(" Vik");
+println!("{mystr1}");
+```
+
+String Slice
+```rust
+let mystr3: &str = &mystr1;
+// note that technically the above is a slice of the entire string, we can also slice it down by
+let mystr4: &str = &mystr1[..5];
+println!("{mystr4}");
+// to key onto a specific char you have to turn it into an iter
+let mychar1 = &mystr1.chars().nth(1).unwrap();
+```
+
+How to combine strings
+```rust
+// combine strings
+let mystr5 = "hi".to_string();
+let mystr6 = "Vik".to_string();
+
+let mystr7 = format!("Combined via format!: {mystr5} {mystr6}!");
+
+// alternatively you can use array/vec join
+let my_string_arr: [&str;2] = [&mystr5, &mystr6];
+let my_string = my_string_arr.join(" ");
+println!("{my_string}");
+```
+
+How to split strings
+```rust
+// how to split on space(s)
+let split_str: Vec<&str> = "this has   many  spaces".to_string().split_whitespace().collect();
+```
+
+How to type convert strings (ex: string int to int)
+```rust
+// how to type convert
+let split_int: Vec<i32> = "1,2,3,4".split(',').map(|val|val.parse::<i32>().unwrap()).collect();
+
+```
+
+# Arrays
+These are fixed sized, same type values
+
+
+How to define an array
+```rust
+// define it with [type;size]
+let numbers1 = [1,2,3];
+let numbers2: [i32; 3] = [1,2,3];
+// note because there is no default string formatter for arrays you can use debug formatter
+println!("{:?} with index 0 = {}", numbers2, numbers2[0]);
+
+// how to init an array (repeat) with values, ex: fill array with 10s for size 3 array
+// IMPORTANT: size has to be a constant during compile time. Therefore you cannot dynamically set this lets say from a len() of something
+// for that use vec instead
+let numbers3 = [10; 3];
+
+// by default all things in Rust are immutable so if we wanted to update an array we have to declare it mut
+let mut numbers4: [i32;3] = [1,2,3];
+numbers4[0] = 10;
+println!("{numbers4:?}");
+```
+
+How to slice an array
+```rust
+let numberslice: &[i32] = &numbers2[..2];
+println!("{numberslice:?}");
+```
+
+## Tuples
+- tuples are fixed size but of mixed type
+- unlike in arrays, we do not need to specify types (Rust will infer it if you want, nor do we need to specify size)
+
+```rust
+let mytuple1 = (3, true);
+let mytuple2: (i32, bool) = (3, true);
+
+// by default all things in Rust are immutable so if we wanted to change index 0 we would have to declare it mut
+let mut mytuple3: (i32,bool) = (3, true);
+// note that tuple indexing is different than other types (array/vec) it is done with .0
+mytuple3.0 = 5;
+// note while this tuple is mutable, you cannot change its original index type
+mytuple3.0 = true; // this will throw an error
+```

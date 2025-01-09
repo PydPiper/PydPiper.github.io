@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Data Types - TBD &#8212; Home</title>
+    <title>Data Types &#8212; Home</title>
   
   
   
@@ -220,6 +220,10 @@ document.write(`
   
 
   
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
 </div>
 
     </header>
@@ -304,6 +308,16 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../AI/minimax.html">Minimax, AlphaBeta Pruning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../AI/search.html">Search Algorithms</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Rust</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0_gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data Types</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="1_fileIO.html">File I/O</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_functions.html">Functions - TBD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_logic_loops.html">Logic Loops - TBD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lib_regex.html">Lib - Regex</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../python/0_quickstart.html">Python Quick Starter</a></li>
@@ -315,15 +329,6 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../python/lib_numpy.html">lib - Numpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python/lib_pytest.html">lib - Testing (unittest/pytest)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python/lib_sphinx.html">lib - sphinx (Python Documentation)</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Rust</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="0_gettingstarted.html">Getting Started</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data Types - TBD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_fileIO.html">File I/O</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_functions.html">Functions - TBD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_logic_loops.html">Logic Loops - TBD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lib_regex.html">Lib - Regex</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Web</span></p>
 <ul class="nav bd-sidenav">
@@ -338,6 +343,7 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../tools/git.html">Git Version Control (CI/CD) DevOps</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/jupyter.html">Juypter Notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/linux.html">Linux Cheatsheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/regex.html">General Regex Cheat Sheet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/vscode.html">VS Code</a></li>
 </ul>
 </div>
@@ -379,7 +385,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Computer Science</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Data Types - TBD</li>
+    <li class="breadcrumb-item active" aria-current="page">Data Types</li>
   </ul>
 </nav>
 </div>
@@ -396,8 +402,154 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="data-types-tbd">
-<h1>Data Types - TBD<a class="headerlink" href="#data-types-tbd" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="data-types">
+<h1>Data Types<a class="headerlink" href="#data-types" title="Link to this heading">#</a></h1>
+<p>General Notes:</p>
+<ul class="simple">
+<li><p>By default all variables are immutable, you have to explicitly state <code class="docutils literal notranslate"><span class="pre">let</span> <span class="pre">mut</span> <span class="pre">...</span></code></p></li>
+</ul>
+<section id="boolean">
+<h2>Boolean<a class="headerlink" href="#boolean" title="Link to this heading">#</a></h2>
+<p>Mutable / Immutable</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// immutable </span>
+<span class="kd">let</span><span class="w"> </span><span class="n">mybool1</span><span class="p">:</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+
+<span class="c1">// mutable</span>
+<span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">mybool2</span><span class="p">:</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="n">mybool2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="integers-floats">
+<h2>Integers/Floats<a class="headerlink" href="#integers-floats" title="Link to this heading">#</a></h2>
+<p>Mutable / Immutable</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// without &quot;mut&quot; a primitive is immutable</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">myint1</span><span class="p">:</span><span class="w"> </span><span class="kt">i32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="c1">// this code errors because myint is immutable</span>
+<span class="n">myint1</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="c1">// this is a mutable int</span>
+<span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">myint2</span><span class="p">:</span><span class="w"> </span><span class="kt">i32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">myint2</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Pointer and de-referencing</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// this is a pointer to myint2, thus it shares memory</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">myint3</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">i32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">myint2</span><span class="p">;</span>
+<span class="c1">// this code error because a pointer is immutable by default</span>
+<span class="n">myint3</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="c1">// what you can do is de-reference the pointer with *</span>
+<span class="c1">// NOTE however arithmetic operation is Rust by default auto-dereference so * here is redundant (but explicit)</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">myint4</span><span class="p">:</span><span class="w"> </span><span class="kt">i32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">myint3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="c1">// all the same for floats as ints, for example</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">pi</span><span class="p">:</span><span class="w"> </span><span class="kt">f32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="char-string-str-slice">
+<h2>Char / String / Str Slice<a class="headerlink" href="#char-string-str-slice" title="Link to this heading">#</a></h2>
+<p>A single character is a <code class="docutils literal notranslate"><span class="pre">char</span></code> and it is in single quotes</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// char is a single character. IMPORTANT: this is subtle but notice a char is &#39;&#39; not &quot;&quot; because &quot;&quot; is reserved for strings</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">mychar</span><span class="p">:</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;a&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>String vs String Slice (&amp;str)</p>
+<ul class="simple">
+<li><p>by default “some text” is a <code class="docutils literal notranslate"><span class="pre">String</span> <span class="pre">Slice</span></code> in Rust unless casted to <code class="docutils literal notranslate"><span class="pre">String</span></code> explicitly</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">String</span></code> is mutable (if defined <code class="docutils literal notranslate"><span class="pre">mut</span></code>) these are OWNED, vs <code class="docutils literal notranslate"><span class="pre">String</span> <span class="pre">Slice</span></code> is immutable reference (BORROWED)</p></li>
+<li><p>Strings because they are mutable are allocated on the HEAP and because of that are slow to access</p></li>
+<li><p>&amp;str are fixed in size and are references to a specific location on the STACK, thus they are very fast to access</p></li>
+</ul>
+<p>Strings</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// there are 2 ways to define a string:</span>
+<span class="c1">// NOTE: : is for decleration, :: is for accessing functions/methods/constants of a type</span>
+<span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">mystr1</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">();</span><span class="w"> </span><span class="c1">// converted from String Slice with .to_string()</span>
+<span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">mystr2</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span><span class="p">::</span><span class="n">from</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// converted from String</span>
+<span class="c1">// to add to string, we push</span>
+<span class="n">mystr1</span><span class="p">.</span><span class="n">push_str</span><span class="p">(</span><span class="s">&quot; Vik&quot;</span><span class="p">);</span>
+<span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{mystr1}&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>String Slice</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">mystr3</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">mystr1</span><span class="p">;</span>
+<span class="c1">// note that technically the above is a slice of the entire string, we can also slice it down by</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">mystr4</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">mystr1</span><span class="p">[</span><span class="o">..</span><span class="mi">5</span><span class="p">];</span>
+<span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{mystr4}&quot;</span><span class="p">);</span>
+<span class="c1">// to key onto a specific char you have to turn it into an iter</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">mychar1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">mystr1</span><span class="p">.</span><span class="n">chars</span><span class="p">().</span><span class="n">nth</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">unwrap</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>How to combine strings</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// combine strings</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">mystr5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hi&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">();</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">mystr6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Vik&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">();</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="n">mystr7</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">format!</span><span class="p">(</span><span class="s">&quot;Combined via format!: {mystr5} {mystr6}!&quot;</span><span class="p">);</span>
+
+<span class="c1">// alternatively you can use array/vec join</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">my_string_arr</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="o">&amp;</span><span class="kt">str</span><span class="p">;</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="o">&amp;</span><span class="n">mystr5</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">mystr6</span><span class="p">];</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">my_string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">my_string_arr</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span>
+<span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{my_string}&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>How to split strings</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// how to split on space(s)</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">split_str</span><span class="p">:</span><span class="w"> </span><span class="nb">Vec</span><span class="o">&lt;&amp;</span><span class="kt">str</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;this has   many  spaces&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">().</span><span class="n">split_whitespace</span><span class="p">().</span><span class="n">collect</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>How to type convert strings (ex: string int to int)</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// how to type convert</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">split_int</span><span class="p">:</span><span class="w"> </span><span class="nb">Vec</span><span class="o">&lt;</span><span class="kt">i32</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;1,2,3,4&quot;</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="sc">&#39;,&#39;</span><span class="p">).</span><span class="n">map</span><span class="p">(</span><span class="o">|</span><span class="n">val</span><span class="o">|</span><span class="n">val</span><span class="p">.</span><span class="n">parse</span><span class="p">::</span><span class="o">&lt;</span><span class="kt">i32</span><span class="o">&gt;</span><span class="p">().</span><span class="n">unwrap</span><span class="p">()).</span><span class="n">collect</span><span class="p">();</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="arrays">
+<h1>Arrays<a class="headerlink" href="#arrays" title="Link to this heading">#</a></h1>
+<p>These are fixed sized, same type values</p>
+<p>How to define an array</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// define it with [type;size]</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">numbers1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">];</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">numbers2</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="kt">i32</span><span class="p">;</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">];</span>
+<span class="c1">// note because there is no default string formatter for arrays you can use debug formatter</span>
+<span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{:?} with index 0 = {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">numbers2</span><span class="p">,</span><span class="w"> </span><span class="n">numbers2</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+
+<span class="c1">// how to init an array (repeat) with values, ex: fill array with 10s for size 3 array</span>
+<span class="c1">// IMPORTANT: size has to be a constant during compile time. Therefore you cannot dynamically set this lets say from a len() of something</span>
+<span class="c1">// for that use vec instead</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">numbers3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="mi">3</span><span class="p">];</span>
+
+<span class="c1">// by default all things in Rust are immutable so if we wanted to update an array we have to declare it mut</span>
+<span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">numbers4</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="kt">i32</span><span class="p">;</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">];</span>
+<span class="n">numbers4</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{numbers4:?}&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>How to slice an array</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">numberslice</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="p">[</span><span class="kt">i32</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">numbers2</span><span class="p">[</span><span class="o">..</span><span class="mi">2</span><span class="p">];</span>
+<span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{numberslice:?}&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<section id="tuples">
+<h2>Tuples<a class="headerlink" href="#tuples" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>tuples are fixed size but of mixed type</p></li>
+<li><p>unlike in arrays, we do not need to specify types (Rust will infer it if you want, nor do we need to specify size)</p></li>
+</ul>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">mytuple1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">mytuple2</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+
+<span class="c1">// by default all things in Rust are immutable so if we wanted to change index 0 we would have to declare it mut</span>
+<span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">mytuple3</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="kt">i32</span><span class="p">,</span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="c1">// note that tuple indexing is different than other types (array/vec) it is done with .0</span>
+<span class="n">mytuple3</span><span class="p">.</span><span class="mi">0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="c1">// note while this tuple is mutable, you cannot change its original index type</span>
+<span class="n">mytuple3</span><span class="p">.</span><span class="mi">0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"> </span><span class="c1">// this will throw an error</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 
@@ -434,6 +586,33 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Data Types</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean">Boolean</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integers-floats">Integers/Floats</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#char-string-str-slice">Char / String / Str Slice</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#arrays">Arrays</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples">Tuples</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
