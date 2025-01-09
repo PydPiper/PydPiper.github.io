@@ -1,0 +1,201 @@
+# lib - Numpy
+
+## High level concepts
+
+- if you are using `for` loops with numpy, you are most likely not computing efficiently. Numpy matrix operations are vectorized that are meant to work on entire matrix operations, rather than looping through rows/columns/indexes.
+- axis=0 is rows
+- axis=1 is columns
+- arrays should be of same type, they dont have to be but thats good practice
+
+**Useful Resources**
+
+- good start guide: [numpy quickstart](https://numpy.org/doc/stable/user/quickstart.html#basic-operations)
+- good resource: [jupyternotebook](https://nbviewer.org/github/ageron/handson-ml/blob/master/tools_numpy.ipynb)
+- understand boardcasting: [numpy](https://numpy.org/devdocs/user/basics.broadcasting.html)
+
+
+## How to define an array
+
+```python
+# 1D (1 row 3 columns)
+np.array([1,2,3])
+>>> array([1, 2, 3])
+# 2D, note that all columns are the same size (2 rows, 3 columns)
+np.array([[1,2,3],[4,5,6]])
+>>> array([[1, 2, 3],
+       [4, 5, 6]])
+
+# define the type of array
+np.array([1,2,3], dtype=np.int32)
+>>> array([1, 2, 3])
+np.array([1,2,3], dtype=np.float64)
+>>> array([1., 2., 3.])
+```
+
+## How to initialize an array
+
+```python
+# initialize array (3 rows, 2 columns)
+np.zeros(shape=(3,2)) 
+>>> array([[0., 0.],
+       [0., 0.],
+       [0., 0.]])
+
+# initialize a string (char) array
+# note itemsize=# must encompass your data otherwise it will be truncated
+np.chararray(shape=(3,3), itemsize=3)
+# this will dump whatever is in memory as initialization, note they are all binary
+>>> chararray([[b'np.', b'cha', b'rar'],
+           [b'ray', b'(sh', b'ape'],
+           [b'=(3', b',3)', b', i']], dtype='|S3') 
+
+# custom initialization
+
+
+# range initialize
+a = np.arange(5)
+>>> array([0, 1, 2, 3, 4])
+# range with conditional initialization, read this as: (condition, True values, False values)
+np.where(a < 2, a, 10*a)
+>>> array([ 0,  1, 20, 30, 40])
+```
+
+## How to assemble a array on the fly
+
+```python
+# row add
+np.vstack
+
+# column add
+np.hstack
+```
+
+## How to get an index/row/column
+
+```python
+a = np.array([[1,2,3],[4,5,6],[7,8,9]])
+>>> array([[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]])
+
+# get row=0, column=0
+a[0][0]
+>>> 1
+
+# get row 0
+a[0]
+>>> array([1, 2, 3])
+
+# get column 0, note this did not come out in column format
+a[:,0]
+>>> array([1, 4, 7])
+# if you wanted this in column format do
+a[:,0].reshape(a.shape[0],1)
+>>> array([[1],
+       [4],
+       [7]])
+
+# get the index of a location:
+# ex: get me the row index where col0 < 5 and col1 < 6
+np.where((a[:,0] < 5) & (a[:,1] < 6))
+# thats rows 0 and 1
+(array([0, 1], dtype=int64),)
+```
+
+## How to delete a row/column
+
+```python
+a = np.array([[1,2,3],[4,5,6],[7,8,9]])
+>>> array([[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]])
+
+# delete the 0th and 2th row, remember axis=0 is row
+np.delete(a, (0,2), axis=0)
+>>> array([[4, 5, 6]])
+```
+
+## How to convert array types
+
+```python
+a = np.array([[1,2,3],[4,5,6],[7,8,9]])
+>>> array([[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]])
+
+a.astype(str)
+array([['1', '2', '3'],
+       ['4', '5', '6'],
+       ['7', '8', '9']], dtype='<U11')
+```
+
+## How to flatten a nested array
+
+```python
+a = np.array([[1,2,3],[4,5,6],[7,8,9]])
+>>> array([[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]])
+
+a.flatten()
+>>> array([1, 2, 3, 4, 5, 6, 7, 8, 9])     
+```
+
+## Vectorized Functions
+
+- This isnt so much as a speed boost as a convenient way of passing a array to a function and getting back a array out of it, even though the function is written up to operate on single values
+
+```python
+a = np.array([[1,2],[3,4]])
+>>> array([[1, 2],
+       [3, 4]])
+
+vect_add = np.vectorize(lambda a,b: a+b)
+# add column 1 to column 2
+vect_add(a[:,0],a[:1])
+```
+
+## Conditional Logic: where, einsum
+
+- einsum resouce: [stackoverflow](https://stackoverflow.com/questions/26089893/understanding-numpys-einsum)
+- `and` operation is `&`
+- `or` operation is `|`
+
+```
+a = np.array([[1,2,3],[4,5,6],[7,8,9]])
+>>> array([[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]])
+
+# get a new array that's capped its values at 5 
+np.where(a < 5, a, 5)
+>>> array([[1, 2, 3],
+       [4, 5, 5],
+       [5, 5, 5]])
+```
+
+## Save/Load arrays
+
+```python
+a = np.array([[1,2,3],[4,5,6],[7,8,9]])
+>>> array([[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]])
+
+with open('array.np', 'wb') as f:
+    np.save(f, a)
+
+with open('array.np', 'rb') as f:
+    a = np.load(f)
+```
+
+## Common Useful Methods of Numpy
+
+- mean, std, random (shuffle), randint, cov, linalg.det dot inv,unique, concatenate
+
+## How to access multiple columns of a structured array
+
+```python
+a = np.array([[1,2,3],[4,5,6]], dtype=[('col1','float32'),('col2','float32'),('col3','float32')])
+a[['col1','col2']]
+```

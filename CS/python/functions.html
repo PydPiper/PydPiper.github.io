@@ -1,0 +1,856 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="dark">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Python Functions &#8212; Home</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "dark";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/mycustom.css?v=650cd416" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CS/python/functions';</script>
+    <script src="../../_static/js/slideimg.js?v=f9c97fb0"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="lib - Numpy" href="lib_numpy.html" />
+    <link rel="prev" title="Python Class" href="class.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="dark">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/favicon_dark.png" class="logo__image only-dark" alt="Home - Home"/>
+    <script>document.write(`<img src="../../_static/favicon_light.png" class="logo__image only-light" alt="Home - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Computer Science
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../ME/index.html">
+    Mechanical Engineering
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../math/index.html">
+    Math
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Computer Science
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../ME/index.html">
+    Mechanical Engineering
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../math/index.html">
+    Math
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Artificial Intelligence</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../AI/bayesnet.html">Bayes Theorem/Network (Probability Relations)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AI/gmm.html">Gaussian Mixture Model (GMM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AI/knn.html">K-means Clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AI/minimax.html">Minimax, AlphaBeta Pruning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AI/search.html">Search Algorithms</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0_cheatsheet.html">Python Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0_quickstart.html">Python Quick Starter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class.html">Python Class</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Python Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lib_numpy.html">lib - Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lib_pytest.html">lib - Testing (unittest/pytest)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lib_sphinx.html">lib - sphinx (Python Documentation)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logicloops.html">Python Logic Loops</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Web</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../web/index.html">Web</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../web/css/cheatsheet.html">CSS Cheatsheet</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Computer Science</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Python Functions</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="python-functions">
+<h1>Python Functions<a class="headerlink" href="#python-functions" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Note that all functions in python end with a return, even when a <code class="docutils literal notranslate"><span class="pre">return</span></code> is not explicitly typed out in your code (of course this is only true if an exception is not raise within the function). When a <code class="docutils literal notranslate"><span class="pre">return</span></code> is not present within a function, the function will simply <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">None</span></code>.</p></li>
+<li><p>Note that local variable data will only be stored in memory while the code is within the function loop. Meaning, a variable within a function can only be called within the function (unless its made <code class="docutils literal notranslate"><span class="pre">global</span></code>)</p></li>
+</ul>
+<section id="syntax">
+<h2>Syntax<a class="headerlink" href="#syntax" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="c1"># bare minimum</span>
+<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">arg1</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">arg2</span><span class="p">)</span>
+
+<span class="c1"># python version 3.5+ added type-hints that improves your editors inline error handling,</span>
+<span class="c1">#  testing, linters, etc.</span>
+<span class="c1"># to be explicit: everything on line 7 is type-hints. Lines 8-14 is your docstring</span>
+<span class="c1">#  (for when you call help(foo), or autodoc)</span>
+<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">arg1</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">arg2</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="s2">&quot;0&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Simple add function</span>
+
+<span class="sd">    :param (int) arg1: positional argument one</span>
+<span class="sd">    :param (str) arg2: positional argument two</span>
+<span class="sd">    :return (int): addition of arg1 + arg2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">arg1</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">arg2</span><span class="p">)</span>
+
+<span class="c1"># lamba function (no-name function, or inline function definition)</span>
+<span class="k">lambda</span> <span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">:</span> <span class="n">arg1</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">arg2</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="all-about-variables">
+<h2>All about variables<a class="headerlink" href="#all-about-variables" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>mandatory vs optional arguments</p>
+<ul>
+<li><p>arg1 is mandatory because it has no predefined value</p></li>
+<li><p>arg2 is optional because it has a predefined value of “0”, therefore foo can be called by
+<code class="docutils literal notranslate"><span class="pre">foo(1)</span></code> or <code class="docutils literal notranslate"><span class="pre">foo(1,&quot;0&quot;)</span></code> both returning the same value</p></li>
+</ul>
+</li>
+<li><p>positional vs. keyword arguments. Note that data must be entered in a positional order, unless it’s fed with keyword arguments (see example below)</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="c1"># from the syntax example above with foo():</span>
+
+<span class="c1"># call a function with positionals</span>
+<span class="n">foo</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;2&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">3</span>
+
+<span class="c1"># call a function by unpacking positionals</span>
+<span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">]</span>
+<span class="n">foo</span><span class="p">(</span><span class="o">*</span><span class="n">mylist</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">3</span>
+
+<span class="c1"># call a function by keywords</span>
+<span class="n">foo</span><span class="p">(</span><span class="n">arg2</span><span class="o">=</span><span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="n">arg1</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">3</span>
+
+<span class="c1"># call a function by unpacking keywords</span>
+<span class="n">mydict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;arg2&quot;</span><span class="p">:</span><span class="s2">&quot;2, &quot;</span><span class="n">arg1</span><span class="s2">&quot;: 1}</span>
+<span class="n">foo</span><span class="p">(</span><span class="o">**</span><span class="n">mydict</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</section>
+<section id="common-pitfall-global-vs-local-vs-nonlocal">
+<h2>Common pitfall - Global vs Local vs NonLocal<a class="headerlink" href="#common-pitfall-global-vs-local-vs-nonlocal" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>General Global variable</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="c1"># global variable</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># by default, a function will only be able to access argument variable or variable defined</span>
+<span class="c1">#  within the function</span>
+<span class="n">func</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="ne">UnboundLocalError</span><span class="p">:</span> <span class="n">local</span> <span class="n">variable</span> <span class="s1">&#39;x&#39;</span> <span class="n">referenced</span> <span class="n">before</span> <span class="n">assignment</span>
+
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="mi">15</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>
+
+<span class="c1"># now both variable y and z are accessible, so there are no errors</span>
+<span class="n">func</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">10</span> <span class="mi">15</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Accessing a Global Variable</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="c1"># to access a global variable defined outside of the function</span>
+<span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">x</span>    <span class="c1"># make it accessible within the function</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">500</span>
+
+<span class="c1"># using &quot;global&quot; we can allow our function to reach outside the local variables and</span>
+<span class="c1">#  grab the variable &quot;x&quot;</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">func</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">5</span>
+<span class="c1"># notice no error this time, but be careful, the function also altered the value of &quot;x&quot;</span>
+<span class="c1"># note that &quot;x&quot; in the function is no longer a &quot;local&quot; variable, x is now globally redefined!</span>
+<span class="n">x</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">500</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Accessing a Nonlocal Variable (nested functions or loops within a function)</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="c1"># alternatively we can access variables from nested functions via &quot;nonlocal&quot;</span>
+<span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="k">def</span> <span class="nf">func2</span><span class="p">():</span>
+        <span class="k">nonlocal</span> <span class="n">y</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">func</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</section>
+<section id="call-function-by-its-string-name">
+<h2>Call function by its string name<a class="headerlink" href="#call-function-by-its-string-name" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Call a function by string when it is imported with <code class="docutils literal notranslate"><span class="pre">getattr()</span></code></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">import</span> <span class="nn">file1</span>
+
+<span class="c1"># in this case: getattr(module, a function is a property of a module)(arguments for function)</span>
+<span class="nb">getattr</span><span class="p">(</span><span class="n">file1</span> <span class="p">,</span> <span class="s2">&quot;foo&quot;</span><span class="p">)(</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;2&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Call a function by string in the same file with <code class="docutils literal notranslate"><span class="pre">globals()</span></code> <code class="docutils literal notranslate"><span class="pre">locals()</span></code></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="c1"># suppose we have a simple add function:</span>
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="c1"># locals and globals will return the same here</span>
+<span class="nb">locals</span><span class="p">()[</span><span class="s2">&quot;func&quot;</span><span class="p">](</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">3</span>
+<span class="nb">globals</span><span class="p">()[</span><span class="s2">&quot;func&quot;</span><span class="p">](</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">3</span>
+
+<span class="c1"># the difference between locals and globals comes in when a property is nested</span>
+<span class="k">def</span> <span class="nf">nest</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+    <span class="c1"># locals will look in the current layer (ie. within nest())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;from local: &quot;</span><span class="p">,</span> <span class="nb">locals</span><span class="p">()[</span><span class="s2">&quot;func&quot;</span><span class="p">](</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+    <span class="c1"># globals will look at the module layer</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;from global: &quot;</span><span class="p">,</span> <span class="nb">globals</span><span class="p">()[</span><span class="s2">&quot;func&quot;</span><span class="p">](</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">nest</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;from local: -1&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;from global: 3&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="function-dundur">
+<h2>Function dundur<a class="headerlink" href="#function-dundur" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="c1"># string name of a function</span>
+<span class="n">foo</span><span class="o">.</span><span class="vm">__name__</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;foo&#39;</span>
+
+<span class="c1"># list of arguments of a function</span>
+<span class="n">foo</span><span class="o">.</span><span class="vm">__code__</span><span class="o">.</span><span class="n">co_varnames</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="s1">&#39;arg1&#39;</span><span class="p">,</span> <span class="s1">&#39;arg2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="functional-programming-map-filter-and-reduce">
+<h2>functional programming: map, filter, and reduce<a class="headerlink" href="#functional-programming-map-filter-and-reduce" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="c1"># map works-on multiple iterables at the same time</span>
+<span class="c1">#   take the following 2 lists and a simple add function for instance</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span> <span class="c1"># 1+4, 2+5, 3+6</span>
+
+<span class="c1"># use filter to narrow down a iterable with a custom true/false function</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="k">def</span> <span class="nf">test_odd</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="c1"># returns 0 for even (same as true), 1 for odd (same as false)</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">test_odd</span><span class="p">,</span> <span class="n">a</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="c1"># or to remove a particular items from a list</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">),</span> <span class="n">a</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># use reduce to narrow down a iterable to a single value</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span>
+<span class="n">reduce</span><span class="p">(</span><span class="n">multiply</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">6</span>
+</pre></div>
+</div>
+</section>
+<section id="functional-programming-factory-closures-currying">
+<h2>functional programming - factory/closures/currying<a class="headerlink" href="#functional-programming-factory-closures-currying" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Factory - A function that keeps its own internal state (see example below)</p></li>
+<li><p>Closure - A “Factory” assigned to a variable</p></li>
+<li><p>Currying - Similar to a “Closure” but input arguments changes the functionality of the Closure</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="c1"># the following function is not a &quot;factory&quot; because its state is not internal</span>
+<span class="c1">#   meaning, that each instance of a function will carry the same state, see demo below:</span>
+<span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># some global initial state</span>
+<span class="k">def</span> <span class="nf">incrementer</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">counter</span> <span class="c1"># allow access to global variable &quot;counter&quot; within the function</span>
+    <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># increment the &quot;state&quot;, but note that counter is linked to a global state</span>
+    <span class="k">return</span> <span class="n">counter</span>
+
+<span class="n">incro1</span> <span class="o">=</span> <span class="n">incrementer</span><span class="p">()</span> <span class="c1"># if incrementer was a &quot;factory&quot;, incro1 would be called a &quot;Closure&quot;</span>
+<span class="n">incro2</span> <span class="o">=</span> <span class="n">incrementer</span><span class="p">()</span>
+
+<span class="c1"># it doesnt matter that we have 2 instances of the function,</span>
+<span class="c1">#   their &quot;state&quot; is linked to a global variable</span>
+<span class="n">incro1</span> <span class="c1"># incro1 was assigned as a function, therefore calling the function doesnt require another &quot;()&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span>
+
+<span class="c1"># we would expect that incro2 would also return 1 but their &quot;state&quot; is linked</span>
+<span class="n">incro2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Factory Function</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="c1"># this is what makes factories unique from regular functions,</span>
+<span class="c1">#   their internal state unique to each instance</span>
+<span class="k">def</span> <span class="nf">incrementer</span><span class="p">():</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># internal state set</span>
+    <span class="k">def</span> <span class="nf">return_func</span><span class="p">():</span>
+        <span class="k">nonlocal</span> <span class="n">counter</span> <span class="c1"># allow access to one level higher variable; ie. &quot;counter&quot;</span>
+        <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># change the internal state</span>
+        <span class="k">return</span> <span class="n">counter</span> <span class="c1"># this is whats ultimately returned when called by a &quot;Closure&quot;</span>
+    <span class="c1"># this is the tricky part...</span>
+    <span class="c1"># when incrementer is initially defined, it runs through the code inside the function</span>
+    <span class="c1"># sets initial &quot;counter&quot; state to 0</span>
+    <span class="c1"># setups up a function &quot;return_func()&quot; but does nothing with it</span>
+    <span class="c1"># then! the &quot;Closure&quot; variable is actually == the &quot;return_func&quot;</span>
+    <span class="c1"># this is why counter = 0 is never reset after initialized, because</span>
+    <span class="c1"># calling the &quot;Closure&quot; variable is actually calling &quot;return_func&quot;</span>
+    <span class="k">return</span> <span class="n">return_func</span>
+
+<span class="c1"># lets see this in practice...</span>
+<span class="n">incro1</span> <span class="o">=</span> <span class="n">incrementer</span><span class="p">()</span> <span class="c1"># incro1 is a &quot;Closure&quot; that sets counter = 0 and returns incro1=return_func</span>
+<span class="n">incro2</span> <span class="o">=</span> <span class="n">incrementer</span><span class="p">()</span> <span class="c1"># lets make a second copy to demonstrate that &quot;state&quot; is unique</span>
+
+<span class="c1"># note that in this case we have to put &quot;()&quot; since incro=return_func,</span>
+<span class="c1">#   and to call return_func we need: return_func()</span>
+<span class="n">incro1</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span>
+<span class="n">incro2</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span>
+<span class="n">incro2</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span>
+<span class="n">incro2</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">3</span>
+<span class="n">incro1</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span> <span class="c1"># indeed state is unique to each instance!</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Currying Function (special Closure)</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="c1"># now is the best time to show a builtin - library shortcut from &quot;functools&quot; called &quot;partial&quot;</span>
+<span class="c1">#   &quot;partial&quot; creates a &quot;Closure&quot; for you</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
+
+<span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">n</span>
+
+<span class="c1"># times3 is a unique &quot;Closure&quot; created from a &quot;Factory&quot; of multiply</span>
+<span class="n">times3</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">multiply</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="c1"># another unique &quot;Closure&quot; built from the same &quot;Factory&quot; but with different function</span>
+<span class="n">times5</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">multiply</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">times3</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">6</span>
+<span class="n">times5</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</section>
+<section id="trick-clean-function-piping">
+<h2>Trick - Clean Function Piping<a class="headerlink" href="#trick-clean-function-piping" title="Link to this heading">#</a></h2>
+<p>Ever need to rip through a bunch of “if” statements to call the function you want? Try combing a piping dictionary with
+function calls.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="k">def</span> <span class="nf">func_one</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+
+<span class="k">def</span> <span class="nf">func_two</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">-</span><span class="n">b</span>
+
+<span class="k">def</span> <span class="nf">func_three</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span>
+
+
+<span class="k">def</span> <span class="nf">math</span><span class="p">(</span><span class="n">val1</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">val2</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">condition</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="s2">&quot;one&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Takes a value and multiplies it by a string amount</span>
+
+<span class="sd">    :param (float) val: input value</span>
+<span class="sd">    :param (str) multi: multiplier in string</span>
+<span class="sd">    :return (float): multiplied input value</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">piper</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;one&quot;</span><span class="p">:</span> <span class="n">func_one</span><span class="p">,</span>
+                <span class="s2">&quot;two&quot;</span><span class="p">:</span> <span class="n">func_two</span><span class="p">,</span>
+                <span class="s2">&quot;three&quot;</span><span class="p">:</span> <span class="n">func_three</span><span class="p">,}</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># instead of coding up a bunch of if condition == something, you can make use of a</span>
+        <span class="c1">#  dict&#39;s keyword arguments to pipe for you</span>
+        <span class="k">return</span> <span class="n">piper</span><span class="p">[</span><span class="n">condition</span><span class="p">](</span><span class="n">val1</span><span class="p">,</span> <span class="n">val2</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">UserWarning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Incorrect input value for condition=</span><span class="si">{</span><span class="n">condition</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="trick-define-function-via-text">
+<h2>Trick - Define function via text<a class="headerlink" href="#trick-define-function-via-text" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="c1"># use exec() to execute text and add it to the global variables</span>
+<span class="n">exec</span><span class="p">(</span><span class="s2">&quot;def f(x): return x*2&quot;</span><span class="p">,</span> <span class="nb">globals</span><span class="p">())</span>
+<span class="n">f</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Python Software Foundation, “Python3.9.7 Documentation” www.python.org (accessed Oct. 15 2021)</p></li>
+</ol>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="class.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Python Class</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="lib_numpy.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">lib - Numpy</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax">Syntax</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#all-about-variables">All about variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-pitfall-global-vs-local-vs-nonlocal">Common pitfall - Global vs Local vs NonLocal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#call-function-by-its-string-name">Call function by its string name</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-dundur">Function dundur</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-programming-map-filter-and-reduce">functional programming: map, filter, and reduce</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-programming-factory-closures-currying">functional programming - factory/closures/currying</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trick-clean-function-piping">Trick - Clean Function Piping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trick-define-function-via-text">Trick - Define function via text</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Viktor Kis.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

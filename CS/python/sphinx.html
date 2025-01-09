@@ -1,0 +1,680 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="dark">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>lib - sphinx (Python Documentation) &#8212; Home</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "dark";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/mycustom.css?v=b1a720d4" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CS/python/sphinx';</script>
+    <script src="../../_static/js/slideimg.js?v=f9c97fb0"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Web" href="../web/index.html" />
+    <link rel="prev" title="Python Quick Starter" href="quickstart.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="dark">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/favicon_dark.png" class="logo__image only-dark" alt="Home - Home"/>
+    <script>document.write(`<img src="../../_static/favicon_light.png" class="logo__image only-light" alt="Home - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Computer Science
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../math/index.html">
+    Math
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Computer Science
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../math/index.html">
+    Math
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Artificial Intelligence</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../AI/bayesnet.html">Bayes Theorem/Network (Probability Relations)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="cheatsheet.html">Python Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy.html">lib - Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pytest.html">Testing (unittest/pytest)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Python Quick Starter</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">lib - sphinx (Python Documentation)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Web</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../web/index.html">Web</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../web/css/cheatsheet.html">CSS Cheatsheet</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Computer Science</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">lib -...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lib-sphinx-python-documentation">
+<h1>lib - sphinx (Python Documentation)<a class="headerlink" href="#lib-sphinx-python-documentation" title="Link to this heading">#</a></h1>
+<section id="setting-up-a-sphinx-doc">
+<h2>Setting up a Sphinx Doc<a class="headerlink" href="#setting-up-a-sphinx-doc" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Install and start sphinx</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>sphinx<span class="w"> </span>sphinx_rtd_theme<span class="w"> </span>myst-parser
+sphinx-quickstart
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Adjust <code class="docutils literal notranslate"><span class="pre">source/config.py</span></code> to use sphinx_rtd_theme, auto code docstring, and allow to use markdown (instead of the default rst)</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># add your project path to your doc (assuming your structure is project/doc and project/source)</span>
+<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;../../&#39;</span><span class="p">)</span>
+
+<span class="c1"># ability to use autodocs</span>
+<span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sphinx.ext.autodoc&#39;</span><span class="p">,</span> <span class="s1">&#39;myst_parser&#39;</span><span class="p">]</span>
+<span class="n">source_suffix</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;.rst&#39;</span><span class="p">:</span> <span class="s1">&#39;restructuredtext&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;.md&#39;</span><span class="p">:</span> <span class="s1">&#39;markdown&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">autodoc_default_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;member-order&#39;</span><span class="p">:</span> <span class="s1">&#39;bysource&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;special-members&#39;</span><span class="p">:</span> <span class="s1">&#39;__init__&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c1"># use a new theme</span>
+<span class="n">html_theme</span> <span class="o">=</span> <span class="s1">&#39;sphinx_rtd_theme&#39;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Generate your docs</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docs/make.bat<span class="w"> </span>html
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Rules</p></li>
+</ol>
+<ul class="simple">
+<li><p>source must have a <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> with a <code class="docutils literal notranslate"><span class="pre">toctree</span></code>. Note you main call an subfolder/index with an index</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">max</span> <span class="n">depth</span> <span class="ow">is</span> <span class="n">how</span> <span class="n">far</span> <span class="n">the</span> <span class="n">nav</span> <span class="n">tree</span> <span class="k">with</span> <span class="n">have</span> <span class="n">expandable</span> <span class="n">buttons</span>
+<span class="n">glob</span> <span class="n">lets</span> <span class="n">you</span> <span class="n">include</span> <span class="n">an</span> <span class="n">entire</span> <span class="n">folder</span> <span class="n">of</span> <span class="n">files</span>
+<span class="n">hidden</span> <span class="n">hides</span> <span class="n">the</span> <span class="n">tree</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">main</span> <span class="n">body</span>
+
+<span class="o">..</span> <span class="n">toctree</span><span class="p">::</span>
+    <span class="p">:</span><span class="n">maxdepth</span><span class="p">:</span> <span class="mi">3</span>
+    <span class="p">:</span><span class="n">glob</span><span class="p">:</span>
+    <span class="p">:</span><span class="n">hidden</span><span class="p">:</span>
+
+    <span class="n">file</span>
+    <span class="n">folder</span><span class="o">/</span><span class="n">file</span>
+    <span class="n">folder</span><span class="o">/*</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>each file must start with a header (in <code class="docutils literal notranslate"><span class="pre">.rst</span></code> underscore with ====, in <code class="docutils literal notranslate"><span class="pre">.md</span></code> leading “#”)</p></li>
+</ul>
+<section id="how-to-create-autodocs">
+<h3>How to create autodocs<a class="headerlink" href="#how-to-create-autodocs" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>make sure your docstring follows the format of</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Description, followed by empty line</span>
+
+<span class="sd">    :param str arg1: this is arg1</span>
+<span class="sd">    :param float arg2: this is arg2</span>
+<span class="sd">    :return bool: this is return description</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">autofuction</span><span class="p">::</span> <span class="n">filename</span><span class="o">.</span><span class="n">functionname</span>
+
+<span class="o">..</span> <span class="n">autoclass</span><span class="p">::</span> <span class="n">filename</span><span class="o">.</span><span class="n">classname</span>
+    <span class="p">:</span><span class="n">members</span><span class="p">:</span>
+
+<span class="o">..</span> <span class="n">automodule</span><span class="p">::</span> <span class="n">filename</span>
+    <span class="p">:</span><span class="n">members</span><span class="p">:</span>
+</pre></div>
+</div>
+</section>
+<section id="how-to-ignore-certain-imports-that-are-causing-issue-with-doc-generation">
+<h3>How to ignore certain imports that are causing issue with doc generation<a class="headerlink" href="#how-to-ignore-certain-imports-that-are-causing-issue-with-doc-generation" title="Link to this heading">#</a></h3>
+<p>add the following to your config.py</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">autodoc_mock_imports</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;numpy&#39;</span><span class="p">,</span> <span class="s1">&#39;pandas&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="myst-parse-tricks">
+<h3>myst-parse tricks<a class="headerlink" href="#myst-parse-tricks" title="Link to this heading">#</a></h3>
+<p>You can write normal markdown that sphinx can consume, however certain things are not native to markdown:</p>
+<p><strong>note the following examples are enclosed by 3x “`”</strong></p>
+<ul class="simple">
+<li><p>how to create a notebox</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="p">{</span><span class="n">note</span><span class="p">}</span> 
+<span class="n">this</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">note</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>code block manipulation</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
+<span class="p">:</span><span class="n">linenos</span><span class="p">:</span>
+<span class="p">:</span><span class="n">emphasize</span><span class="o">-</span><span class="n">lines</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span>
+<span class="o">---</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="restructuredtext-rst">
+<h2>ReStructuredText (rst)<a class="headerlink" href="#restructuredtext-rst" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>To italicize text: <code class="docutils literal notranslate"><span class="pre">*text*</span></code></p></li>
+<li><p>To bold text: <code class="docutils literal notranslate"><span class="pre">**text**</span></code></p></li>
+<li><p>Subscript/Superscript: <code class="docutils literal notranslate"><span class="pre">:sub:`yourtext`</span> </code> or <code class="docutils literal notranslate"><span class="pre">:sup:`yourtext`</span> </code></p></li>
+<li><p>To in-text code highlight:  <code class="docutils literal notranslate"><span class="pre">`your</span> <span class="pre">text</span> <span class="pre">then`</span></code></p></li>
+<li><p>Important messages: <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">note::</span></code> <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">warning::</span></code> <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">deprecated::</span></code> <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">seealso::</span></code></p></li>
+<li><p>Internal Links: <code class="docutils literal notranslate"><span class="pre">:doc:`filename`</span> </code></p></li>
+<li><p>External Links: <code class="docutils literal notranslate"><span class="pre">linktext</span> <span class="pre">&lt;https://google.com&gt;`_</span></code></p></li>
+<li><p>Section Links within the same doc</p>
+<ol class="arabic simple">
+<li><p>put a <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">_ref1:</span></code> above the header you want to ref (make sure there is an empty line between the header and _ref1)</p></li>
+<li><p>call the link by: <code class="docutils literal notranslate"><span class="pre">:ref:`ref1`</span> </code></p></li>
+</ol>
+</li>
+<li><p>Citations: to define it <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">[refname1]</span> <span class="pre">Title</span></code> then to use it in text: <code class="docutils literal notranslate"><span class="pre">[refname1]_</span></code></p></li>
+<li><p>Today’s date in text <code class="docutils literal notranslate"><span class="pre">|today|</span></code></p></li>
+<li><p>Bullets, there are a few not so intuitive conventions about bullets, see below:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+    <span class="o">-</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">bullet</span>
+
+    <span class="o">-</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">another</span> <span class="n">bullet</span>
+
+    <span class="o">-</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">bullet</span>
+    <span class="n">on</span> <span class="n">multi</span> <span class="n">lines</span>
+
+    <span class="mi">1</span><span class="p">)</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">numbered</span> <span class="n">bullet</span>
+
+        <span class="mf">1.1</span><span class="p">)</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">nested</span> <span class="n">bullet</span>
+        <span class="k">with</span> <span class="n">multi</span> <span class="n">lines</span>
+
+        <span class="mf">1.2</span><span class="p">)</span> <span class="n">here</span> <span class="ow">is</span> <span class="n">another</span> <span class="n">nested</span> <span class="n">bullet</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Header Types</p>
+<ul>
+<li><p>Title: <code class="docutils literal notranslate"><span class="pre">###</span></code></p></li>
+<li><p>Section: <code class="docutils literal notranslate"><span class="pre">===</span></code></p></li>
+<li><p>SubSection: <code class="docutils literal notranslate"><span class="pre">---</span></code></p></li>
+<li><p>2SubSection: <code class="docutils literal notranslate"><span class="pre">^^^</span></code></p></li>
+<li><p>3SubSection: <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code></p></li>
+</ul>
+</li>
+<li><p>Figures</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">code</span><span class="o">-</span><span class="n">block</span><span class="p">::</span> <span class="n">text</span>
+
+    <span class="o">..</span> <span class="n">figure</span><span class="p">::</span> <span class="n">pic</span><span class="o">.</span><span class="n">png</span>
+        <span class="p">:</span><span class="n">scale</span><span class="p">:</span> <span class="mi">50</span><span class="o">%</span>
+        <span class="p">:</span><span class="n">alt</span><span class="p">:</span> <span class="n">Alternative</span> <span class="n">text</span> <span class="k">if</span> <span class="n">image</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">load</span><span class="p">,</span> <span class="n">spoken</span> <span class="n">by</span> <span class="n">application</span> <span class="k">for</span> <span class="n">visually</span> <span class="n">impaired</span>
+        <span class="p">:</span><span class="n">align</span><span class="p">:</span> <span class="n">center</span>
+
+        <span class="n">This</span> <span class="ow">is</span> <span class="n">caption</span> <span class="n">text</span>
+</pre></div>
+</div>
+</section>
+<section id="how-to-hyperlink-to-other-python-package-code">
+<h2>How to hyperlink to other python package code:<a class="headerlink" href="#how-to-hyperlink-to-other-python-package-code" title="Link to this heading">#</a></h2>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">config.py</span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;sphinx.ext.intersphinx&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="n">intersphinx_mapping</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;python&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;https://docs.python.org/3&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+    <span class="s1">&#39;numpy&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;https://numpy.org/doc/stable/&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+    <span class="s1">&#39;pandas&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;https://pandas.pydata.org/pandas-docs/stable&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+    <span class="s1">&#39;scipy&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;https://docs.scipy.org/doc/scipy&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+    <span class="s1">&#39;scipy-lecture-notes&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;https://scipy-lectures.org&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+    <span class="s1">&#39;matplotlib&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;https://matplotlib.org/stable&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>In your documentation you refernce code by either <code class="docutils literal notranslate"><span class="pre">py:class</span></code> or <code class="docutils literal notranslate"><span class="pre">py:func</span></code> then the name of the reference the same way as you would import the function/class.</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">mynotes.md</span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>{py:class}`list`
+<span class="linenos">2</span>{py:func}`numpy.cross`
+<span class="linenos">3</span>{py:func}`numpy.array`
+</pre></div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Sphinx, “Sphinx Documentation” https://www.sphinx-doc.org (accessed Oct. 29 2021)</p></li>
+<li><p>Myst-Parse, “Myst-Parse Documentation” https://myst-parser.readthedocs.io (accessed Oct. 29 2021)</p></li>
+</ol>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="quickstart.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Python Quick Starter</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../web/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Web</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-a-sphinx-doc">Setting up a Sphinx Doc</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-create-autodocs">How to create autodocs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-ignore-certain-imports-that-are-causing-issue-with-doc-generation">How to ignore certain imports that are causing issue with doc generation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#myst-parse-tricks">myst-parse tricks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#restructuredtext-rst">ReStructuredText (rst)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-hyperlink-to-other-python-package-code">How to hyperlink to other python package code:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Viktor Kis.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
