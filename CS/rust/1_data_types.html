@@ -308,6 +308,16 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../AI/minimax.html">Minimax, AlphaBeta Pruning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../AI/search.html">Search Algorithms</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Rust</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0_gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data Types</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="1_fileIO.html">File I/O</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_functions.html">Functions - TBD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_logic_loops.html">Logic Loops - TBD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lib_regex.html">Lib - Regex</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../python/0_quickstart.html">Python Quick Starter</a></li>
@@ -319,16 +329,6 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../python/lib_numpy.html">lib - Numpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python/lib_pytest.html">lib - Testing (unittest/pytest)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python/lib_sphinx.html">lib - sphinx (Python Documentation)</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Rust</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="0_gettingstarted.html">Getting Started</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data Types</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="1_fileIO.html">File I/O</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_functions.html">Functions - TBD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_logic_loops.html">Logic Loops - TBD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lib_regex.html">Lib - Regex</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Web</span></p>
 <ul class="nav bd-sidenav">
@@ -532,6 +532,69 @@ document.write(`
 <span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{numberslice:?}&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
+<section id="tuples">
+<h2>Tuples<a class="headerlink" href="#tuples" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>tuples are fixed size but of mixed type</p></li>
+<li><p>unlike in arrays, we do not need to specify types (Rust will infer it if you want, nor do we need to specify size)</p></li>
+</ul>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">mytuple1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">mytuple2</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+
+<span class="c1">// by default all things in Rust are immutable so if we wanted to change index 0 we would have to declare it mut</span>
+<span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">mytuple3</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="kt">i32</span><span class="p">,</span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="c1">// note that tuple indexing is different than other types (array/vec) it is done with .0</span>
+<span class="n">mytuple3</span><span class="p">.</span><span class="mi">0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="c1">// note while this tuple is mutable, you cannot change its original index type</span>
+<span class="n">mytuple3</span><span class="p">.</span><span class="mi">0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"> </span><span class="c1">// this will throw an error</span>
+</pre></div>
+</div>
+</section>
+<section id="vectors">
+<h2>Vectors<a class="headerlink" href="#vectors" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>vectors are like arrays in that they have to contain the same value types however the size can change</p></li>
+<li><p>you have to declare it’s type with <code class="docutils literal notranslate"><span class="pre">&lt;type&gt;</span></code></p></li>
+</ul>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">vec1</span><span class="p">:</span><span class="w"> </span><span class="nb">Vec</span><span class="o">&lt;</span><span class="kt">i32</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Vec</span><span class="p">::</span><span class="n">new</span><span class="p">();</span>
+
+<span class="c1">// you can let Rust infer type of a non-empty vec</span>
+<span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">vec2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">vec!</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">];</span>
+
+<span class="c1">// initialize vec with values (repeat)</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">vec3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">repeat</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+
+<span class="c1">// add to a vec</span>
+<span class="n">vec2</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+
+<span class="c1">// remove last element</span>
+<span class="n">vec2</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+
+<span class="c1">// index to</span>
+<span class="fm">println!</span><span class="p">(</span><span class="s">&quot;index 1 of vec = {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">vec2</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+
+<span class="c1">// slice</span>
+<span class="fm">println!</span><span class="p">(</span><span class="s">&quot;index 0:2 of vec = {:?}&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">vec2</span><span class="p">[</span><span class="o">..</span><span class="mi">2</span><span class="p">]);</span>
+
+<span class="c1">// indexing out of bounds will cause an error</span>
+<span class="o">&amp;</span><span class="n">vec2</span><span class="p">[</span><span class="mi">99</span><span class="p">];</span><span class="w"> </span><span class="c1">// this will throw an error</span>
+
+<span class="c1">// however using .get(index) will return an Option enum, thats option of value or None</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">vec2</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">99</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">results</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nb">Some</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">val</span><span class="p">,</span>
+<span class="w">    </span><span class="nb">None</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="mi">0</span>
+<span class="p">};</span>
+
+<span class="c1">// how to update values of vec</span>
+<span class="k">for</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">vec2</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// note because we are looping over the ref values of vec2, to update it we have to declare it &amp;mut (mutable ref), </span>
+<span class="w">    </span><span class="c1">// and when updating the vals, we need to remember that we cannot update ref vals, so we must dereference it with *val</span>
+<span class="w">    </span><span class="o">*</span><span class="n">val</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 
@@ -586,7 +649,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#char-string-str-slice">Char / String / Str Slice</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#arrays">Arrays</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#arrays">Arrays</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples">Tuples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vectors">Vectors</a></li>
+</ul>
+</li>
 </ul>
 
   </nav></div>

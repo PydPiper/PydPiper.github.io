@@ -34,6 +34,7 @@
 - To get list of files/folders in your current working directory: `dir -la` or `ls -la` (-l for long desc, -a for hidden)
 - To get a list of files sorted from oldest to newest on the bottom: `ll -lrt`
 - To search for text in files/folders: `grep -r "GRID.*100" *.bdf` (note grep can be fed regex)
+- To check the size of a folder: `du -sh foldername` (due stands for disk usage) similarly (`df` for disk free)
 
 ## File Permissions
 

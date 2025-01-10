@@ -136,3 +136,63 @@ How to slice an array
 let numberslice: &[i32] = &numbers2[..2];
 println!("{numberslice:?}");
 ```
+
+## Tuples
+- tuples are fixed size but of mixed type
+- unlike in arrays, we do not need to specify types (Rust will infer it if you want, nor do we need to specify size)
+
+```rust
+let mytuple1 = (3, true);
+let mytuple2: (i32, bool) = (3, true);
+
+// by default all things in Rust are immutable so if we wanted to change index 0 we would have to declare it mut
+let mut mytuple3: (i32,bool) = (3, true);
+// note that tuple indexing is different than other types (array/vec) it is done with .0
+mytuple3.0 = 5;
+// note while this tuple is mutable, you cannot change its original index type
+mytuple3.0 = true; // this will throw an error
+```
+
+## Vectors
+
+- vectors are like arrays in that they have to contain the same value types however the size can change
+- you have to declare it's type with `<type>`
+
+```rust
+let vec1: Vec<i32> = Vec::new();
+
+// you can let Rust infer type of a non-empty vec
+let mut vec2 = vec![1,2,3];
+
+// initialize vec with values (repeat)
+let vec3 = [0].repeat(5);
+
+// add to a vec
+vec2.push(4);
+
+// remove last element
+vec2.pop();
+
+// index to
+println!("index 1 of vec = {}", &vec2[1]);
+
+// slice
+println!("index 0:2 of vec = {:?}", &vec2[..2]);
+
+// indexing out of bounds will cause an error
+&vec2[99]; // this will throw an error
+
+// however using .get(index) will return an Option enum, thats option of value or None
+let result = &vec2.get(99);
+let results = match result {
+    Some(val) => val,
+    None => &0
+};
+
+// how to update values of vec
+for val in &mut vec2 {
+    // note because we are looping over the ref values of vec2, to update it we have to declare it &mut (mutable ref), 
+    // and when updating the vals, we need to remember that we cannot update ref vals, so we must dereference it with *val
+    *val += 10; 
+}
+```
