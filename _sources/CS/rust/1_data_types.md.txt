@@ -137,7 +137,7 @@ let numberslice: &[i32] = &numbers2[..2];
 println!("{numberslice:?}");
 ```
 
-## Tuples
+# Tuples
 - tuples are fixed size but of mixed type
 - unlike in arrays, we do not need to specify types (Rust will infer it if you want, nor do we need to specify size)
 
@@ -153,7 +153,7 @@ mytuple3.0 = 5;
 mytuple3.0 = true; // this will throw an error
 ```
 
-## Vectors
+# Vectors
 
 - vectors are like arrays in that they have to contain the same value types however the size can change
 - you have to declare it's type with `<type>`
