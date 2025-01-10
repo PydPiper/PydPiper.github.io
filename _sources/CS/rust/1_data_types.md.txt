@@ -151,7 +151,6 @@ let mut mytuple3: (i32,bool) = (3, true);
 mytuple3.0 = 5;
 // note while this tuple is mutable, you cannot change its original index type
 mytuple3.0 = true; // this will throw an error
-<<<<<<< HEAD
 ```
 
 ## Vectors
@@ -196,6 +195,4 @@ for val in &mut vec2 {
     // and when updating the vals, we need to remember that we cannot update ref vals, so we must dereference it with *val
     *val += 10; 
 }
-=======
->>>>>>> 1c0cb8264d024dd134e11c5882d220db227ff83a
 ```
