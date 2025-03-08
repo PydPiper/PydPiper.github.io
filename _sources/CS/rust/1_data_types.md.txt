@@ -195,7 +195,6 @@ for val in &mut vec2 {
     // and when updating the vals, we need to remember that we cannot update ref vals, so we must dereference it with *val
     *val += 10; 
 }
-<<<<<<< HEAD
 ```
 
 # Hashset
@@ -325,6 +324,3 @@ fn area(myshape:Shapes)->f64{
     }
 }
 ```
-=======
-```
->>>>>>> a6d36f67dff0dc1fbd2a8eaa41e25f24d0051038
