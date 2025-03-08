@@ -1,10 +1,13 @@
 # Welcome to Vik's Blue Prints
 A place for all of my personal notes mainly related to Science, Tech, Engineering, and Math (STEM). Some of the notes are full-blown tutorials with a problem statement, derivation and example problem, while others are a collection of "how-to's". For video tutorials check out [VixBluePrint on Youtube](https://www.youtube.com/@vixblueprints)
 
-These notes were written on 100% my own time as a hobby/skill-maintenance with 100% publicly available sources such as books/articles/posts. Like many other's creative content they do take a lot of time to develop so the only thing I would like to ask for is to properly cite the content you may use, whether directly from my posts or the references I used to create my posts. Cheers! 
+These notes were written 100% by me (no GenAI used) on 100% my own time as a hobby/skill-maintenance with 100% publicly available sources such as books/articles/posts. Like many other's creative content they do take a lot of time to develop so the only thing I would like to ask for is to properly cite the content you may use, whether directly from my posts or the references I used to create my posts. Cheers! 
 
 ## About Me
-Viktor holds a B.S. in Mechanical Engineer and a M.S. in Computer Science. Professionally, Viktor has 10+ years of work experience in the Structures Aerospace industry working on various stages of the lifecycle from blank-page Product Development all the way to Fleet Support Airframe sustaining. 
+Viktor holds a B.S. in Mechanical Engineer and a M.S. in Computer Science from Georgia Tech. Professionally, Viktor has 13+ years of work experience in the Structures Aerospace industry working on various stages of the lifecycle. From a "blank page" Product Development all the way to aircraft sustaining, ensuring our aircrafts meet structural integrity of our in-service fleet. As for my tasks, I have worked as a Structures Design Engineer, on both new airplane design as well as in-service fleet support. I’ve worked as a Structures Stress Analyst on derivative and new airplane development where I was responsible for primary/secondary structure static/fatigue/discrete source damage analysis. Currently I am working in a Structures Finite Element Simulation team supporting fine grid component level modeling for the various commercial programs.
+
+Over the years I’ve had the pleasure of mentoring from some of the industry’s best to not only grow/learn but to better understand the workflow of my counterparts so that I can make more informed big picture decision on the work that I do today. The road of an engineer is certainly a path continuous learning and whether it was mentoring, publications, certifications or most recently finish my masters, I’ve certainly embraced an engineer’s growth mindset.
+
 
 ``` {eval-rst}
 .. toctree::

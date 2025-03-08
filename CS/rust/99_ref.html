@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Functions &#8212; Home</title>
+    <title>References / Quick Notes &#8212; Home</title>
   
   
   
@@ -45,13 +45,13 @@
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'CS/rust/1_functions';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CS/rust/99_ref';</script>
     <script src="../../_static/js/slideimg.js?v=f9c97fb0"></script>
     <link rel="icon" href="../../_static/favicon_light.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Logic Loops" href="1_logic_loops.html" />
-    <link rel="prev" title="File I/O" href="1_fileIO.html" />
+    <link rel="next" title="Lib - Regex" href="lib_regex.html" />
+    <link rel="prev" title="Logic Loops" href="1_logic_loops.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -320,14 +320,14 @@ document.write(`
 
 
 <li class="toctree-l1"><a class="reference internal" href="1_fileIO.html">File I/O</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_functions.html">Functions</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="1_logic_loops.html">Logic Loops</a></li>
 
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="99_ref.html">References / Quick Notes</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">References / Quick Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lib_regex.html">Lib - Regex</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
@@ -397,7 +397,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Computer Science</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Functions</li>
+    <li class="breadcrumb-item active" aria-current="page">References...</li>
   </ul>
 </nav>
 </div>
@@ -414,29 +414,15 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="functions">
-<h1>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="references-quick-notes">
+<h1>References / Quick Notes<a class="headerlink" href="#references-quick-notes" title="Link to this heading">#</a></h1>
+<section id="game-engines">
+<h2>Game Engines<a class="headerlink" href="#game-engines" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://bevyengine.org/">Bevy</a> 2D/3D game engine</p></li>
+<li><p><a class="reference external" href="https://macroquad.rs/">macroquad</a> simple 2D game engine</p></li>
+</ul>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="how-to-return-multiple-values-out-of-a-function">
-<h1>how to return multiple values out of a function<a class="headerlink" href="#how-to-return-multiple-values-out-of-a-function" title="Link to this heading">#</a></h1>
-<ul class="simple">
-<li><p>array</p></li>
-</ul>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">fn</span><span class="w"> </span><span class="nf">return_arr</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p">[</span><span class="kt">i32</span><span class="p">;</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
-<span class="p">}</span>
-<span class="kd">let</span><span class="w"> </span><span class="p">[</span><span class="n">val1</span><span class="p">,</span><span class="w"> </span><span class="n">val2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">return_arr</span><span class="p">();</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>tuple</p></li>
-</ul>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">fn</span><span class="w"> </span><span class="nf">return_tuple</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p">(</span><span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="kt">i32</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="p">}</span>
-<span class="kd">let</span><span class="w"> </span><span class="p">(</span><span class="n">val1</span><span class="p">,</span><span class="w"> </span><span class="n">val2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">return_tuple</span><span class="p">();</span>
-</pre></div>
-</div>
 </section>
 
 
@@ -450,20 +436,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="1_fileIO.html"
+       href="1_logic_loops.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">File I/O</p>
+        <p class="prev-next-title">Logic Loops</p>
       </div>
     </a>
     <a class="right-next"
-       href="1_logic_loops.html"
+       href="lib_regex.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Logic Loops</p>
+        <p class="prev-next-title">Lib - Regex</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -485,10 +471,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Functions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-return-multiple-values-out-of-a-function">how to return multiple values out of a function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#game-engines">Game Engines</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>

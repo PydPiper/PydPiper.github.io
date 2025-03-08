@@ -18,6 +18,7 @@ fn read_data(filename: &str) -> String{
 fn read_data(filename: &str) -> Vec<String> {
     let file = File::open(filename).expect("unable to open file");
     let reader = io::BufReader::new(&file);
+    // NOTE: .collect transforms an iterator into a vec/hashmap/string etc.
     let lines: Vec<String> = reader.lines().map(|line|line.expect("unable to parse line")).collect();
     lines
 }

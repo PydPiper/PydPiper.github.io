@@ -137,7 +137,7 @@ let numberslice: &[i32] = &numbers2[..2];
 println!("{numberslice:?}");
 ```
 
-## Tuples
+# Tuples
 - tuples are fixed size but of mixed type
 - unlike in arrays, we do not need to specify types (Rust will infer it if you want, nor do we need to specify size)
 
@@ -151,4 +151,176 @@ let mut mytuple3: (i32,bool) = (3, true);
 mytuple3.0 = 5;
 // note while this tuple is mutable, you cannot change its original index type
 mytuple3.0 = true; // this will throw an error
+```
+
+# Vectors
+
+- vectors are like arrays in that they have to contain the same value types however the size can change
+- you have to declare it's type with `<type>`
+
+```rust
+let vec1: Vec<i32> = Vec::new();
+
+// you can let Rust infer type of a non-empty vec
+let mut vec2 = vec![1,2,3];
+
+// initialize vec with values (repeat)
+let vec3 = [0].repeat(5);
+
+// add to a vec
+vec2.push(4);
+
+// remove last element
+vec2.pop();
+
+// index to
+println!("index 1 of vec = {}", &vec2[1]);
+
+// slice
+println!("index 0:2 of vec = {:?}", &vec2[..2]);
+
+// indexing out of bounds will cause an error
+&vec2[99]; // this will throw an error
+
+// however using .get(index) will return an Option enum, thats option of value or None
+let result = &vec2.get(99);
+let results = match result {
+    Some(val) => val,
+    None => &0
+};
+
+// how to update values of vec
+for val in &mut vec2 {
+    // note because we are looping over the ref values of vec2, to update it we have to declare it &mut (mutable ref), 
+    // and when updating the vals, we need to remember that we cannot update ref vals, so we must dereference it with *val
+    *val += 10; 
+}
+```
+
+# Hashset
+
+```rust
+// create a hashset
+let mut hashset: HashSet<i32> = HashSet::new();
+
+// add to it
+hashset.insert(0);
+hashset.insert(0); // note that hashsets only store unique values
+hashset.insert(1);
+println!("{:?}", hashset);
+
+// you can also call the usual hashset operations like .difference .intersection etc.
+```
+
+# Hashmap
+
+```rust
+// init a hashmap
+let mut hashmap1: HashMap<&str, i32> = HashMap::new();
+
+// add to it
+hashmap1.insert("Vik", 1);
+hashmap1.insert("Nicole", 2);
+// you can overwrite existing keys
+hashmap1.insert("Vik", 5);
+
+// get a specific key's value
+let result = hashmap1.get("Vik").expect("key not in hashmap");
+// get a key and if not in hashmap return a default
+let result = hashmap1.get("Lexie").unwrap_or(&0);
+
+// loop over hashmap
+for (key, val) in hashmap1.iter(){
+    println!("key = {key}, val = {val}");
+}
+
+// update based on key'ed values
+for key in ["Vik", "Avery"] {
+    // get a value if exists otherwise add it with default value
+    let count = hashmap1.entry(key).or_insert(0);
+    *count += 1;
+}
+```
+
+# Struct
+`struct`'s are as close to **Object Oriented classes** as you can get in Rust. A struct does not need to have `impl` (implementation) that most similar to **methods** of a **class**, in which case it's most similar to a **named tuple**.
+
+```rust
+// create a struct that has named field: name, age
+struct Human{
+    name: String,
+    age: i32
+}
+
+// at this point the struct is most similar to a named tuple
+
+// now we can implement a method that is now closer to how a class object would work with its instance data
+impl Human{
+    fn introduce(&self){
+        println!("Hi, my name is {} and I am {} old.", self.name, self.age)
+    }
+
+    fn update_age(&mut self, age: i32){
+        self.age = age;
+    }
+}
+
+let mut person = Human{name:"Vik".to_string(), age: 20};
+println!("person.age = {}",person.age);
+person.introduce();
+person.update_age(21);
+person.introduce();
+```
+
+# Enum
+`enum`'s are state carrying data structures that are used in combination with `match` (like options in other languages). There are 2 types of enums:
+
+- TYPE 1: no data carrying enum, useful for state selection
+
+```rust
+// step 1: define enum states
+enum TrafficLight{
+    Red,
+    Yellow,
+    Green
+}
+// step 2: define current state by instantiating it from enum
+let traffic_light_state = TrafficLight::Red;
+// step 3: use it with match to do something based on state match
+match traffic_light_state {
+    TrafficLight::Red => println!("Stop!"),
+    TrafficLight::Yellow => println!("Slow down!"),
+    TrafficLight::Green => println!("Go!"),
+}
+// step 3-improved: use in a function
+fn tell_me_what_to_do(traffic_light_state: TrafficLight){
+    match traffic_light_state {
+        TrafficLight::Red => println!("Stop!"),
+        TrafficLight::Yellow => println!("Slow down!"),
+        TrafficLight::Green => println!("Go!"),
+    }
+}
+```
+- TYPE 2: data carrying enum, useful for state selection that needs to perform on state data
+
+```rust
+// step 1: define enum states with types
+enum Shapes {
+    circle(f64),
+    rectangle(f64, f64)
+}
+// step 2: instance enum with data
+let myshape = Shapes::circle(1.5);
+// step 3: use it with match that works on state+data
+let area = match myshape {
+    Shapes::circle(r) => 3.14 * r.powi(2),
+    Shapes::rectangle(w,h) => w * h
+};
+// step 3-improved: use in a function
+fn area(myshape:Shapes)->f64{
+    match myshape {
+        Shapes::circle(r) => 3.14 * r.powi(2),
+        Shapes::rectangle(w,h) => w * h
+    }
+}
 ```

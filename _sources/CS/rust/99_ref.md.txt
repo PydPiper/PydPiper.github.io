@@ -1,0 +1,6 @@
+# References / Quick Notes
+
+## Game Engines
+
+- [Bevy](https://bevyengine.org/) 2D/3D game engine
+- [macroquad](https://macroquad.rs/) simple 2D game engine

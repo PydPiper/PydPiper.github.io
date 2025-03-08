@@ -50,8 +50,8 @@
     <link rel="icon" href="../../_static/favicon_light.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Functions - TBD" href="1_functions.html" />
-    <link rel="prev" title="Data Types - TBD" href="1_data_types.html" />
+    <link rel="next" title="Functions" href="1_functions.html" />
+    <link rel="prev" title="Data Types" href="1_data_types.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -308,6 +308,28 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../AI/minimax.html">Minimax, AlphaBeta Pruning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../AI/search.html">Search Algorithms</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Rust</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0_gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_data_types.html">Data Types</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">File I/O</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_functions.html">Functions</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="1_logic_loops.html">Logic Loops</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="99_ref.html">References / Quick Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lib_regex.html">Lib - Regex</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../python/0_quickstart.html">Python Quick Starter</a></li>
@@ -319,15 +341,6 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../python/lib_numpy.html">lib - Numpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python/lib_pytest.html">lib - Testing (unittest/pytest)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python/lib_sphinx.html">lib - sphinx (Python Documentation)</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Rust</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="0_gettingstarted.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_data_types.html">Data Types - TBD</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">File I/O</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_functions.html">Functions - TBD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_logic_loops.html">Logic Loops - TBD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lib_regex.html">Lib - Regex</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Web</span></p>
 <ul class="nav bd-sidenav">
@@ -342,6 +355,7 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../tools/git.html">Git Version Control (CI/CD) DevOps</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/jupyter.html">Juypter Notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/linux.html">Linux Cheatsheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/regex.html">General Regex Cheat Sheet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/vscode.html">VS Code</a></li>
 </ul>
 </div>
@@ -419,6 +433,7 @@ document.write(`
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">fn</span><span class="w"> </span><span class="nf">read_data</span><span class="p">(</span><span class="n">filename</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nb">Vec</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">File</span><span class="p">::</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">).</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;unable to open file&quot;</span><span class="p">);</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">reader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">io</span><span class="p">::</span><span class="n">BufReader</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="o">&amp;</span><span class="n">file</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// NOTE: .collect transforms an iterator into a vec/hashmap/string etc.</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">lines</span><span class="p">:</span><span class="w"> </span><span class="nb">Vec</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">reader</span><span class="p">.</span><span class="n">lines</span><span class="p">().</span><span class="n">map</span><span class="p">(</span><span class="o">|</span><span class="n">line</span><span class="o">|</span><span class="n">line</span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;unable to parse line&quot;</span><span class="p">)).</span><span class="n">collect</span><span class="p">();</span>
 <span class="w">    </span><span class="n">lines</span>
 <span class="p">}</span>
@@ -443,7 +458,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Data Types - TBD</p>
+        <p class="prev-next-title">Data Types</p>
       </div>
     </a>
     <a class="right-next"
@@ -451,7 +466,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Functions - TBD</p>
+        <p class="prev-next-title">Functions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

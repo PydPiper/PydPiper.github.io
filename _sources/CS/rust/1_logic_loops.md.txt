@@ -1,1 +1,115 @@
-# Logic Loops - TBD
+# Logic Loops
+
+# If
+
+```rust
+let input: i32 = 1;
+
+// if, else if, else
+if input >= 1 {
+    println!("input:{input} >= 1");
+} 
+else if input == 0 {
+    println!("input:{input} == 0");
+}
+else {
+    println!("is else input:{input}");
+}
+
+// let based on if
+let number: i32 = if true { 1 } else { 0 };
+```
+
+# Loop
+loop (infinite loop until break, without condition). Useful to retry operations that you know will fail, like testing if thread has finished
+
+```rust
+println!("loop");
+let mut x = 0;
+loop {
+    println!("{x}");
+    x += 1;
+    if x == 5 {
+        break;
+    }
+}
+```
+
+# While
+infinite loop until condition
+
+```rust
+println!("while");
+let mut x = 0;
+while x < 5 {
+    println!("{x}");
+    x += 1;
+}
+```
+
+# For
+iterate until end of iter
+
+- iter a range
+
+```rust
+println!("for range");
+for i in 0..5 {
+    println!("{i}");
+}
+
+for i in (0..10).step_by(2) {
+    println!("{i}");
+}
+```
+
+
+- iter over items
+
+```rust
+println!("for iter");
+let x: [i32;5] = [0,1,2,3,4];
+for i in x {
+    println!("{i}");
+}
+```
+
+- tagging loop names (to directly break out of a loop)
+
+```rust
+'outer_for: for i in 0..5 {
+    println!("i = {i}");
+    'inner_for: for ii in 0..5 {
+        println!("ii = {ii}");
+        break 'outer_for;
+    }
+}
+```
+- difference between iter() and into_iter()
+
+```rust
+let lines = vec!["hi".to_string(), "there".to_string()];
+// this is iteration over ref pointer of values in the vector
+// this you can call multiple times like you would in a python loop
+for line in lines.iter() {
+    let tmp: &String = line;
+    println!("{tmp}");
+}
+// this is iteration over values of a vector
+// IMPORTANT: lines gets fully consumed and cannot be access anymore (similar to turing an array into an iter in python, the iter object gets consumed)
+//  (under the hood lines is called with lines.into_iter() which turns lines Vec<String> into a iterator)
+for (i, line) in lines.into_iter().enumerate() {
+    let tmp: String = line;
+    println!("{i}: {tmp}");
+}
+```
+
+- how to loop 2 iterables at the same time
+
+```rust
+let arr1 = [1,2,3];
+let arr2 = [10,20,30];
+for (val1, val2) in arr1.iter().zip(arr2.iter()){
+    println!("{val1} {val2}");
+}
+```

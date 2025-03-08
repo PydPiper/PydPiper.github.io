@@ -1,1 +1,19 @@
-# Functions - TBD
+# Functions
+
+# how to return multiple values out of a function 
+
+- array
+```rust
+fn return_arr() -> [i32;2] {
+    [1,2]
+}
+let [val1, val2] = return_arr();
+```
+
+- tuple
+```rust
+fn return_tuple() -> (i32, i32) {
+    (1,2)
+}
+let (val1, val2) = return_tuple();
+```

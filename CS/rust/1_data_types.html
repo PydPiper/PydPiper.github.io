@@ -313,9 +313,21 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="0_gettingstarted.html">Getting Started</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Data Types</a></li>
 
+
+
+
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="1_fileIO.html">File I/O</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_functions.html">Functions - TBD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_logic_loops.html">Logic Loops - TBD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_functions.html">Functions</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="1_logic_loops.html">Logic Loops</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="99_ref.html">References / Quick Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lib_regex.html">Lib - Regex</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
@@ -532,8 +544,9 @@ document.write(`
 <span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{numberslice:?}&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<section id="tuples">
-<h2>Tuples<a class="headerlink" href="#tuples" title="Link to this heading">#</a></h2>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="tuples">
+<h1>Tuples<a class="headerlink" href="#tuples" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p>tuples are fixed size but of mixed type</p></li>
 <li><p>unlike in arrays, we do not need to specify types (Rust will infer it if you want, nor do we need to specify size)</p></li>
@@ -550,6 +563,180 @@ document.write(`
 </pre></div>
 </div>
 </section>
+<section class="tex2jax_ignore mathjax_ignore" id="vectors">
+<h1>Vectors<a class="headerlink" href="#vectors" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>vectors are like arrays in that they have to contain the same value types however the size can change</p></li>
+<li><p>you have to declare it’s type with <code class="docutils literal notranslate"><span class="pre">&lt;type&gt;</span></code></p></li>
+</ul>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">vec1</span><span class="p">:</span><span class="w"> </span><span class="nb">Vec</span><span class="o">&lt;</span><span class="kt">i32</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Vec</span><span class="p">::</span><span class="n">new</span><span class="p">();</span>
+
+<span class="c1">// you can let Rust infer type of a non-empty vec</span>
+<span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">vec2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">vec!</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">];</span>
+
+<span class="c1">// initialize vec with values (repeat)</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">vec3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">repeat</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+
+<span class="c1">// add to a vec</span>
+<span class="n">vec2</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+
+<span class="c1">// remove last element</span>
+<span class="n">vec2</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+
+<span class="c1">// index to</span>
+<span class="fm">println!</span><span class="p">(</span><span class="s">&quot;index 1 of vec = {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">vec2</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+
+<span class="c1">// slice</span>
+<span class="fm">println!</span><span class="p">(</span><span class="s">&quot;index 0:2 of vec = {:?}&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">vec2</span><span class="p">[</span><span class="o">..</span><span class="mi">2</span><span class="p">]);</span>
+
+<span class="c1">// indexing out of bounds will cause an error</span>
+<span class="o">&amp;</span><span class="n">vec2</span><span class="p">[</span><span class="mi">99</span><span class="p">];</span><span class="w"> </span><span class="c1">// this will throw an error</span>
+
+<span class="c1">// however using .get(index) will return an Option enum, thats option of value or None</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">vec2</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">99</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">results</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nb">Some</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">val</span><span class="p">,</span>
+<span class="w">    </span><span class="nb">None</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="mi">0</span>
+<span class="p">};</span>
+
+<span class="c1">// how to update values of vec</span>
+<span class="k">for</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">vec2</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// note because we are looping over the ref values of vec2, to update it we have to declare it &amp;mut (mutable ref), </span>
+<span class="w">    </span><span class="c1">// and when updating the vals, we need to remember that we cannot update ref vals, so we must dereference it with *val</span>
+<span class="w">    </span><span class="o">*</span><span class="n">val</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="hashset">
+<h1>Hashset<a class="headerlink" href="#hashset" title="Link to this heading">#</a></h1>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// create a hashset</span>
+<span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">hashset</span><span class="p">:</span><span class="w"> </span><span class="nc">HashSet</span><span class="o">&lt;</span><span class="kt">i32</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HashSet</span><span class="p">::</span><span class="n">new</span><span class="p">();</span>
+
+<span class="c1">// add to it</span>
+<span class="n">hashset</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="n">hashset</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// note that hashsets only store unique values</span>
+<span class="n">hashset</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{:?}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">hashset</span><span class="p">);</span>
+
+<span class="c1">// you can also call the usual hashset operations like .difference .intersection etc.</span>
+</pre></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="hashmap">
+<h1>Hashmap<a class="headerlink" href="#hashmap" title="Link to this heading">#</a></h1>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// init a hashmap</span>
+<span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">hashmap1</span><span class="p">:</span><span class="w"> </span><span class="nc">HashMap</span><span class="o">&lt;&amp;</span><span class="kt">str</span><span class="p">,</span><span class="w"> </span><span class="kt">i32</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HashMap</span><span class="p">::</span><span class="n">new</span><span class="p">();</span>
+
+<span class="c1">// add to it</span>
+<span class="n">hashmap1</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;Vik&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="n">hashmap1</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;Nicole&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="c1">// you can overwrite existing keys</span>
+<span class="n">hashmap1</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;Vik&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span>
+
+<span class="c1">// get a specific key&#39;s value</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hashmap1</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;Vik&quot;</span><span class="p">).</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;key not in hashmap&quot;</span><span class="p">);</span>
+<span class="c1">// get a key and if not in hashmap return a default</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hashmap1</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;Lexie&quot;</span><span class="p">).</span><span class="n">unwrap_or</span><span class="p">(</span><span class="o">&amp;</span><span class="mi">0</span><span class="p">);</span>
+
+<span class="c1">// loop over hashmap</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">hashmap1</span><span class="p">.</span><span class="n">iter</span><span class="p">(){</span>
+<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;key = {key}, val = {val}&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// update based on key&#39;ed values</span>
+<span class="k">for</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;Vik&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Avery&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// get a value if exists otherwise add it with default value</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hashmap1</span><span class="p">.</span><span class="n">entry</span><span class="p">(</span><span class="n">key</span><span class="p">).</span><span class="n">or_insert</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="o">*</span><span class="n">count</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="struct">
+<h1>Struct<a class="headerlink" href="#struct" title="Link to this heading">#</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">struct</span></code>’s are as close to <strong>Object Oriented classes</strong> as you can get in Rust. A struct does not need to have <code class="docutils literal notranslate"><span class="pre">impl</span></code> (implementation) that most similar to <strong>methods</strong> of a <strong>class</strong>, in which case it’s most similar to a <strong>named tuple</strong>.</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// create a struct that has named field: name, age</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">Human</span><span class="p">{</span>
+<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+<span class="w">    </span><span class="n">age</span><span class="p">:</span><span class="w"> </span><span class="kt">i32</span>
+<span class="p">}</span>
+
+<span class="c1">// at this point the struct is most similar to a named tuple</span>
+
+<span class="c1">// now we can implement a method that is now closer to how a class object would work with its instance data</span>
+<span class="k">impl</span><span class="w"> </span><span class="n">Human</span><span class="p">{</span>
+<span class="w">    </span><span class="k">fn</span><span class="w"> </span><span class="nf">introduce</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">){</span>
+<span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Hi, my name is {} and I am {} old.&quot;</span><span class="p">,</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">age</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">fn</span><span class="w"> </span><span class="nf">update_age</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">:</span><span class="w"> </span><span class="kt">i32</span><span class="p">){</span>
+<span class="w">        </span><span class="bp">self</span><span class="p">.</span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Human</span><span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="s">&quot;Vik&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w"> </span><span class="n">age</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">};</span>
+<span class="fm">println!</span><span class="p">(</span><span class="s">&quot;person.age = {}&quot;</span><span class="p">,</span><span class="n">person</span><span class="p">.</span><span class="n">age</span><span class="p">);</span>
+<span class="n">person</span><span class="p">.</span><span class="n">introduce</span><span class="p">();</span>
+<span class="n">person</span><span class="p">.</span><span class="n">update_age</span><span class="p">(</span><span class="mi">21</span><span class="p">);</span>
+<span class="n">person</span><span class="p">.</span><span class="n">introduce</span><span class="p">();</span>
+</pre></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="enum">
+<h1>Enum<a class="headerlink" href="#enum" title="Link to this heading">#</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">enum</span></code>’s are state carrying data structures that are used in combination with <code class="docutils literal notranslate"><span class="pre">match</span></code> (like options in other languages). There are 2 types of enums:</p>
+<ul class="simple">
+<li><p>TYPE 1: no data carrying enum, useful for state selection</p></li>
+</ul>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// step 1: define enum states</span>
+<span class="k">enum</span><span class="w"> </span><span class="nc">TrafficLight</span><span class="p">{</span>
+<span class="w">    </span><span class="n">Red</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Yellow</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Green</span>
+<span class="p">}</span>
+<span class="c1">// step 2: define current state by instantiating it from enum</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">traffic_light_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TrafficLight</span><span class="p">::</span><span class="n">Red</span><span class="p">;</span>
+<span class="c1">// step 3: use it with match to do something based on state match</span>
+<span class="k">match</span><span class="w"> </span><span class="n">traffic_light_state</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">TrafficLight</span><span class="p">::</span><span class="n">Red</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Stop!&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="n">TrafficLight</span><span class="p">::</span><span class="n">Yellow</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Slow down!&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="n">TrafficLight</span><span class="p">::</span><span class="n">Green</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Go!&quot;</span><span class="p">),</span>
+<span class="p">}</span>
+<span class="c1">// step 3-improved: use in a function</span>
+<span class="k">fn</span><span class="w"> </span><span class="nf">tell_me_what_to_do</span><span class="p">(</span><span class="n">traffic_light_state</span><span class="p">:</span><span class="w"> </span><span class="nc">TrafficLight</span><span class="p">){</span>
+<span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="n">traffic_light_state</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">TrafficLight</span><span class="p">::</span><span class="n">Red</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Stop!&quot;</span><span class="p">),</span>
+<span class="w">        </span><span class="n">TrafficLight</span><span class="p">::</span><span class="n">Yellow</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Slow down!&quot;</span><span class="p">),</span>
+<span class="w">        </span><span class="n">TrafficLight</span><span class="p">::</span><span class="n">Green</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Go!&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>TYPE 2: data carrying enum, useful for state selection that needs to perform on state data</p></li>
+</ul>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// step 1: define enum states with types</span>
+<span class="k">enum</span><span class="w"> </span><span class="nc">Shapes</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">circle</span><span class="p">(</span><span class="kt">f64</span><span class="p">),</span>
+<span class="w">    </span><span class="n">rectangle</span><span class="p">(</span><span class="kt">f64</span><span class="p">,</span><span class="w"> </span><span class="kt">f64</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">// step 2: instance enum with data</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">myshape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Shapes</span><span class="p">::</span><span class="n">circle</span><span class="p">(</span><span class="mf">1.5</span><span class="p">);</span>
+<span class="c1">// step 3: use it with match that works on state+data</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">myshape</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Shapes</span><span class="p">::</span><span class="n">circle</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mf">3.14</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">powi</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span>
+<span class="w">    </span><span class="n">Shapes</span><span class="p">::</span><span class="n">rectangle</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="n">h</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">w</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">h</span>
+<span class="p">};</span>
+<span class="c1">// step 3-improved: use in a function</span>
+<span class="k">fn</span><span class="w"> </span><span class="nf">area</span><span class="p">(</span><span class="n">myshape</span><span class="p">:</span><span class="nc">Shapes</span><span class="p">)-&gt;</span><span class="kt">f64</span><span class="p">{</span>
+<span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="n">myshape</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Shapes</span><span class="p">::</span><span class="n">circle</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mf">3.14</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">powi</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span>
+<span class="w">        </span><span class="n">Shapes</span><span class="p">::</span><span class="n">rectangle</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="n">h</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">w</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">h</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </section>
 
 
@@ -604,10 +791,13 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#char-string-str-slice">Char / String / Str Slice</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#arrays">Arrays</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples">Tuples</a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#arrays">Arrays</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples">Tuples</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vectors">Vectors</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hashset">Hashset</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hashmap">Hashmap</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#struct">Struct</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#enum">Enum</a></li>
 </ul>
 
   </nav></div>

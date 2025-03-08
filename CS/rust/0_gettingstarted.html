@@ -50,8 +50,8 @@
     <link rel="icon" href="../../_static/favicon_light.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Data Types - TBD" href="1_data_types.html" />
-    <link rel="prev" title="lib - sphinx (Python Documentation)" href="../python/lib_sphinx.html" />
+    <link rel="next" title="Data Types" href="1_data_types.html" />
+    <link rel="prev" title="Search Algorithms" href="../AI/search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -308,6 +308,28 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../AI/minimax.html">Minimax, AlphaBeta Pruning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../AI/search.html">Search Algorithms</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Rust</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_data_types.html">Data Types</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="1_fileIO.html">File I/O</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_functions.html">Functions</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="1_logic_loops.html">Logic Loops</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="99_ref.html">References / Quick Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lib_regex.html">Lib - Regex</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../python/0_quickstart.html">Python Quick Starter</a></li>
@@ -319,15 +341,6 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../python/lib_numpy.html">lib - Numpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python/lib_pytest.html">lib - Testing (unittest/pytest)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python/lib_sphinx.html">lib - sphinx (Python Documentation)</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Rust</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_data_types.html">Data Types - TBD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_fileIO.html">File I/O</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_functions.html">Functions - TBD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_logic_loops.html">Logic Loops - TBD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lib_regex.html">Lib - Regex</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Web</span></p>
 <ul class="nav bd-sidenav">
@@ -342,6 +355,7 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../tools/git.html">Git Version Control (CI/CD) DevOps</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/jupyter.html">Juypter Notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/linux.html">Linux Cheatsheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/regex.html">General Regex Cheat Sheet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/vscode.html">VS Code</a></li>
 </ul>
 </div>
@@ -536,48 +550,11 @@ is that it is slow. Your program has to stop for the garbage collector to releas
 </section>
 <section id="primitive-types">
 <h2>Primitive Types<a class="headerlink" href="#primitive-types" title="Link to this heading">#</a></h2>
-<section id="integers-floats-floats-work-the-same">
-<h3>Integers/Floats (floats work the same)<a class="headerlink" href="#integers-floats-floats-work-the-same" title="Link to this heading">#</a></h3>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// without &quot;mut&quot; a primitive is immutable</span>
-<span class="kd">let</span><span class="w"> </span><span class="n">myint</span><span class="p">:</span><span class="w"> </span><span class="kt">i32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="n">myint</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// this code errors because myint is immutable</span>
-
-<span class="c1">// this is a mutable int</span>
-<span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">myint2</span><span class="p">:</span><span class="w"> </span><span class="kt">i32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="n">myint2</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-
-<span class="c1">// this is a pointer to myint2, thus it shares memory</span>
-<span class="kd">let</span><span class="w"> </span><span class="n">myint3</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">i32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">myint2</span><span class="p">;</span>
-<span class="n">myint3</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// this code error because a pointer is immutable</span>
-<span class="c1">// what you can do is de-reference the pointer with *</span>
-<span class="c1">// NOTE however arithmetic operation is Rust by default auto-dereference so * here is redundant (but explicit)</span>
-<span class="kd">let</span><span class="w"> </span><span class="n">myint4</span><span class="p">:</span><span class="w"> </span><span class="kt">i32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">myint3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-
-<span class="c1">// all the same for floats as ints, for example</span>
-<span class="kd">let</span><span class="w"> </span><span class="n">pi</span><span class="p">:</span><span class="w"> </span><span class="kt">f32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14</span><span class="p">;</span>
-</pre></div>
-</div>
-</section>
+<p>See <a class="reference internal" href="1_data_types.html"><span class="std std-doc">Data Types</span></a></p>
 </section>
 <section id="logic-and-loops">
 <h2>Logic and Loops<a class="headerlink" href="#logic-and-loops" title="Link to this heading">#</a></h2>
-<section id="if-else">
-<h3>If/Else<a class="headerlink" href="#if-else" title="Link to this heading">#</a></h3>
-</section>
-<section id="loops">
-<h3>Loops<a class="headerlink" href="#loops" title="Link to this heading">#</a></h3>
-</section>
-<section id="while">
-<h3>While<a class="headerlink" href="#while" title="Link to this heading">#</a></h3>
-</section>
-<section id="for">
-<h3>For<a class="headerlink" href="#for" title="Link to this heading">#</a></h3>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for i in (0..(matches.len()-1)).step_by(2) {
-    total += matches[i] * matches[i+1];
-}
-</pre></div>
-</div>
-</section>
+<p>See <a class="reference internal" href="1_logic_loops.html"><span class="std std-doc">Logic Loops</span></a></p>
 </section>
 <section id="how-to-work-with-modules">
 <h2>How to work with modules?<a class="headerlink" href="#how-to-work-with-modules" title="Link to this heading">#</a></h2>
@@ -694,7 +671,7 @@ is that it is slow. Your program has to stop for the garbage collector to releas
 <li><p><a class="reference external" href="https://doc.rust-lang.org/book/title-page.html">Rust Book</a>, accessed Dec, 2024.</p></li>
 <li><p><a class="reference external" href="https://doc.rust-lang.org/book/appendix-02-operators.html">Rust Book - Common Arithmetic Operations</a>, accessed Dec, 2024.</p></li>
 <li><p><a class="reference external" href="https://docs.rs/">Rust Docs</a>, accessed Dec, 2024.</p></li>
-<li><p><a class="reference external" href="https://www.whitehouse.gov/wp-content/uploads/2024/02/Final-ONCD-Technical-Report.pdf">White House - A Path Towards Secure and Measurable software</a>, released Feb, 2024.</p></li>
+<li><p><a class="reference external" href="https://bidenwhitehouse.archives.gov/wp-content/uploads/2024/02/Final-ONCD-Technical-Report.pdf">White House - A Path Towards Secure and Measurable software</a>, released Feb, 2024.</p></li>
 </ol>
 </section>
 </section>
@@ -710,12 +687,12 @@ is that it is slow. Your program has to stop for the garbage collector to releas
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../python/lib_sphinx.html"
+       href="../AI/search.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">lib - sphinx (Python Documentation)</p>
+        <p class="prev-next-title">Search Algorithms</p>
       </div>
     </a>
     <a class="right-next"
@@ -723,7 +700,7 @@ is that it is slow. Your program has to stop for the garbage collector to releas
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Data Types - TBD</p>
+        <p class="prev-next-title">Data Types</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -759,17 +736,8 @@ is that it is slow. Your program has to stop for the garbage collector to releas
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-ownership">Understanding Ownership</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primitive-types">Primitive Types</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integers-floats-floats-work-the-same">Integers/Floats (floats work the same)</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logic-and-loops">Logic and Loops</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else">If/Else</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loops">Loops</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while">While</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for">For</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primitive-types">Primitive Types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logic-and-loops">Logic and Loops</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-work-with-modules">How to work with modules?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-work-with-rust-base-libraries">How to work with Rust base libraries?</a></li>
 </ul>
